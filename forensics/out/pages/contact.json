@@ -1,0 +1,912 @@
+{
+  "url": "https://nccinfraspace.com/contact",
+  "title": "NCC Infraspace Pvt Ltd - Nataraj Construction Company",
+  "lang": "en",
+  "canonical": null,
+  "metas": {
+    "viewport": "width=device-width,initial-scale=1",
+    "theme-color": "#000000",
+    "description": "Nataraj Construction Company"
+  },
+  "jsonld": [],
+  "headings": [
+    {
+      "level": 1,
+      "text": "CONTACT US",
+      "fontSize": "40px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "48px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(55, 73, 145)"
+    },
+    {
+      "level": 3,
+      "text": "Ahmedabad",
+      "fontSize": "20px",
+      "fontWeight": "700",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(55, 73, 145)"
+    },
+    {
+      "level": 3,
+      "text": "Mehsana",
+      "fontSize": "20px",
+      "fontWeight": "700",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "24px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(55, 73, 145)"
+    },
+    {
+      "level": 1,
+      "text": "MAIL US",
+      "fontSize": "48px",
+      "fontWeight": "900",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "57.6px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "level": 3,
+      "text": "Links",
+      "fontSize": "20px",
+      "fontWeight": "700",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)"
+    }
+  ],
+  "sections": [
+    {
+      "order": 0,
+      "tag": "div",
+      "id": null,
+      "class": "App",
+      "heightPx": 1508,
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": null,
+      "padding": "0px",
+      "display": "block",
+      "gridTemplateColumns": null,
+      "childCount": 4,
+      "headings": [
+        "CONTACT US",
+        "Ahmedabad",
+        "Mehsana",
+        "MAIL US",
+        "Links"
+      ],
+      "textSample": "HOME\nOUR COMPANY\nPROJECTS & SERVICES\nGALLERY\nCONTACT US\nCONTACT US\nAhmedabad\nA-502 Empire Business Hub, Science City Road, Sola,\nAhmedabad, Gujarat 380060, India\nEmail: ncc_infraspace2015@yahoo.in\nMehsana\n301, 3rd Floor, Orbit Business Hub, Nr.Dena Bank, Radhanpur Road,\nMehsana-384002\nOffice: 02762-255962\nEmail: ncc_infraspace2015@yahoo.in\nMAIL US\nSend Now\nLinks\n Home\n Our Company\n Projects & Services\n Awards\n Contact us\nAll rights are reserved by NCC.",
+      "imageCount": 1,
+      "buttons": [
+        "",
+        "CONTACT US",
+        "Send Now"
+      ]
+    },
+    {
+      "order": 1,
+      "tag": "div",
+      "id": "image-animation-container",
+      "class": "image-animation-container hidden",
+      "heightPx": 900,
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": null,
+      "padding": "0px",
+      "display": "block",
+      "gridTemplateColumns": null,
+      "childCount": 2,
+      "headings": [],
+      "textSample": "",
+      "imageCount": 0,
+      "buttons": []
+    },
+    {
+      "order": 2,
+      "tag": "div",
+      "id": null,
+      "class": "container",
+      "heightPx": 0,
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": null,
+      "padding": "0px 10px",
+      "display": "block",
+      "gridTemplateColumns": null,
+      "childCount": 1,
+      "headings": [],
+      "textSample": "HOME\nOUR COMPANY\nPROJECTS & SERVICES\nGALLERY\nCONTACT US",
+      "imageCount": 1,
+      "buttons": [
+        "",
+        "CONTACT US"
+      ]
+    },
+    {
+      "order": 3,
+      "tag": "div",
+      "id": null,
+      "class": "main_wrapper",
+      "heightPx": 1066,
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": null,
+      "padding": "100px 0px 0px",
+      "display": "block",
+      "gridTemplateColumns": null,
+      "childCount": 1,
+      "headings": [
+        "CONTACT US",
+        "Ahmedabad",
+        "Mehsana"
+      ],
+      "textSample": "CONTACT US\nAhmedabad\nA-502 Empire Business Hub, Science City Road, Sola,\nAhmedabad, Gujarat 380060, India\nEmail: ncc_infraspace2015@yahoo.in\nMehsana\n301, 3rd Floor, Orbit Business Hub, Nr.Dena Bank, Radhanpur Road,\nMehsana-384002\nOffice: 02762-255962\nEmail: ncc_infraspace2015@yahoo.in",
+      "imageCount": 0,
+      "buttons": []
+    },
+    {
+      "order": 4,
+      "tag": "div",
+      "id": null,
+      "class": null,
+      "heightPx": 442,
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": null,
+      "padding": "0px",
+      "display": "block",
+      "gridTemplateColumns": null,
+      "childCount": 2,
+      "headings": [
+        "MAIL US",
+        "Links"
+      ],
+      "textSample": "MAIL US\nSend Now\nLinks\n Home\n Our Company\n Projects & Services\n Awards\n Contact us\nAll rights are reserved by NCC.",
+      "imageCount": 0,
+      "buttons": [
+        "Send Now"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": true,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "HOME",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": true,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "OUR COMPANY",
+      "href": "https://nccinfraspace.com/our-company",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": true,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "PROJECTS & SERVICES",
+      "href": "https://nccinfraspace.com/project-services/on-going",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": true,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "GALLERY",
+      "href": "https://nccinfraspace.com/gallery",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": true,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "CONTACT US",
+      "href": "https://nccinfraspace.com/contact",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": true,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "Home",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "Our Company",
+      "href": "https://nccinfraspace.com/our-company",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "Projects & Services",
+      "href": "https://nccinfraspace.com/project-services",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "Awards",
+      "href": "https://nccinfraspace.com/awards",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "Contact us",
+      "href": "https://nccinfraspace.com/contact",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://nccinfraspace.com/contact",
+      "method": "get",
+      "fields": [
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "name",
+          "id": "name",
+          "placeholder": "Name",
+          "required": true,
+          "pattern": null,
+          "maxLength": null,
+          "label": null
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "pincode",
+          "id": "pincode",
+          "placeholder": "Pin Code",
+          "required": true,
+          "pattern": null,
+          "maxLength": null,
+          "label": null
+        },
+        {
+          "tag": "input",
+          "type": "email",
+          "name": "email",
+          "id": "email",
+          "placeholder": "Email",
+          "required": true,
+          "pattern": null,
+          "maxLength": null,
+          "label": null
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "phone",
+          "id": "phone",
+          "placeholder": "Contact No",
+          "required": true,
+          "pattern": null,
+          "maxLength": null,
+          "label": null
+        },
+        {
+          "tag": "textarea",
+          "type": "textarea",
+          "name": "desc",
+          "id": "desc",
+          "placeholder": "Inquiry",
+          "required": true,
+          "pattern": null,
+          "maxLength": null,
+          "label": null
+        }
+      ],
+      "submitText": "Send Now",
+      "hasCaptcha": false
+    }
+  ],
+  "looseInputs": [],
+  "images": [
+    {
+      "src": "https://nccinfraspace.com/static/media/NCC-logo.5870da8076a2801747e5.webp",
+      "srcset": null,
+      "alt": "Nataraj Construction Company logo",
+      "natural": [
+        3208,
+        1182
+      ],
+      "rendered": [
+        163,
+        60
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": false
+    }
+  ],
+  "bgImages": [
+    "https://nccinfraspace.com/static/media/logo-animation_left_rectangle.f1b871c88e248c2b3043.webp",
+    "https://nccinfraspace.com/static/media/logo-animation_right_rectangle.3586b24fbd5d2fbaeb79.webp",
+    "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(33, 37, 41, 0.75",
+    "https://nccinfraspace.com/static/media/light-gray-bg.c75aa16be85c402f5bac.jpeg",
+    "https://nccinfraspace.com/static/media/footer-bg.398dc4812c44084f21d6.jpg"
+  ],
+  "videos": [],
+  "iframes": [
+    {
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.657801944179!2d72.5132729258535!3d23.073003943251056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9cb6b351130b%3A0xce418d22916f76bd!2sEmpire%20Business%20Hub%2C%20Sola%2C%20Ahmedabad%2C%20Gujarat%20380060%2C%20India!5e0!3m2!1sen!2sus!4v1708100631602!5m2!1sen!2sus",
+      "title": null
+    },
+    {
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1827.9583889909554!2d72.37694275057522!3d23.60731742205538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c423328c623df%3A0x95cfab1340bf2d89!2sOrbit%20-%20The%20Business%20Hub!5e0!3m2!1sen!2sus!4v1707858320630!5m2!1sen!2sus",
+      "title": null
+    }
+  ],
+  "inlineSvgCount": 0,
+  "favicons": [
+    {
+      "rel": "icon",
+      "href": "https://nccinfraspace.com/NCC-icon.png",
+      "sizes": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://nccinfraspace.com/NCC-icon.png",
+      "sizes": null
+    },
+    {
+      "rel": "manifest",
+      "href": "https://nccinfraspace.com/manifest.json",
+      "sizes": null
+    }
+  ],
+  "tokens": {
+    "color": [
+      [
+        "rgb(255, 255, 255)",
+        49
+      ],
+      [
+        "rgb(33, 37, 41)",
+        30
+      ],
+      [
+        "rgb(0, 0, 0)",
+        17
+      ],
+      [
+        "rgb(55, 73, 145)",
+        16
+      ],
+      [
+        "rgb(238, 154, 8)",
+        4
+      ],
+      [
+        "rgba(0, 0, 0, 0.65)",
+        2
+      ]
+    ],
+    "backgroundColor": [
+      [
+        "rgb(255, 255, 255)",
+        8
+      ],
+      [
+        "rgb(238, 154, 8)",
+        6
+      ],
+      [
+        "rgb(235, 237, 236)",
+        1
+      ]
+    ],
+    "borderColor": [
+      [
+        "rgb(222, 226, 230)",
+        5
+      ],
+      [
+        "rgb(238, 154, 8)",
+        2
+      ],
+      [
+        "rgba(0, 0, 0, 0.15)",
+        1
+      ]
+    ],
+    "fontFamily": [
+      [
+        "system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        60
+      ],
+      [
+        "\"PT Sans\", sans-serif",
+        26
+      ],
+      [
+        "Times",
+        15
+      ],
+      [
+        "boxicons",
+        11
+      ],
+      [
+        "Montserrat, sans-serif",
+        5
+      ],
+      [
+        "Roboto, sans-serif",
+        1
+      ]
+    ],
+    "fontSize": [
+      [
+        "16px",
+        86
+      ],
+      [
+        "14px",
+        13
+      ],
+      [
+        "18px",
+        8
+      ],
+      [
+        "20px",
+        7
+      ],
+      [
+        "32px",
+        2
+      ],
+      [
+        "40px",
+        1
+      ],
+      [
+        "48px",
+        1
+      ]
+    ],
+    "fontWeight": [
+      [
+        "400",
+        108
+      ],
+      [
+        "700",
+        8
+      ],
+      [
+        "500",
+        1
+      ],
+      [
+        "900",
+        1
+      ]
+    ],
+    "lineHeight": [
+      [
+        "24px",
+        75
+      ],
+      [
+        "18px",
+        8
+      ],
+      [
+        "21px",
+        6
+      ],
+      [
+        "16px",
+        5
+      ],
+      [
+        "20px",
+        3
+      ],
+      [
+        "30px",
+        2
+      ],
+      [
+        "32px",
+        2
+      ],
+      [
+        "48px",
+        1
+      ],
+      [
+        "57.6px",
+        1
+      ]
+    ],
+    "letterSpacing": [],
+    "borderRadius": [
+      [
+        "6px",
+        6
+      ],
+      [
+        "50%",
+        6
+      ],
+      [
+        "10px",
+        2
+      ],
+      [
+        "5px",
+        1
+      ]
+    ],
+    "boxShadow": [
+      [
+        "rgba(214, 215, 216, 0.6) 0px 0px 30px 0px",
+        2
+      ],
+      [
+        "rgb(178, 180, 179) 0px 4px 15px -2px",
+        1
+      ]
+    ],
+    "transition": [
+      [
+        "all",
+        99
+      ],
+      [
+        "0.3s",
+        9
+      ],
+      [
+        "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
+        5
+      ],
+      [
+        "transform 5s ease-out",
+        2
+      ],
+      [
+        "0.4s",
+        2
+      ],
+      [
+        "box-shadow 0.15s ease-in-out",
+        1
+      ]
+    ],
+    "gap": [],
+    "padding": [
+      [
+        "0px 12px",
+        12
+      ],
+      [
+        "8px 16px",
+        5
+      ],
+      [
+        "6px 12px",
+        5
+      ],
+      [
+        "0px 10px",
+        4
+      ],
+      [
+        "8px 0px",
+        4
+      ],
+      [
+        "10px 24px",
+        2
+      ],
+      [
+        "0px 25px 0px 0px",
+        2
+      ],
+      [
+        "20px 0px 0px",
+        2
+      ],
+      [
+        "8px",
+        2
+      ],
+      [
+        "12px",
+        1
+      ],
+      [
+        "5px 0px",
+        1
+      ],
+      [
+        "4px 12px",
+        1
+      ],
+      [
+        "16px 0px 0px",
+        1
+      ],
+      [
+        "100px 0px 0px",
+        1
+      ],
+      [
+        "0px 0px 80px",
+        1
+      ],
+      [
+        "50px 0px",
+        1
+      ],
+      [
+        "0px 0px 20px",
+        1
+      ],
+      [
+        "50px 12px",
+        1
+      ],
+      [
+        "0px 16px",
+        1
+      ],
+      [
+        "60px 0px 0px 60px",
+        1
+      ],
+      [
+        "2px 0px",
+        1
+      ]
+    ],
+    "maxWidth": [
+      [
+        "100%",
+        13
+      ],
+      [
+        "calc(100% - 60px)",
+        4
+      ]
+    ],
+    "zIndex": [
+      [
+        "1",
+        2
+      ],
+      [
+        "1030",
+        1
+      ],
+      [
+        "5000",
+        1
+      ],
+      [
+        "5100",
+        1
+      ]
+    ]
+  },
+  "cssVars": {
+    "--primary-blue-color": "#374991",
+    "--primary-yellow-color": "#ee9a08",
+    "--secondary-gray-color": "#b2b4b3",
+    "--secondary-light-gray-color": "#ebedec",
+    "--bs-breakpoint-xs": "0",
+    "--bs-breakpoint-sm": "576px",
+    "--bs-breakpoint-md": "768px",
+    "--bs-breakpoint-lg": "992px",
+    "--bs-breakpoint-xl": "1200px",
+    "--bs-breakpoint-xxl": "1400px"
+  },
+  "chrome": {
+    "header": {
+      "heightPx": 94,
+      "position": "fixed",
+      "background": "rgb(235, 237, 236)",
+      "navItems": [
+        "HOME",
+        "OUR COMPANY",
+        "PROJECTS & SERVICES",
+        "GALLERY",
+        "CONTACT US"
+      ],
+      "hasDropdown": false,
+      "hasBurger": false
+    },
+    "footer": null
+  },
+  "stack": {
+    "reactRoot": true,
+    "reactDevtools": false,
+    "nextData": false,
+    "nuxt": false,
+    "vue": false,
+    "angular": false,
+    "jquery": false,
+    "gtm": false,
+    "ga": false,
+    "fbPixel": false,
+    "bootstrapClasses": true,
+    "tailwindClasses": true,
+    "aos": false,
+    "swiper": false,
+    "slick": false,
+    "owl": false,
+    "framerMotion": false,
+    "fontLinks": [
+      "https://fonts.googleapis.com/",
+      "https://fonts.gstatic.com/",
+      "https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap&family=PT+Sans&family=Roboto:ital,wght@0,100;1,300;1,900&display=swap"
+    ],
+    "scripts": [
+      "https://nccinfraspace.com/static/js/main.488ac818.js"
+    ],
+    "stylesheets": [
+      "https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap&family=PT+Sans&family=Roboto:ital,wght@0,100;1,300;1,900&display=swap",
+      "https://nccinfraspace.com/static/css/main.613a8e00.css"
+    ]
+  },
+  "fullText": "HOME\nOUR COMPANY\nPROJECTS & SERVICES\nGALLERY\nCONTACT US\nCONTACT US\nAhmedabad\nA-502 Empire Business Hub, Science City Road, Sola,\nAhmedabad, Gujarat 380060, India\nEmail: ncc_infraspace2015@yahoo.in\nMehsana\n301, 3rd Floor, Orbit Business Hub, Nr.Dena Bank, Radhanpur Road,\nMehsana-384002\nOffice: 02762-255962\nEmail: ncc_infraspace2015@yahoo.in\nMAIL US\nSend Now\nLinks\n Home\n Our Company\n Projects & Services\n Awards\n Contact us\nAll rights are reserved by NCC.",
+  "docHeight": 1508,
+  "httpStatus": 200,
+  "consoleErrors": [],
+  "responsive": {
+    "desktop": {
+      "docHeight": 1508,
+      "headerHeight": 94,
+      "burgerVisible": false,
+      "navLinksVisible": 6,
+      "bodyFontSize": "16px",
+      "h1FontSize": "40px",
+      "gridColumns": []
+    },
+    "tablet": {
+      "docHeight": 1843,
+      "headerHeight": 94,
+      "burgerVisible": false,
+      "navLinksVisible": 1,
+      "bodyFontSize": "16px",
+      "h1FontSize": "34.51px",
+      "gridColumns": []
+    },
+    "mobile": {
+      "docHeight": 2146,
+      "headerHeight": 70,
+      "burgerVisible": false,
+      "navLinksVisible": 1,
+      "bodyFontSize": "16px",
+      "h1FontSize": "27.85px",
+      "gridColumns": []
+    }
+  }
+}

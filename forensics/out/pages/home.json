@@ -1,0 +1,2300 @@
+{
+  "url": "https://nccinfraspace.com/",
+  "title": "NCC Infraspace Pvt Ltd - Nataraj Construction Company",
+  "lang": "en",
+  "canonical": null,
+  "metas": {
+    "viewport": "width=device-width,initial-scale=1",
+    "theme-color": "#000000",
+    "description": "Nataraj Construction Company"
+  },
+  "jsonld": [],
+  "headings": [
+    {
+      "level": 4,
+      "text": "We are AA class contractor",
+      "fontSize": "30px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "36px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(238, 154, 8)"
+    },
+    {
+      "level": 4,
+      "text": "Gandhi Ashram Precinct",
+      "fontSize": "30px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "36px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(238, 154, 8)"
+    },
+    {
+      "level": 4,
+      "text": "Kheda Dholka Road",
+      "fontSize": "30px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "36px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(238, 154, 8)"
+    },
+    {
+      "level": 4,
+      "text": "We are AA class contractor",
+      "fontSize": "30px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "36px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(238, 154, 8)"
+    },
+    {
+      "level": 4,
+      "text": "Gandhi Ashram Precinct",
+      "fontSize": "30px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "36px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(238, 154, 8)"
+    },
+    {
+      "level": 4,
+      "text": "Kheda Dholka Road",
+      "fontSize": "30px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "36px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(238, 154, 8)"
+    },
+    {
+      "level": 1,
+      "text": "OUR EXPERTISE",
+      "fontSize": "48px",
+      "fontWeight": "900",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "57.6px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(55, 73, 145)"
+    },
+    {
+      "level": 1,
+      "text": "OUR PHILOSOPHY",
+      "fontSize": "48px",
+      "fontWeight": "900",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "57.6px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "level": 6,
+      "text": "Quality",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "19.2px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "level": 6,
+      "text": "Integrity",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "19.2px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "level": 6,
+      "text": "Seasoned",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "19.2px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "level": 6,
+      "text": "Social Services",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "19.2px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "level": 6,
+      "text": "Client-Centric",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "19.2px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "level": 6,
+      "text": "Teamwork",
+      "fontSize": "16px",
+      "fontWeight": "500",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "19.2px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "level": 1,
+      "text": "OUR CLIENTS",
+      "fontSize": "48px",
+      "fontWeight": "900",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "57.6px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(55, 73, 145)"
+    },
+    {
+      "level": 1,
+      "text": "MILESTONE",
+      "fontSize": "48px",
+      "fontWeight": "900",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "57.6px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(55, 73, 145)"
+    },
+    {
+      "level": 1,
+      "text": "PRESTIGIOUS PROJECTS",
+      "fontSize": "48px",
+      "fontWeight": "900",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "57.6px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(55, 73, 145)"
+    },
+    {
+      "level": 3,
+      "text": "S. G. Highway",
+      "fontSize": "28px",
+      "fontWeight": "500",
+      "fontFamily": "\"PT Sans\", sans-serif",
+      "lineHeight": "33.6px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(55, 73, 145)"
+    },
+    {
+      "level": 3,
+      "text": "Sabarmati Aashram Redevelopment",
+      "fontSize": "28px",
+      "fontWeight": "500",
+      "fontFamily": "\"PT Sans\", sans-serif",
+      "lineHeight": "33.6px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(55, 73, 145)"
+    },
+    {
+      "level": 1,
+      "text": "OUR PRESENCE",
+      "fontSize": "48px",
+      "fontWeight": "900",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "57.6px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(55, 73, 145)"
+    },
+    {
+      "level": 3,
+      "text": "Ahmedabad",
+      "fontSize": "28px",
+      "fontWeight": "500",
+      "fontFamily": "\"PT Sans\", sans-serif",
+      "lineHeight": "33.6px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(55, 73, 145)"
+    },
+    {
+      "level": 3,
+      "text": "Mehsana",
+      "fontSize": "28px",
+      "fontWeight": "500",
+      "fontFamily": "\"PT Sans\", sans-serif",
+      "lineHeight": "33.6px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(55, 73, 145)"
+    },
+    {
+      "level": 1,
+      "text": "MAIL US",
+      "fontSize": "48px",
+      "fontWeight": "900",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "57.6px",
+      "letterSpacing": "normal",
+      "textTransform": "uppercase",
+      "color": "rgb(255, 255, 255)"
+    },
+    {
+      "level": 3,
+      "text": "Links",
+      "fontSize": "20px",
+      "fontWeight": "700",
+      "fontFamily": "Montserrat, sans-serif",
+      "lineHeight": "20px",
+      "letterSpacing": "normal",
+      "textTransform": "none",
+      "color": "rgb(255, 255, 255)"
+    }
+  ],
+  "sections": [
+    {
+      "order": 0,
+      "tag": "div",
+      "id": null,
+      "class": "App",
+      "heightPx": 5372,
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": null,
+      "padding": "0px",
+      "display": "block",
+      "gridTemplateColumns": null,
+      "childCount": 4,
+      "headings": [
+        "We are AA class contractor",
+        "Gandhi Ashram Precinct",
+        "Kheda Dholka Road",
+        "We are AA class contractor",
+        "Gandhi Ashram Precinct",
+        "Kheda Dholka Road",
+        "OUR EXPERTISE",
+        "OUR PHILOSOPHY",
+        "OUR CLIENTS",
+        "MILESTONE",
+        "PRESTIGIOUS PROJECTS",
+        "S. G. Highway"
+      ],
+      "textSample": "HOME\nOUR COMPANY\nPROJECTS & SERVICES\nGALLERY\nCONTACT US\n Previous\nWe are AA class contractor\nDevelopment of Chiloda-Gandhinagar-Sarkhej of NH-147 (Old NH-8C) from Km. 0/0 to 44/420 in the State of Gujarat to Six-lane with paved shoulders with both side continuous service road on EPC mode. (Job No. 147/GJ/2017-18/607) Package-II Km. 16/350 to 31/300\nGandhi Ashram Precinct\nGandhi Ashram Precinct Development at Sardar Patel Stadium Ward in West Zone\nKheda Dholka Road\nKheda Dholka Road\nWe are AA class contractor\nDevelopment of Chiloda-Gandhinagar-Sarkhej of NH-147 (Old NH-8C) from Km. 0/0 to 44/420 in the State of Gujarat to Six-lane with paved shoulders with both side continuous service road on EPC mode. (Job No. 147/GJ/2017-18/607) Package-II Km. 16/350 to 31/300\nGandhi Ashram Precinct\nGandhi Ashram Precinct Development at Sardar Patel Stadium Ward in West Zone\nKheda Dholka Road\nKheda Dholka Road\n Next\n1\n2\n3\n4\n5\n6\nNCC\nNCC news will be displayed here. NCC news will be displayed here. NCC news will be displayed here. NCC news will be displayed here.\nOUR EXPERTISE\nNCC Infraspace is a respected government-approved contractor, rated as \"AA Class\" with a special focus on Road and Bridge pr",
+      "imageCount": 61,
+      "buttons": [
+        "",
+        "CONTACT US",
+        "Previous",
+        "Next",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "Send Now"
+      ]
+    },
+    {
+      "order": 1,
+      "tag": "div",
+      "id": "image-animation-container",
+      "class": "image-animation-container hidden",
+      "heightPx": 900,
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": null,
+      "padding": "0px",
+      "display": "block",
+      "gridTemplateColumns": null,
+      "childCount": 2,
+      "headings": [],
+      "textSample": "",
+      "imageCount": 0,
+      "buttons": []
+    },
+    {
+      "order": 2,
+      "tag": "div",
+      "id": null,
+      "class": "container",
+      "heightPx": 0,
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": null,
+      "padding": "0px 10px",
+      "display": "block",
+      "gridTemplateColumns": null,
+      "childCount": 1,
+      "headings": [],
+      "textSample": "HOME\nOUR COMPANY\nPROJECTS & SERVICES\nGALLERY\nCONTACT US",
+      "imageCount": 1,
+      "buttons": [
+        "",
+        "CONTACT US"
+      ]
+    },
+    {
+      "order": 3,
+      "tag": "div",
+      "id": null,
+      "class": "main_wrapper",
+      "heightPx": 4930,
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": null,
+      "padding": "100px 0px 0px",
+      "display": "block",
+      "gridTemplateColumns": null,
+      "childCount": 1,
+      "headings": [
+        "We are AA class contractor",
+        "Gandhi Ashram Precinct",
+        "Kheda Dholka Road",
+        "We are AA class contractor",
+        "Gandhi Ashram Precinct",
+        "Kheda Dholka Road",
+        "OUR EXPERTISE",
+        "OUR PHILOSOPHY",
+        "OUR CLIENTS",
+        "MILESTONE",
+        "PRESTIGIOUS PROJECTS",
+        "S. G. Highway"
+      ],
+      "textSample": "Previous\nWe are AA class contractor\nDevelopment of Chiloda-Gandhinagar-Sarkhej of NH-147 (Old NH-8C) from Km. 0/0 to 44/420 in the State of Gujarat to Six-lane with paved shoulders with both side continuous service road on EPC mode. (Job No. 147/GJ/2017-18/607) Package-II Km. 16/350 to 31/300\nGandhi Ashram Precinct\nGandhi Ashram Precinct Development at Sardar Patel Stadium Ward in West Zone\nKheda Dholka Road\nKheda Dholka Road\nWe are AA class contractor\nDevelopment of Chiloda-Gandhinagar-Sarkhej of NH-147 (Old NH-8C) from Km. 0/0 to 44/420 in the State of Gujarat to Six-lane with paved shoulders with both side continuous service road on EPC mode. (Job No. 147/GJ/2017-18/607) Package-II Km. 16/350 to 31/300\nGandhi Ashram Precinct\nGandhi Ashram Precinct Development at Sardar Patel Stadium Ward in West Zone\nKheda Dholka Road\nKheda Dholka Road\n Next\n1\n2\n3\n4\n5\n6\nNCC\nNCC news will be displayed here. NCC news will be displayed here. NCC news will be displayed here. NCC news will be displayed here.\nOUR EXPERTISE\nNCC Infraspace is a respected government-approved contractor, rated as \"AA Class\" with a special focus on Road and Bridge projects. We've been active in this field since 1987, succe",
+      "imageCount": 60,
+      "buttons": [
+        "Previous",
+        "Next",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6"
+      ]
+    },
+    {
+      "order": 4,
+      "tag": "div",
+      "id": null,
+      "class": null,
+      "heightPx": 442,
+      "background": "rgba(0, 0, 0, 0)",
+      "backgroundImage": null,
+      "padding": "0px",
+      "display": "block",
+      "gridTemplateColumns": null,
+      "childCount": 2,
+      "headings": [
+        "MAIL US",
+        "Links"
+      ],
+      "textSample": "MAIL US\nSend Now\nLinks\n Home\n Our Company\n Projects & Services\n Awards\n Contact us\nAll rights are reserved by NCC.",
+      "imageCount": 0,
+      "buttons": [
+        "Send Now"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "text": "",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": true,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "HOME",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": true,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "OUR COMPANY",
+      "href": "https://nccinfraspace.com/our-company",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": true,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "PROJECTS & SERVICES",
+      "href": "https://nccinfraspace.com/project-services/on-going",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": true,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "GALLERY",
+      "href": "https://nccinfraspace.com/gallery",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": true,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "CONTACT US",
+      "href": "https://nccinfraspace.com/contact",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": true,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "Navigate",
+      "href": "https://www.google.com/maps/dir//Empire+Business+Hub+Sola+Ahmedabad,+Gujarat+380060+India/@23.0730039,72.5132729,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x395e9cb6b351130b:0xce418d22916f76bd!2m2!1d72.5132729!2d23.0730039?entry=ttu",
+      "internal": false,
+      "target": "_blank",
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "Navigate",
+      "href": "https://www.google.com/maps/dir//Orbit+-+The+Business+Hub+Orbit+business+hub+,+Nr.+Dena+Bank+,+Randhanpur+Road+,+Mehsana-02+Radhanpur+Rd,+Radhanpur+Road+Mehsana,+Gujarat+384002,+India/@23.6073157,72.3778462,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x395c423328c623df:0x95cfab1340bf2d89!2m2!1d72.3778462!2d23.6073157?entry=ttu",
+      "internal": false,
+      "target": "_blank",
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "Home",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "Our Company",
+      "href": "https://nccinfraspace.com/our-company",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "Projects & Services",
+      "href": "https://nccinfraspace.com/project-services",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "Awards",
+      "href": "https://nccinfraspace.com/awards",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "Contact us",
+      "href": "https://nccinfraspace.com/contact",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    },
+    {
+      "text": "",
+      "href": "https://nccinfraspace.com/",
+      "internal": true,
+      "target": null,
+      "rel": null,
+      "inNav": false,
+      "inFooter": false,
+      "isTel": false,
+      "isMail": false,
+      "isDoc": false
+    }
+  ],
+  "forms": [
+    {
+      "action": "https://nccinfraspace.com/",
+      "method": "get",
+      "fields": [
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "name",
+          "id": "name",
+          "placeholder": "Name",
+          "required": true,
+          "pattern": null,
+          "maxLength": null,
+          "label": null
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "pincode",
+          "id": "pincode",
+          "placeholder": "Pin Code",
+          "required": true,
+          "pattern": null,
+          "maxLength": null,
+          "label": null
+        },
+        {
+          "tag": "input",
+          "type": "email",
+          "name": "email",
+          "id": "email",
+          "placeholder": "Email",
+          "required": true,
+          "pattern": null,
+          "maxLength": null,
+          "label": null
+        },
+        {
+          "tag": "input",
+          "type": "text",
+          "name": "phone",
+          "id": "phone",
+          "placeholder": "Contact No",
+          "required": true,
+          "pattern": null,
+          "maxLength": null,
+          "label": null
+        },
+        {
+          "tag": "textarea",
+          "type": "textarea",
+          "name": "desc",
+          "id": "desc",
+          "placeholder": "Inquiry",
+          "required": true,
+          "pattern": null,
+          "maxLength": null,
+          "label": null
+        }
+      ],
+      "submitText": "Send Now",
+      "hasCaptcha": false
+    }
+  ],
+  "looseInputs": [],
+  "images": [
+    {
+      "src": "https://nccinfraspace.com/static/media/NCC-logo.5870da8076a2801747e5.webp",
+      "srcset": null,
+      "alt": "Nataraj Construction Company logo",
+      "natural": [
+        3208,
+        1182
+      ],
+      "rendered": [
+        163,
+        60
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": false
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/SGHighway_2.9915b8bad34b9e85080e.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1280,
+        720
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/vaishnodevi-circle-2.67eb3da66980f1b4420b.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1280,
+        720
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Sabarmati-Ashram-2.f4aef7fcef962bf35bf1.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1500,
+        721
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Kheda-Dholka-Road.7aa0d384370a13013f8c.jpeg",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1280,
+        720
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/S.G.Highway_night.08b05945745b3c106ce9.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1280,
+        720
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/slider_img1.3bb36ed884b46c40e28f.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1920,
+        1080
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/SGHighway_2.9915b8bad34b9e85080e.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1280,
+        720
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/vaishnodevi-circle-2.67eb3da66980f1b4420b.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1280,
+        720
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Sabarmati-Ashram-2.f4aef7fcef962bf35bf1.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1500,
+        721
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Kheda-Dholka-Road.7aa0d384370a13013f8c.jpeg",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1280,
+        720
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/S.G.Highway_night.08b05945745b3c106ce9.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1280,
+        720
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/slider_img1.3bb36ed884b46c40e28f.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1920,
+        1080
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/SGHighway_2.9915b8bad34b9e85080e.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1280,
+        720
+      ],
+      "rendered": [
+        1350,
+        720
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/_0000_badge.65d59e0f9a5be42c3afe.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1080,
+        1080
+      ],
+      "rendered": [
+        80,
+        80
+      ],
+      "loading": "auto",
+      "objectFit": "cover",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/honesty.06a596ff438066a6a497.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        512,
+        512
+      ],
+      "rendered": [
+        80,
+        80
+      ],
+      "loading": "auto",
+      "objectFit": "cover",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/certificate.d077c4c67880b5c059e3.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1080,
+        1080
+      ],
+      "rendered": [
+        80,
+        80
+      ],
+      "loading": "auto",
+      "objectFit": "cover",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/2.e1aa7e93d6c226e52ab2.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        512,
+        512
+      ],
+      "rendered": [
+        80,
+        80
+      ],
+      "loading": "auto",
+      "objectFit": "cover",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/honesty.06a596ff438066a6a497.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        512,
+        512
+      ],
+      "rendered": [
+        80,
+        80
+      ],
+      "loading": "auto",
+      "objectFit": "cover",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/_0003_teamwork.f8228bc3044129e0bf3a.webp",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1080,
+        1080
+      ],
+      "rendered": [
+        80,
+        80
+      ],
+      "loading": "auto",
+      "objectFit": "cover",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Govt_of_india.152176654cbd1977fab0.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        333,
+        151
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/PMGSY-Pradhanmantri-Gram-Sadak-Yojana.cb30bb8df19497e28986.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1017,
+        609
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "data:image/png;base64,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",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        195,
+        258
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/NHAI-logo.1c28f63c897bbb614c5c.jpeg",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1092,
+        774
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/adani-logo.c449d31c78a0287cea94.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1402,
+        854
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Gandhinagar_municipal_corp.78ed4b1d70be349bf55d.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        278,
+        181
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "data:image/png;base64,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",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        89,
+        70
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Guj_Road_and_building_dept.73a6be7b4bd07940fa5a.jpeg",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        789,
+        756
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/MORTH.275f712b585ada8d3c50.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        642,
+        361
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Ahmedabad_Development_Authority_Logo.svg.f91a0dd0c813a390424c.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        549,
+        554
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Amdavad_Municipal_Corporation_logo.44cf1a5c1cd98dd56fe9.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        260,
+        265
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/MP-PWD-Division.bccc481fdd959b124171.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        300,
+        374
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/UP-PWD-Division.2ecb9b2bfb18bc504da5.jpeg",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        789,
+        785
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Govt_of_india.152176654cbd1977fab0.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        333,
+        151
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/PMGSY-Pradhanmantri-Gram-Sadak-Yojana.cb30bb8df19497e28986.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1017,
+        609
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "data:image/png;base64,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",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        195,
+        258
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/NHAI-logo.1c28f63c897bbb614c5c.jpeg",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1092,
+        774
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/adani-logo.c449d31c78a0287cea94.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1402,
+        854
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Gandhinagar_municipal_corp.78ed4b1d70be349bf55d.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        278,
+        181
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFkAAABGCAYAAACnizjhAAAABmJLR0QA/wD/AP+gvaeTAAAKLElEQVR42u1cC5AcRRk+BDFQPlCe4guV5HYDgQiFICqKoIKClQIMGBWlwBcGLIlUVFB2bykKEBCujHrcTvfM5kL0BJSyFHkogghavEwkSilRUSSQ0uR2D4wocn7f3923k93Z253b3N7epbvqr3n1dP/99T/9P6a7e3qmMY30ZdaW+zJjaWmkkF3e41NraWysZ4exXM8L0pJHLkWqFDLXlvt6b09LI/nsqR69FpMBLfNEesqe7dHzqZskOXMT6JG0VOnLnuXR89ZFN0ly9jSAtjQtjeSyh3j0WpXkQvbYkXzm5LRUyWXmefT8cLHtU39//4uKpeKBSql3qUgd24yKxeLrphrkUqn02jAM31pXv1Jv4HOt9WGt8JpEK4ZXvLhD3trYDmEYfECHwc06VP8GjbVKKlRfsMPF8nI+05+WRvLzj0niKQiCfbVWV6OOpxrWH+mLmBc83JOG561I6wVTDrA0JlI/nSyTDuRy7oD9R3PZA9NSJTdvj9oO1zo4H2X/q2n9MwFkVLAfKvrrpBmMS/I2GC7MF6VUy/V3O8gDAwMvBHMPtgPwtgYZZV2Ypm50yFe7GmR8kp+eoPK/YwgZBvMDzQhMvntbgIxy9kG9zzbg5xnQvTrEKB2rOwyL75d3I728jq9Q/6keUDypyRdF0aumDGRIwX0JjXka4H88l8ulDkGW8/OOB2hL0tJoYW7WdvoXkyVNhQBi99RCFOrra8tatWrVyztmpkFq5qDS52qYeB73j5tsmZsLmZPgXHwiLW3K9R5kpFHdkDAURZNuYxeAvE+91Og7p9MZSfqyaB/PWJBXrhx4Zb2mDvqnE+QEJTzSliBNN8hiG9ePfVd3GcibZx3IaOQ1bcaTNf6O3JWeMku2H0luc7hoN3mQW5PkB0HPpaVKofd8D7JXfB5kD/L2DDL99SkYk1eD7k9P2dOtx7cKfNxfpfaco1kJcrelJJDxF+cVXTFc2GebWiX8wllqAkSZeyGZo52l3gu7FuSJJHlwaPDVnYwnt0fZggfZg+xB9iDPZpAnSsPDw7s0Anmyk8DbItTZtSAnSmubILc7CRygfAuB+9scYQ7I92e0CTcVIM+EeLIH2YPsQfYgby8gP92XWVC+OHtEWnom17uvB7lFkMuFzDmVfOaStDR6cfaoToU6px/kUH+jy4aLmQ0yJo3slTB577oWoncvqX8vWOZBTkic62Yn8cWZ+EOz9wDoexJAXuxBbszELXWfPqb3T/iOVj+pnT/H+LMHuUECoGclBHwe48TwZICDryTkfyj2+wmzNHvPTUvonENnLchWiW1IAG4T5vt+GWAvLK4s7i9rSeol2En+Ulfe5nzv0ZVCdlFaKheyc2ctyEY69ZI2Ztk/yim4M+lv9bSAbJSZ+uYkAN6iSurweDke5CaWBoC+KgXAZbeEwYOcVhGW1Hsx9+E3E4D7PIC4sVQafH3S+x7kdOP0YVy/waUEXJwDd/ta3DunEbgu0UWGaz2UlhDsP8GCfJmpzxLWirQ3DAbLtioPRGeqxyeffPKpg4lLZ/k3ms6GczrcWES7NmlVPJ83G69YLifscRcBlLkjzx21Otah/t3i72FV7K7xMsgfz4eGhl7q3omXz/u5O3I7ubbwGfliG+PlkkeU/TLc39lisDPdf7c+kRhwhwHm4cpct9OBq8/Z/3xGnmsbsQBa9M/403s3PTeYZp+EEsu5GZK4voAxC6N91T+5bo8Nxfk/mJ/nsoDcROX+iOOT8Oo+Zct+n1n7F6xGJ86zsy+30BVH3kGbR5au2ef0Jp+1c+tuZSCJfOB8o9TN9xHDHj/H32qulaaJCCX4O64oHbhuYA9rGVTYWNS9BqtQjzL8B6vJD/g7Afk/b94xrj7yngRF9xccPwo60da5lmWSN7xzqm3jD/E8Q15F2ErB26SNkfqRbc9xXEC6NciYforKvsue55JY2rPNQEaFH8M7P8b1wzieUQU5OJnhTxdn5i96XH+NwDFUastYh3c+E+vkWpB/DyvhUgeyjYGsIEDWzPq6CITWH4yi4psFZK1+hb0tjmHjYnHvtWbFqgHZgs/OuIZAsSy8/ybmHf9qHch4h2u2bRtuZmdakB+WSCQ7xIKMTi8h7xUo87+yuD8JZOkZmb8gTK41pou+CPd/MR7kQRzCArTJFBLczY7B9R1soANZrk1HnEhpZMXI9yXar2xwKyDbINRmA1wyyCKB6AhpuJHkx/H8di6e5NBgO/x05H0C7XmEICPfeQzNoqwrKXlcVNkYZLXexVhQz3dQ7krWhXp/hutv28XvG2SYwPYPuM7zGvkuSZZkE4uoIENBQplchE4ng3tHRPpyfi78tFmZfGqh+pBsImLs4rwEfZQ6xAAVvAX5h8gUvwBxFrBQ3Br5621MekKQuQMMO5iOTDOQaYtbkG/lGGlWpA5m7crUvazkjQnI/EIiFRh+1Hq2tyHIJnr4mJX6UeLhQLZ8/k++OtQvvLBMMyH9STvU/EeEAPjEpDk8gIvQ+bmzENv4hRwWcHy7caM5FCAAr/XceAzZRNwwRsnnG+0Ohg8G2EeDsXewwaIM+KniORtDhlHfG2Mgz3HPyCAVC857eQ+d9xpxOtiJWh/h+OIzeW62u5lPEKlYeU9WzuJIRSb6BueUWh6pP1x58uVyzMZ9pxg5XDqFhjxHEnDyIr/fBgf3xjuHumesk9vvRNHgQU5Bm7rQyZY/0CJpJEOTnqaOxDoxfzs8TRV1bFMonybzd0SUjiGOoTxyzKLtSQ3L8RBj9YcZOBqP1iGPM+M4jolikPtQfNby4OclJhoUFMdbPHtndccVVajqj2r91BVQPGe7a/veHOQ/V2xqrU+r4X9H8QXwDO+eSafD8nJ4vFxaF9ZaWCgKGwrW6ZhORNx2sxsmnSfKxBr/1ir4LW1iUZiwUtgIa2uuka1noIWtslzMfHReqCip1a3lQa1/FRsotnCkP0ftbRXckbb+/QQkaHDmpQISk4qWA/iRTqBdy3uwnFgHrYiqXyDWyDqUeYpYH8YaGDMKWcrdyI2joLyPF6sKu4ZZftfRm+swyLLf0BUiyXGQYZwbB0B9jyBTmnH+N56zwXY/ucWQlp8bkwnmEo60JKw5OD9muXxWtt+Bd+c8xGrsV22hhWBDnvcYe5jzlOFQwR6O/0uk9UCX2Jp5d7mvYty6sWaoLfdR2tjWitjTrtja2Oyv/NSAbMyug+tANsb4U8Y4B8h0feGMOBeWuyAayaDzgPgt7U2ATAVh7G+9yJhwMhQso4ORFOuoAxn7wrkYBDd4YqxZwMVsJWsnrwcvv6YXyri32UsOdi5NtQYgWxv9Sr7X0THZgkrPL+MCMLwW+zBSv6Qvb1xxxkEIMuIicNXFO+KeQfCYCCSOP7Bl0VtbY8E6Q362ioTLuPgRA44MI/fVgLyhGpOQ+SCP23wXVEGlm67vjP/doGDYDt8g8Q/Y/eR13N4N1QN0PMb//sC9Bt3UDmb/B/gb9rbUSInNAAAAAElFTkSuQmCC",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        89,
+        70
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Guj_Road_and_building_dept.73a6be7b4bd07940fa5a.jpeg",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        789,
+        756
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/MORTH.275f712b585ada8d3c50.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        642,
+        361
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Ahmedabad_Development_Authority_Logo.svg.f91a0dd0c813a390424c.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        549,
+        554
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Amdavad_Municipal_Corporation_logo.44cf1a5c1cd98dd56fe9.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        260,
+        265
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/MP-PWD-Division.bccc481fdd959b124171.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        300,
+        374
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/UP-PWD-Division.2ecb9b2bfb18bc504da5.jpeg",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        789,
+        785
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Govt_of_india.152176654cbd1977fab0.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        333,
+        151
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/PMGSY-Pradhanmantri-Gram-Sadak-Yojana.cb30bb8df19497e28986.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1017,
+        609
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMMAAAECCAMAAAB0YpM9AAAAllBMVEX///8AakQAXzIAZTwAaEH6/vwAXS8AYzkAZj4AYTYAXC0AZDoAaEIAZTsAWyuCqpixyr92o4+mw7bp8u7e6uZSinDx9/XZ5uHE18/N3tf1+vivyb7L3NUKbUhKiW6Vt6hgln5nmoScvK49gmW80slAhGd8p5Qmd1aMsaAyfV4cdFFYknl3n4wAViJ7oY5tmYRmn4gAUBWt/pmnAAAgAElEQVR4nO1d6YLqKLA2gATibtLGpd33OGf6zvu/3KUgCwGiidp9ztw79WMWWxM+qJ2iaLX+o//oP/qP/n/QJPocji+n0fZL0Oh0GR9m4fx3D6o+RcPLKulRxH0fS2IY+5wjis+3yyH83cN7SPHuRijvMMIYDBshCiT+zbnPxKc+D5abcfS7h1lJ88O2g3xGsI+od9yuBfvEUQgUxZ+H8WWzJ4H8O6feaPq7R+uiw8ZHMD603O4+JxVfCqfrG0GcdTEio88fHd9Dik4EACC+XTzmk3h8owgTTJN1Fdafp+mqj7sMeafaM9s+fPUEaL+/jb9zYLVpeBaj4Xw7a/i7wwfyCaOr389SAgFhKBk/wxXhhXHCgmNT9O+lT0AQHJ9XMosEHvDx+5RteKOE0NVr03g4IyFLp/abxtSQdkIO0PV1dh563PPZ4Q0jakrRWbyZLN7yrLVQtfT244p2DWw0eBcHTDZU+CE/uxSTI/L4+Z26/UCwF2zf+MBHNBVeT3B57zPb28Dzkx/zatcBwcv3G9ghF7byh/hpgzx0+w5dGJ59L1h/w4NNml+/8UVb6tHvF4ow+dYF31GPf3zb0xWFnojGvtPXPFDiH7/x+cKw9QhLvtcWxR2Cz9/oeUQicrnWy060w9lhdxn8vb3dbn//PdgNp3XTGpEnXvJtIMJevafH49Hey/IajDGMOz5HtHPerD9r/DwkBO9fH62TJjBBj74UjW8+5Zh4DoJsQbC/PPRzQxHhrd4zZpPOjD1g1OiSiIDfNXwNiI/Y9kHAEfa6/OuNI89phcnynji3x1fqO+ffIoaWg7thTyzM6DfYoBMn/I43E40QrwdArUYnWN1bjM++13+7FVoIC1rNyPGN4voAssVIhtXvG1MPvTlCjZBHx5V/vAUPhKBiMVBSPdcjTpL3YlgSf1Txp/koaLwGOQq6rzT6e+a/1XXa+uxc8acx7zyLAIj1RxW6bt4j9A6zNaVD4CG3PId79AoCIJ9UMNRUuE5vi4nmjFB38D9GTwlCmUiwdS/FibO3+bAbjG+uz9u3lxdBkV8RFZ6r5q4xTannu4xbvHxalk0ibqUXB6Tzng2wJUGu2RiiBjbtIVGn2jv5+C0+x5ozV1CyDh7PLsa+L7zXDmbdh1/mR4dQtL1u/w0RV8g96jCYI3p/+D5C5LodrNfj3fry9yrpoApnNid8djDsATknsCGNcMexzJt70sy48LCnZbU4F0GFd98nZEuHJj0y+rLfFIkg3RarG7+3ArdhhX8br8/0jjJmng0i7r/ucmyZbzvBm0oIXeSt79ql2Rb5d1bCBr9h6MWFiALCLFkbVTISXz7W5+EAVepkllhrHtFXF2KEubUMlyoIGFe6tiWajGiVXDiCXbEQL21mh4j0zJkZVihVQre17VF8rZoHf2N9l76mmi5+Z2A9soINWKPZWvcrlgJZ+fQVC16xEYwEhoTOifvdfNXQKYiTCqkIzLmYUvxCICEszMb4aOV+Mz01fnh75dZuxHLOEoJqTVAUO3T6iiFjy3Dn5uOgSpgnkaAqZVuh35iZINv53H5+O7IY7Ksf4JtRlBP2u8vytyK3MPQd8dbkcLktA1n3QwOyOg0dSC7ux5lpmYlwW0ofzA+jJKDIVPp/YfAR6F4fzc73DQG7Oq2sHTJG6yuCMp9ibjFHycBKjOzcOs7MaNyYLpbxliPwvbADg3gppBqKAV2J4e25Ocny/Q/Hvssx6mKa7Iz3um2NqUwPyN/l0/MRiGF2RABp+UB/YRaPb8IPIHSVSkZIjSWcOJceGdp34VUHqISjS/nNW6dgGwFLu8eykVz6zMP0fJltmYVhi3swyksPi3VXay5YqcyYG5dOwuWQd5o8CI18v7xsR9dDSa88ug2mkplAlxG6AWkWHoSJ4cbUz+Zb6nWVu3s0bEvsYl6y1J8031R6EdokX3UOnTPXLwxBHHKpmeZn7PnptvgI+1UYVIwZiJWYc1LWSisXiwS6nE5xrQib9Hfajz7dHFpS9ZOAQVbizDyUxaYjHJjWoMDQijnpsklrinAp+Jm53uXrtm0d1I2wkZ4nObmc8U7ZaO4ZExzla8J3HwPMDFu1BpiXdObRsQzE076wbZCp8a/aAJYu6Lw0wouPoqEIx4pZdWDYaxgg6UynR1LK7TmXQQ9PPqpjOwfpgefUucIldTdFnXVZ5z7C0Lrh7tUrG2mXUtJ176o6PKsAUQzBKWlcf/sEeUL2dSERGEzLX8YQCuXk4U35E5to4U259fxdEElu75z+fNlHSgS/cV0VjLCVbiljaJ06YjX1n1wc06wtg9PeQsWuLJV2p2VwsW94c8laKdP+JYxziS8cGIRfof/vRExrKQRcOrJchTQcHBPJENmMZ9FkEsbDUeLaJ+I5yztND9Wt09g3FsaBISH90v9vWYn7Ph3zTFiO2HaPGC3vt8UjBwqaf2XvWCisq9cp8sqp1xoYYNClX9jvKGzph8UKyN7fmWz75loWOZOhQ5xKijs0g7kRRqYbbGJolx0+l/3NPeShyUkEqWWPxqfVfn/82qm3zZYm1nyDrO3U3FoA1mbG/kENDDHVw9CZi5XytI9nMAJRlTXjM+WYEcKwT70TKML53tQMOc9vHVKNdRNxZmUn2oHBMzAIo6K5XQPHnlv+97XBB0SaryHR96sJVvtuHwYIlummg2OWSgZqxUhTDAuuq9arQ+SylW6bEHAIW0S5A5v925fJm73Bldmm98SlnKlmxYQMl+IngcEsDzYxrH2tWmziUn2Z+74zMATi0ZNii2h5yf6TBGJWJkZuh2Vc7pomroVClw4t2WWBwUzimBgGOsypSxyy7ENS1jbg50y8nLvxdl5MABXsNzXmox9mL7TfwTRVtPPLvOPAQLwyhr8wKrSjy0hn2ttw2CQPnwsBFXZQ87Qgh7MpS2+moQ8u7aqZ6gUv846Noc0MDBummUmXT5ZZTUOhoCGUKRSj8Moer7BLhueVqTdn2icozNqBl3P4NTCsmMZ+Lgc/m5UyBFgG3XGQbprG6qAgDdTpXM1dfq/GPlNUHvMGm+WdFoajhiF06gxl4QzLAVmEfTFGZWoXGpuIdTIikSzxcHZ4ZJqLNEW8lOzYMKtE9d46uJwlL1Cabl2ePoFMd6RVjqXdKz4B1ikva2Yijo7F1mzUDJk+n4lh3rmDweXMeCj7nv4huMeaa5V5PLrOEQbBcL5Sp8nlf7PCv/h8iGHi3+GltYtVU6e1vESgDLVZzsykLq9Cny3Kc5Jypcut1Hw2wUuGTHMjRSowIHMdouLr9tO7Sp0YSkYMOtQkOvcKNakW+jIuA0/H5sRQeBtCpk0MRo5URADl1NqGFfZh41jlFIMh0mJqNHvYzb3CsbaSgQV8XYnBK3bShrysl2wMIffKGP7SXCqXtKVq3RAVMVW7YrgFN0clEzEvm+o0jeXEUMRhY8vGWRiQgWGgmZCzKxrupU82MWg2vQjE2vp3YhPDthpDoAklKoVVJ2xunFsY1treizOHpcLvXVnceRlDoRm1aUAzI3+eKleXXvKKcQ+MfNKlY2KITAxjXoSaTgzqiSaGsf6JFsNo8TKNIhAZTcpV5svFsRqGG+Yl39uBgRoY9Gyrex0iE8NSco/mu2mRoGaEAyn2JMkfmmJIXPVBBYYrK2ewL52OsUkVUSPJHSOSJwadGJS4FBjISvhBwiHXxDd3z1vzgteFsrrI5FXOOoqX5u7NlByDudV46WBj80YMuYxhroFyYlD2q1Ca/g6CHeFoFo4F8dr544vF2UprgaLcwiuZdu/d5xgmiJXzGjaGmYmhtezmmWenXlKPLHQrigGPEGrNLc3NpGbp0UGKdNDOl1AxrdOhKfTSDBnsLzAYe+I2hiPJ58ApbSo+KWwcl/8t+EILinJPU5sFX/KfMC/5T9XgTs7tl9w+DLnhHq19/NcjDKfCH7HtNMken5tckB4YVBBpA86EOioMAl+3IKIWc5inlNR75K8sscaZnRb2qpzWszEcLAxjnq+VZX0IvFC5L9lkAkMAFwnbrCVfUfa+/JdE5RAgnZGJmQyCZF5juTdAFIPas7I/VwtDXGzOW+E0+x+WsXEmmSDiM5huOhWqPMeg1r9YmeDQhofJfNcq/VTuDYI4kP2XseKF38rNCoi1z4zC4YNZTgBLnVV6WOLmj3tySjV8kvW3vvx4nhswpZ8LVuIjlZuVU58aZvVi4Fc8MJMb+TBjZEqwjWHITQxCA2YekxXHoVgKBDiFmWRKpm4nTG5YxyjjCZl5yZ0q/6g2KlSJSipmUkVKF4ovDLNfxHE734x4bAwLG8MAZ96GFU+j8CNnJqxhaIWYycmOs5NN0unKtC0/qvRyemw5xSBnSsJEsbniuc92Y2bhv8BgnN1yYJgW7GUaOT6XLCQLV9IBpkoshAQf2rbCsxoN/ruV7aiSYNQa96FmbpeNS/GLWnSY9baZdc39f98qTNz5xJAQBwZh/DNP0cwvcRXpyFlKY55sxmSilR/nrQGCPLO0hDBAwr2DLE7mSWZ2lB8oC7plqkOMwIjw8gHMkGmUxcqZGMY2BmHaMhtlKCahwqQqVHOjdrkKB2zY4x5mw1Z4QgjL7SqPYeTtWvHZ90i/GIuSfJk0lpMkpNbg2nzyB3Zi0h6xC8MulxpjiUHbyEmUqReVM9Z3K3bYJ+gqXjod7OHVl+tl1opvASn1IFCRkBymyjgJRWw4frmLlJhFKHLEBnuNffvIR5SfezDy3uwrNVsyuapy9yXzMh9RQtDykg842l2R8Gqp7i0rbSenQXEVJCatcERSTJlVlWhjuDgwCNOUMVM5sQ68qdxMmYpUeyjlHW/gm66POmcYxQXLYnWjEYTUoxL6UKKRAygHEZnPKFjJqpeuiWGdi37Z9ki3W8Uw4DS15ZaCGaGrwwXk1yGt2iPUkMpjxo3q98pKlopC8k1FQnxrcAKDV/7EiSEMspkoWzmpR5UPJCVGKn1TW0PRhycFVQosY8aujRRf6fyOFANJr6DkbOTbA0YFTwWGAXYdgdqTrMy4tB8ndUSaC5P1iLLo1dounvbVOGDC7QMaUtf1Z/n+vIqESgue6aIbcxzztDGMnBgWQktmf9efLfk6NbNwEBaqCjxb7A6BVP9CmJh1dFxqIH6SmS2N90tp0XQTMewTxwFDYdnLm4wiWnAeRetkbF5iJpWJTYNHKVlyLu0DI2sEOiwhJLHPH0AtKgwtLTdNdbOeis2OMw06jhJdwGCcanCvg/h5Jvy6u5EGqVu1NrJSfgCpCmyVKq+YEJglsWvO5a4cF1N/Syc+VWu6w5RW5cwxsSpZFVoDw5Y5MQjBS7WabqqZ8skn6fsQiN7GT6OC8u8DIerEdDCFvYCf9qfFthfPduWK9c5mb8fNSmH1Te6x8icVGMTnKS/q6WyS4s9OQsgiu6MQ+47VBWDLP1rc2kgOQZuCAz5Ih5yfqNV4Ns0BtBmxCsbky7nXKX9ehSHuZwtRpBIL25IVXoH9bV8ha2R2rpjRa4sbEWIr7gEEYWRO2Yhzx1pz+tL9xB13KFaFwSjQ31RgEENPh1zsomn28ZhymDxlCGcBGDF8M3xtBcYYFhAh9cfa0ah+/qMCQzrytk+os27fxnCrwiC0T1oEk6dMdRufgeCrtux4AydqSk/en1v/lLTKZAPf4tPWJC9A0cr2CwxpGmPg+6bXXYWhch3EX4iS4TxvRJaaPsgOYmAIC3ZQ4Cr8be3Zh0Fro8/juiO0mZ9ErU+SMmdXL9vPMaTWxnUgKcdghHbVGIRqSquMcl+G6DrtlBbmEmhoFC8Bko9O7mMb8zWB9EX/VPwsry43MARqGW4Y7ZyPcmBYkcrj1gM/3QbPJaJcPjslKU+gawyaRoYzqq68TPEICfeVIOG+TpOMj9Cq9LAsxZBKw6H6cJyNYV+NQXiNqX7N8n2GkIloIbW1aDRphRtZuMforew/HfbwOUHeUPYmTIeKDAuc7eZRhUyIV1X/v2YYhCOhTFAWCln6Pj6mKDASshCNKKQ1cF/b12+vxLAJDq6HVrjtp3PB+htT86e+RnqwcORXn8gaWueJ72GAtJbipvQcCrcPVE4zFD6CBqLDWwf5+FcxT4MAc5pcwtZ0lZ16ZcGHzW/Kb00ZaBqk6qQehqR7B0PoZ09VSUcrxwA0+0iLP5kYqxjcbPelGbzZ8e9h2Jqd8jMqmH642qaoDIo6kDAn5M6544YYIMhR/TrUJo/LFYY/Ch6SGIlPyWYclzyy+Wx3U0eR5BeCkbsRi2Sl9EDC6m6TEJCH8jrexwBlVOrk0loF8hXno+e7JJtn5iO0zBV/uKdwYir9E1pWNQGeFikf8SozjW1hKK/kAwxtEdsqkZBGwiEQ+ShWxSnvbtanbtIrQkxMV9UMIp0y5akL7xzZ8nIPA/Hut+MQLgecTRHDgfYGdi5K/6rWQSdQK7HNo0Bh/u5081HJf7ngIa/oV1GNoedZJ0PLJCJ8lhTvuXtGV6jazAirLc/MOGJ+udtIC3IlSgbaS8LvH3QFDGUd/xADRCuq2B/yFRVSnRN0AZUk03OZ8aWWOSjThedx1J5Zp0YNAgxlpsQPMcBBNi6/A4ELdzuTOc03au5l+KK23R+2V4StFkIkzJtfPrPmIBsDf4yhfWaeWl8IfR62FVLpJakIZEaPPexreiVe14/UC7q9R9+2MfQfY4DedrC10FKtKYJHLepkaCzFDmJxdn50BBpCayWlW+7IIpg0Rc9gEPa6BOJRy4hxkKa5Tth7yBrAoUQdYd8icqf1WUYi8jaK4WphgHaVHpdJCgDRf9R97uSr18CZlkf90bYCAv9UjyZWRb2DAEPZTPU9d+RtUCScBV82t4EDfejjQfvNhMjs1o3ZDS7KJLdXOjDy9tGvswovYGiFIoLEUjoHglNY735LkPTc84rdcxrks4SNJbBUYYLJXfOck4VhHtTE0JqchRqWi74AQ4aOd1+YyAXY84p4UtECAkF1+HLWYcyr15Zv9jwGdYQZkkOtmQc5U7q9887LL4nhnzuK8vMKB66VZ7WjxHd1MHJR/AKGVuuLeqop83yFvPso5jI5EFXbkhnEd2JOQGygvRlyNj5zEWAoOVQCg1lZdofG4r1YJsN20knF/c1zfftnysnlZ5iET4JJg2bPL2KQ3dSIzO1FqnEMRvvmDYaGVxlspJtcJ9q19orujuFFDLCTDh3p1FKoEFgENk26tcQnohoPILnTOF36ZprmAUFzq5cwiEkUYVk3uMEm0FbFCyICHdXsbdMen6kKS/0ejCOElv30rvKyyIXB0e7qLk0gScQQBATxRxr14Fq3m4QDnB6dw2gg1q59ETyFjg07nb4DAwQJoNcJPGi2SlEwen3QwmgyoukGpd8fgdbaicdYubLHBBgsO928c0/rgoRsc4ki3iJ1eJfQu2ZvnWZwCMcX2NveYbjWZdS8G6JlH1qofGq9LoVboRwJZzCcyS5RTM7M3XTt+6okSIjOHt4fDnwO1+s80zDX9r2XhBwrvnyfok2AoZ+dvB4oHsimNR6/ujXMJ+QwmU+TC4z68EF9AXj/3I0qYyuehg2Spx4lJnOE/C5k99YwsHj3wZHPneHCtI99hFY7+N7s1BOSzIKnrzi6dEyHfos9585dLZqsl0guxl4Orz3bbROH5xL/k2zWM3DcIWeJReDJX7hqasXMfaBBx8zWNKPphnJGBJ+f04IfRw4mUq+MB0shNwSj5e6V7v+C+w3OWfByG4fmNB/eGODwg/MdPTkfnwNMuhix02tXI4XUMyVYaCp7J7wxReMPoWgI71VMx2SAxJ87NBm8fDPSgVvpdzitSdzfbkbzxVWoW+S8d2eBhR5C3uV5ISjohM2UgEzu1Apja5DwqD3iaLM2CqDJ1psuIVwSu9hIqCrn1shTNORdu1fcFnn++V2XxQnetzP7n64Pn6aoYzV3WyNHL8qn6eJ7jk7HzLFX+DxNqVFFE/XtarkXCFKOdtQ1ws+5TBV0w/JIe057Zm4Jv0KwX8Ttj2EH3epo9DxNOqW6jk9qtkl7iYSRduYwzqRBbuMxHUp+5c3REvB5gvmmLg0N5fsVnfmforO25R2it87PnnlmwXpK7NGmXDPa+UVhh3BlnPP2HMGuQMVu2hi5aiOfJuHR5My0xXe3IZtRW0RalTtdUAXg7M7/HF1Jzj/siXC9kuDIVGUHedjyfLSV14Aunewgu1gSV7/55wi2+SsvNlGV1/7r7mtKM+RRpYumyPT1nyco5nT0HC8IKnEf7As3IJTt9K/9t2mlIRSRVxY1AclStLeB+GCpe3xjlp/8JMmibLt9dokkTP4mdrp00thw2X3TfUULgPCQ29fyW677JJrTgasyMNjdeMfz1L0Zj+9OU7W/+C0XfUZI2czYOsj5HMmjLY83uluwEQDf7LzBD593VF3HAbE3iHT7CDlCXAcCtKKHdGL/DW7mUh0JsxojP0MzWdPr72ty+VCW7vD9y3J4JLLw/NJ5/TbPAYUTW2hT+wexLN1hD3TYY/pSjXccrfQa0jThkjeaLGdb7nh63HtNrQ86cvA39loIF8nNUw+ThjOhbsJ68Z7vnS891xWrd2+AmyZf6dbjpvFDQlXQRoKndgcUpW25r+yF9NtF3Z7id54SqaEqRmf97bOcMEUyiE6ev5Vl11FjCKpumXtE7fQGGbX19wR9qgOGD8v/quiw5DW2xx5QVl/u17xxxqAZgkS0MHVPBSXxXupTgs4v5jflXhVo5uQJ9aga70zQMxgm277a3Du/ITwOR1yeEm5wdU5GkWzGOwmeyPCNuTpFcXxTgD+5yPuhcK/p8wSGM/yzMYbwKCtygtWbUvFAc3lEhgQNoyPV1ak5hoV62+rNl3WHGxAwf9nIWCgMMWqIAc6oeTx5006FTlDa4pFGd1dFFM5wzZphmO/5m9xmF40gjGpyle8zGCZwf5N/fVsqx6QDlBw9rM0taIYUBlIfwwR6gKM35mYtksdqH1ZJ5zSTeSUhFfXtwxWnh5m/j+B4vTrMUYdUd60mGOAYtvtC1jfSqONo4VBFAkMC1wrVTglAh4iim9x3URuuwqmbHZ/JhMak9m2CjR7+AsFWS90xzaSnNOd1/VY4ZPBkDVIzWub91B7SVGrVea/urrFchm8wbRZBC4yatR1T2dywbVW4VNAB1V/i12giU7K1fNipav20dDaXsAkast8vb38bwZnOei7HVDVoPNe8gRnCrXu7mrPL5rYdv2V7FaS6XuLuoPqK7+vdhwhddO5o4c8z9Rlj/MU6K0XQQtbsUeimA0/zS0EdDOAEVG/ED/LLPNE7Nm8ppf1aZu7wS558GAW/6rhww1+U/lPFowO9e/sb9ifv3VVZovAgdfDnrlblHtyBGVcIf9z3NHrTBec/TF9ZdTKCUnFXH6A/n9ID9PvFbLrH988N/7EkmwCmvuZ7y4h+jmSfgXQHIArscsR/A8keX1kJywr137aH/oMkew5nG8SHyxvTTj9IUGjyxrqV30LQFePfqY40ghs86fsKk34Pidjr385MrVnfe18F0e+iC89b4DmpPW//8QQNwXmY/Y8DgxegP55ks1RFv1w+uvvqgj+W3I2ZKm68/1MJO4M556W3fy45+8VNOnVvj/4jiASu+PZAe6yasp9q38kbJ9752bse0CPmVzvNs2nqmhOsK+i0iRutF92qDrClo7XpHTa1KuVVz8+Gp7wNSjHoZ4bS+wRqBlUpBn2LJ+04W6voUolr56UzS80xzMvr8y/DEO+2Ce0HQb93PA0zX7Mxhkmo0UTd2vFTGBZn6meXZsM12mnrymYYokHiI66ReuDPYIjOyNDRTDWhbYTh0ndeHf4zGA6B490+lPw2wXCq8nx+AsNUzyliKngAyYannbgJhqjvVdAPYJjrl5rjQTSB29h3Z+R1UZzUx5BfAkOwQQ2auTyL4ZS1lmVI3x089LpeKiVNMBB63g7KdKljT+P90k1eHQzZxczoNuOeFnVFeYfzWhhUp3LiPZlG2mPipjoYspt2YcXHpXN4+Y1etTCoC7UbleiUMNx3Xu9jSLukq6YlN6ydBM7vE6inl2SDS2Z+WpcGrjtd62JQt5ilHebgxqn8/FR+9Vk9DKqVvvZBO5wNx4ea2e6wUq3VwNAubstpKT2bFgpNmsmDkIg+3CguIn8x9vX2mHSoMNooWNVDsc5jUkZ1qoNBcmLBQCM/u0+hiBHr+hpwiUqHJoEYu89IdtML9upl+j7SOWOrsPC6JiGug2GB9JsgoZep3Pe4FQxa2+eTN8FYwslqBj7X0g1YGdWz07BfU7Qwh2QJWnwutYtI6vutaydXd+pVWcwT/DQGuF9D68kN6sgv+YCPMITn3KgcUOlGny7D4Afe766bU3svL1wpdzeq6fNBc1c0yNJw4dKcxwcYdogVxXxh2l+LYJ9TnqwGF/BXeE3ttO1j/5fZabcWBtnI0se39Xi3FoFQMXhSCwOcgINbz1KariC9tx+th7H8DM5R4rpVbJ8jsxtJ7Rjo0u9CkyXu+6xgIsKTZS1egtJNRorpa0e6JpLdbBsUdhpUP46betzQJwQtd3V978iD3n9bZ72Auprt+cY4DeLp9rqH8jBMRKN0D+qhbvwgO0h2iCONF6lHPL+l1SyvMR0ce/2ABv3e+WvcNJ5eC24kfGlWKu1SBfd804MncjNhiZcbxHEzWVrO0WYYZjiitZcFRs+XmvHGGAzybAwL5MbQao/UIRROe8l+M9oel7SIEJ8/qLZX5+x0DFPVa68mho+ga2KYybMhTjs9u6Z3lBLIsBJNSTQpmjdp6Pnm1Q+TL8hi1C0Akaesyofy2/IaErevMVyaSR4Jid5vP/yA2gPKrLu3r6hBEcsFMbOxQLxHpCpXuUiocXdtFyWvnk2JVr+s3Mii86s2hlZ4+2UdCxiS6kq5zy8fZaaySzp0+Y7iq4OdO283OsZ4cCSI7rZMne02Z4khOb7eie03Uq+q8EQAAAANSURBVLvlbPj3f4n+F88EB1WRGFGOAAAAAElFTkSuQmCC",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        195,
+        258
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/NHAI-logo.1c28f63c897bbb614c5c.jpeg",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1092,
+        774
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/adani-logo.c449d31c78a0287cea94.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        1402,
+        854
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Gandhinagar_municipal_corp.78ed4b1d70be349bf55d.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        278,
+        181
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "data:image/png;base64,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",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        89,
+        70
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Guj_Road_and_building_dept.73a6be7b4bd07940fa5a.jpeg",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        789,
+        756
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/MORTH.275f712b585ada8d3c50.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        642,
+        361
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Ahmedabad_Development_Authority_Logo.svg.f91a0dd0c813a390424c.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        549,
+        554
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Amdavad_Municipal_Corporation_logo.44cf1a5c1cd98dd56fe9.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        260,
+        265
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/MP-PWD-Division.bccc481fdd959b124171.png",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        300,
+        374
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/UP-PWD-Division.2ecb9b2bfb18bc504da5.jpeg",
+      "srcset": null,
+      "alt": "",
+      "natural": [
+        789,
+        785
+      ],
+      "rendered": [
+        200,
+        100
+      ],
+      "loading": "auto",
+      "objectFit": "contain",
+      "borderRadius": "0px",
+      "decorative": true
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/SGH-image-6.7c46bd0aa5330865b07f.webp",
+      "srcset": null,
+      "alt": "S.G.Highway",
+      "natural": [
+        1280,
+        960
+      ],
+      "rendered": [
+        608,
+        450
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": false
+    },
+    {
+      "src": "https://nccinfraspace.com/static/media/Sabarmati-Ashram-2.8b2ade436420e77b3920.webp",
+      "srcset": null,
+      "alt": "S.G.Highway",
+      "natural": [
+        887,
+        721
+      ],
+      "rendered": [
+        608,
+        450
+      ],
+      "loading": "auto",
+      "objectFit": "fill",
+      "borderRadius": "0px",
+      "decorative": false
+    }
+  ],
+  "bgImages": [
+    "https://nccinfraspace.com/static/media/logo-animation_left_rectangle.f1b871c88e248c2b3043.webp",
+    "https://nccinfraspace.com/static/media/logo-animation_right_rectangle.3586b24fbd5d2fbaeb79.webp",
+    "data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(33, 37, 41, 0.75",
+    "https://nccinfraspace.com/static/media/light-gray-bg.c75aa16be85c402f5bac.jpeg",
+    "https://nccinfraspace.com/static/media/philosophy.d149179f392c796d5255.webp",
+    "https://nccinfraspace.com/static/media/footer-bg.398dc4812c44084f21d6.jpg"
+  ],
+  "videos": [],
+  "iframes": [
+    {
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.657801944179!2d72.5132729258535!3d23.073003943251056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9cb6b351130b%3A0xce418d22916f76bd!2sEmpire%20Business%20Hub%2C%20Sola%2C%20Ahmedabad%2C%20Gujarat%20380060%2C%20India!5e0!3m2!1sen!2sus!4v1708100631602!5m2!1sen!2sus",
+      "title": null
+    },
+    {
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1827.9583889909554!2d72.37694275057522!3d23.60731742205538!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395c423328c623df%3A0x95cfab1340bf2d89!2sOrbit%20-%20The%20Business%20Hub!5e0!3m2!1sen!2sus!4v1707858320630!5m2!1sen!2sus",
+      "title": null
+    }
+  ],
+  "inlineSvgCount": 0,
+  "favicons": [
+    {
+      "rel": "icon",
+      "href": "https://nccinfraspace.com/NCC-icon.png",
+      "sizes": null
+    },
+    {
+      "rel": "apple-touch-icon",
+      "href": "https://nccinfraspace.com/NCC-icon.png",
+      "sizes": null
+    },
+    {
+      "rel": "manifest",
+      "href": "https://nccinfraspace.com/manifest.json",
+      "sizes": null
+    }
+  ],
+  "tokens": {
+    "color": [
+      [
+        "rgb(33, 37, 41)",
+        305
+      ],
+      [
+        "rgb(255, 255, 255)",
+        108
+      ],
+      [
+        "rgb(55, 73, 145)",
+        20
+      ],
+      [
+        "rgb(51, 51, 51)",
+        18
+      ],
+      [
+        "rgb(0, 0, 0)",
+        17
+      ],
+      [
+        "rgb(238, 154, 8)",
+        10
+      ],
+      [
+        "rgba(0, 0, 0, 0.65)",
+        2
+      ]
+    ],
+    "backgroundColor": [
+      [
+        "rgb(255, 255, 255)",
+        7
+      ],
+      [
+        "rgb(238, 154, 8)",
+        6
+      ],
+      [
+        "rgb(235, 237, 236)",
+        1
+      ],
+      [
+        "rgb(222, 222, 222)",
+        1
+      ]
+    ],
+    "borderColor": [
+      [
+        "rgb(255, 255, 255)",
+        6
+      ],
+      [
+        "rgb(222, 226, 230)",
+        5
+      ],
+      [
+        "rgba(0, 0, 0, 0.15)",
+        1
+      ],
+      [
+        "rgb(178, 180, 179)",
+        1
+      ],
+      [
+        "rgb(55, 73, 145)",
+        1
+      ]
+    ],
+    "fontFamily": [
+      [
+        "system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        291
+      ],
+      [
+        "\"PT Sans\", sans-serif",
+        118
+      ],
+      [
+        "Roboto, sans-serif",
+        35
+      ],
+      [
+        "Montserrat, sans-serif",
+        20
+      ],
+      [
+        "Times",
+        15
+      ],
+      [
+        "boxicons",
+        9
+      ]
+    ],
+    "fontSize": [
+      [
+        "16px",
+        438
+      ],
+      [
+        "0px",
+        10
+      ],
+      [
+        "18px",
+        8
+      ],
+      [
+        "48px",
+        7
+      ],
+      [
+        "14px",
+        6
+      ],
+      [
+        "30px",
+        6
+      ],
+      [
+        "20px",
+        5
+      ],
+      [
+        "56px",
+        4
+      ],
+      [
+        "28px",
+        4
+      ]
+    ],
+    "fontWeight": [
+      [
+        "400",
+        443
+      ],
+      [
+        "500",
+        16
+      ],
+      [
+        "700",
+        16
+      ],
+      [
+        "900",
+        13
+      ]
+    ],
+    "lineHeight": [
+      [
+        "24px",
+        412
+      ],
+      [
+        "0px",
+        10
+      ],
+      [
+        "18px",
+        8
+      ],
+      [
+        "57.6px",
+        7
+      ],
+      [
+        "21px",
+        6
+      ],
+      [
+        "36px",
+        6
+      ],
+      [
+        "19.2px",
+        6
+      ],
+      [
+        "16px",
+        5
+      ],
+      [
+        "67.2px",
+        4
+      ],
+      [
+        "33.6px",
+        4
+      ],
+      [
+        "20px",
+        3
+      ],
+      [
+        "30px",
+        2
+      ]
+    ],
+    "letterSpacing": [],
+    "borderRadius": [
+      [
+        "6px",
+        6
+      ],
+      [
+        "50%",
+        4
+      ],
+      [
+        "5px",
+        1
+      ]
+    ],
+    "boxShadow": [
+      [
+        "rgb(178, 180, 179) 0px 4px 15px -2px",
+        6
+      ]
+    ],
+    "transition": [
+      [
+        "all",
+        466
+      ],
+      [
+        "0.3s",
+        9
+      ],
+      [
+        "border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out",
+        5
+      ],
+      [
+        "transform 5s ease-out",
+        2
+      ],
+      [
+        "0.4s",
+        2
+      ],
+      [
+        "box-shadow 0.15s ease-in-out",
+        1
+      ],
+      [
+        "-webkit-transform 4s",
+        1
+      ],
+      [
+        "opacity 0.4s, transform 0.4s",
+        1
+      ],
+      [
+        "-webkit-transform 3s linear",
+        1
+      ]
+    ],
+    "gap": [],
+    "padding": [
+      [
+        "0px 12px",
+        17
+      ],
+      [
+        "20px",
+        11
+      ],
+      [
+        "0px 25px 0px 0px",
+        7
+      ],
+      [
+        "40px",
+        6
+      ],
+      [
+        "0px 0px 20px",
+        6
+      ],
+      [
+        "5px",
+        6
+      ],
+      [
+        "50px 10px",
+        6
+      ],
+      [
+        "10px",
+        6
+      ],
+      [
+        "8px 16px",
+        5
+      ],
+      [
+        "6px 12px",
+        5
+      ],
+      [
+        "0px 10px",
+        4
+      ],
+      [
+        "8px 0px",
+        4
+      ],
+      [
+        "10px 24px",
+        2
+      ],
+      [
+        "12px",
+        1
+      ],
+      [
+        "5px 0px",
+        1
+      ],
+      [
+        "4px 12px",
+        1
+      ],
+      [
+        "16px 0px 0px",
+        1
+      ],
+      [
+        "100px 0px 0px",
+        1
+      ],
+      [
+        "0px 20px 50px 10px",
+        1
+      ],
+      [
+        "15px 20px",
+        1
+      ],
+      [
+        "0px 15px 0px 0px",
+        1
+      ],
+      [
+        "15px 0px",
+        1
+      ],
+      [
+        "20px 0px",
+        1
+      ],
+      [
+        "50px 12px",
+        1
+      ],
+      [
+        "0px 16px",
+        1
+      ],
+      [
+        "60px 0px 0px 60px",
+        1
+      ],
+      [
+        "2px 0px",
+        1
+      ]
+    ],
+    "maxWidth": [
+      [
+        "200px",
+        39
+      ],
+      [
+        "100%",
+        25
+      ],
+      [
+        "calc(100% - 60px)",
+        11
+      ],
+      [
+        "1080px",
+        6
+      ]
+    ],
+    "zIndex": [
+      [
+        "1",
+        15
+      ],
+      [
+        "1030",
+        1
+      ],
+      [
+        "5000",
+        1
+      ],
+      [
+        "5100",
+        1
+      ]
+    ]
+  },
+  "cssVars": {
+    "--primary-blue-color": "#374991",
+    "--primary-yellow-color": "#ee9a08",
+    "--secondary-gray-color": "#b2b4b3",
+    "--secondary-light-gray-color": "#ebedec",
+    "--bs-breakpoint-xs": "0",
+    "--bs-breakpoint-sm": "576px",
+    "--bs-breakpoint-md": "768px",
+    "--bs-breakpoint-lg": "992px",
+    "--bs-breakpoint-xl": "1200px",
+    "--bs-breakpoint-xxl": "1400px"
+  },
+  "chrome": {
+    "header": {
+      "heightPx": 94,
+      "position": "fixed",
+      "background": "rgb(235, 237, 236)",
+      "navItems": [
+        "HOME",
+        "OUR COMPANY",
+        "PROJECTS & SERVICES",
+        "GALLERY",
+        "CONTACT US"
+      ],
+      "hasDropdown": false,
+      "hasBurger": false
+    },
+    "footer": null
+  },
+  "stack": {
+    "reactRoot": true,
+    "reactDevtools": false,
+    "nextData": false,
+    "nuxt": false,
+    "vue": false,
+    "angular": false,
+    "jquery": false,
+    "gtm": false,
+    "ga": false,
+    "fbPixel": false,
+    "bootstrapClasses": true,
+    "tailwindClasses": true,
+    "aos": true,
+    "swiper": false,
+    "slick": true,
+    "owl": false,
+    "framerMotion": false,
+    "fontLinks": [
+      "https://fonts.googleapis.com/",
+      "https://fonts.gstatic.com/",
+      "https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap&family=PT+Sans&family=Roboto:ital,wght@0,100;1,300;1,900&display=swap"
+    ],
+    "scripts": [
+      "https://nccinfraspace.com/static/js/main.488ac818.js"
+    ],
+    "stylesheets": [
+      "https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap&family=PT+Sans&family=Roboto:ital,wght@0,100;1,300;1,900&display=swap",
+      "https://nccinfraspace.com/static/css/main.613a8e00.css"
+    ]
+  },
+  "fullText": "HOME\nOUR COMPANY\nPROJECTS & SERVICES\nGALLERY\nCONTACT US\n Previous\nWe are AA class contractor\nDevelopment of Chiloda-Gandhinagar-Sarkhej of NH-147 (Old NH-8C) from Km. 0/0 to 44/420 in the State of Gujarat to Six-lane with paved shoulders with both side continuous service road on EPC mode. (Job No. 147/GJ/2017-18/607) Package-II Km. 16/350 to 31/300\nGandhi Ashram Precinct\nGandhi Ashram Precinct Development at Sardar Patel Stadium Ward in West Zone\nKheda Dholka Road\nKheda Dholka Road\nWe are AA class contractor\nDevelopment of Chiloda-Gandhinagar-Sarkhej of NH-147 (Old NH-8C) from Km. 0/0 to 44/420 in the State of Gujarat to Six-lane with paved shoulders with both side continuous service road on EPC mode. (Job No. 147/GJ/2017-18/607) Package-II Km. 16/350 to 31/300\nGandhi Ashram Precinct\nGandhi Ashram Precinct Development at Sardar Patel Stadium Ward in West Zone\nKheda Dholka Road\nKheda Dholka Road\n Next\n1\n2\n3\n4\n5\n6\nNCC\nNCC news will be displayed here. NCC news will be displayed here. NCC news will be displayed here. NCC news will be displayed here.\nOUR EXPERTISE\nNCC Infraspace is a respected government-approved contractor, rated as \"AA Class\" with a special focus on Road and Bridge projects. We've been active in this field since 1987, successfully completing projects with high quality and staying within budget.\nOur company has worked on various significant projects for the Government, Semi-Government, and Private sectors, including PMGSY road projects, NABARD Road projects, N.H. projects, EPC projects, Hudco projects, Major Earthwork projects, GMC smart city Project in Gandhinagar, GUDC MSWM projects, and building projects in SSPA & DPEP departments across different districts of Gujarat.\nOur commitment to quality remains strong, whether it's a public or private sector project. We also understand the financial aspects affecting national budgets and follow Supreme Court guidelines for MSWM projects in GUDC.\nSuccessfully completing challenging projects in Gujarat, Madhya Pradesh, Uttar Pradesh, and Rajasthan, our team includes qualified engineers and technical staff dedicated to project execution. Quality is a top priority for us at every stage of the project.\nWith extensive experience in various projects, our management ensures that we complete projects within the specified budget and timeframe.\nOUR PHILOSOPHY\nAt NCC Infraspace, our philosophy is rooted in a set of core values and virtues that guide our every endeavor. These principles reflect our commitment to excellence, integrity, and social responsibility.\n  Quality\nWe strive for excellence in all aspects of our work. From the inception of a project to its completion, our focus on quality and precision is unwavering. By consistently delivering high-quality results, we aim to set new standards and exceed expectations.\n  Integrity\nIntegrity is the foundation of our business. We uphold the highest ethical standards in our interactions with clients, partners, and the community. Honesty, transparency, and accountability are ingrained in our culture, fostering trust and long-lasting relationships.\n  Seasoned\nWe value the wealth of experience and seasoned expertise within our team. Our seasoned team members bring wisdom, mentorship, and a deep understanding of the industry to every endeavor with their accumulated knowledge and skills.\n  Social Services\nWe recognize the impact our projects have on society. Committed to giving back, we actively participate in social and educational initiatives. Our involvement with various institutions reflects our dedication to the betterment of the communities we serve.\n  Client-Centric\nUnderstanding and exceeding client expectations is at the core of our philosophy. We listen attentively, adapt to evolving needs, and prioritize client satisfaction. Our client-centric approach builds enduring partnerships based on mutual respect and shared success.\n  Teamwork\nOur success is a result of collaborative efforts. We value the diversity and expertise of our team members, fostering an inclusive environment where everyone's contributions are acknowledged and celebrated. Together, we overcome challenges and achieve milestones.\nOUR CLIENTS\nMILESTONE\n Previous\n2024\nGandhi Ashram Precinct\nGandhi Ashram Precinct Development at Sardar Patel Stadium Ward in West Zone, Ahmedabad.\nFour Lane Road, Dhandhuka\nBagodara - Dhandhuka - Vallabhipur - Bhavnagar Road, Section Fedra to Sarangpur Junction Km. 82/300 to 133/200, Ta.: Dhandhuka, Dist.: Ahmedabad. (Widening from 10 Mtr. to Four Lane)\n2023\nRoad Construction, Madhya Pradesh\nUpgradation and Reconstruction of Major District Roads in the state of Madhya Pradesh Under NDB - II (Pkg 5) total length 199.13Km .\nFour Lane Road, Sabarkantha\nWidening and Strengthening of Naroda - Dehgam - Harsol -Dhansura Road From Km 35+600 to 61+000 (SH 68) (From 10.00 mt Wide Road to Standard Four Lane) In Sabarkantha District.\n2022\nKheda Dholka Road, Gujarat\nWidening of Kheda Dholka Road KM.36/600 to 53/200 widening up to 4 Four Lane, strengthening work, hard side shoulder, cross drainage work and miscellaneous work [27 of 2018 19]\n2021\nGandhinagar Smart city\nDesign and Construction of Smart Road of Road No. 6, Road No. 7 & G Road including widening of roads in Gandhinagar City\n Next\nPRESTIGIOUS PROJECTS\nS. G. Highway\nClient: N.H Department Government Of Gujarat\nDevelopment of Childa-Gandhinagar-Sarkhej of NH-147 (Old NIH-8C) rom kn 1/0 to 44/920 in the State of Gujarat to six-lane with paved shoulders with both side continuous senice road on EPC mode. (Job No. 147/GJ/2017-18/607) Package- km 16/3650 to 31/300 Letter of Award (10A) 109\nSabarmati Aashram Redevelopment\nClient:- Government Of Gujarat\nSabarmati Aashram Redevelopment\nOUR PRESENCE\nAhmedabad\nA-502 Empire Business Hub, Science City Road, Sola,\nAhmedabad, Gujarat 380060, India\nEmail: ncc_infraspace2015@yahoo.in\nNavigate\nMehsana\n301, 3rd Floor, Orbit Business Hub, Nr.Dena Bank, Radhanpur Road,\nMehsana-384002\nOffice: 02762-255962\nEmail: ncc_infraspace2015@yahoo.in\nNavigate\nMAIL US\nSend Now\nLinks\n Home\n Our Company\n Projects & Services\n Awards\n Contact us\nAll rights are reserved by NCC.",
+  "docHeight": 5372,
+  "httpStatus": 200,
+  "consoleErrors": [],
+  "responsive": {
+    "desktop": {
+      "docHeight": 5372,
+      "headerHeight": 94,
+      "burgerVisible": false,
+      "navLinksVisible": 6,
+      "bodyFontSize": "16px",
+      "h1FontSize": "48px",
+      "gridColumns": []
+    },
+    "tablet": {
+      "docHeight": 6233,
+      "headerHeight": 94,
+      "burgerVisible": false,
+      "navLinksVisible": 1,
+      "bodyFontSize": "16px",
+      "h1FontSize": "48px",
+      "gridColumns": []
+    },
+    "mobile": {
+      "docHeight": 9014,
+      "headerHeight": 70,
+      "burgerVisible": false,
+      "navLinksVisible": 1,
+      "bodyFontSize": "16px",
+      "h1FontSize": "48px",
+      "gridColumns": []
+    }
+  },
+  "interactions": [
+    {
+      "name": "headerOnScroll",
+      "before": {
+        "pos": "fixed",
+        "bg": "rgb(235, 237, 236)",
+        "h": 94
+      },
+      "after": {
+        "pos": "fixed",
+        "bg": "rgb(235, 237, 236)",
+        "h": 94,
+        "top": 0
+      },
+      "sticky": true
+    },
+    {
+      "name": "scrollReveal",
+      "count": 1,
+      "samples": [
+        "col-sm-12 col-md-8 col-lg-8 aos-init"
+      ]
+    },
+    {
+      "name": "mobileMenu",
+      "opened": false,
+      "note": "no burger element matched"
+    }
+  ]
+}
