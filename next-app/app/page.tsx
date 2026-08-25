@@ -1,42 +1,40 @@
 import { Container, Section, Eyebrow } from "@/components/container"
+import { ImageStreamHero } from "@/components/image-stream-hero"
 import { COMPANY, CREDENTIALS } from "@/lib/company"
 
 /*
- * PHASE A GATE: "Tokens render correctly at all three breakpoints."
- * Palette per docs/01-requirements-r3.md §1 "Brass & Midnight".
+ * Palette per docs/01-requirements-r4.md §1, which deletes --onyx from R3.
  *
- * The image corridor (R3 §2) is NOT built here, deliberately. R3 §4 places it
- * at the new phase D.5, and R3 §2.3 is explicit: with fewer than six usable
- * project photographs the corridor does not ship at all — a half-empty
- * corridor repeating three images looks worse than none. Zero project photos
- * exist (R3 §5 lists 6-12 verticals as a hard build dependency), so the hero
- * below is the specified fallback: a single --onyx band carrying the same
- * scrim structure and the same copy, ready for the corridor to slot behind it.
+ * R4 §2.2 unblocked the corridor by replacing the six-photo gate with
+ * deterministic gradients, so the hero is now the real component rather than
+ * R3's single-band fallback.
  *
- * R3 §1 caps a page at three dark moments. This page uses exactly three:
- * hero (onyx), credentials strip (midnight), footer (onyx).
+ * R3 §1 caps a page at three dark moments. This page uses exactly three, and
+ * they now descend in ONE hue (R4 §1): midnight hero -> indigo credentials
+ * strip -> paper body, with the midnight footer closing it.
  */
 export default function Page() {
   return (
     <>
       {/*
-       * Hero. The scrim is R3 §2's exact two-stop wash. Content is anchored to
-       * the LOWER band (justify-end) rather than centred, because at the 55%
-       * top stop --paper text measures 3.58:1 over a blown-out sky and the
-       * --brass-light eyebrow only 2.06:1. Below the 62% stop they are 8.73:1
-       * and 5.03:1. Keeping the gradient and moving the copy preserves the
-       * corridor's visibility, which darkening the top stop would destroy.
+       * Hero — the image corridor, R4 §2. Now built: R4 §2.2 replaces the
+       * six-photo gate with deterministic gradients, so phase D.5 is unblocked.
+       *
+       * INTERIM. R4 §3 is blunt that this "no longer makes an argument" — a
+       * stream of real project work IS the credibility claim, and gradients
+       * say nothing about NCC. Swap to photography before launch; see
+       * lib/corridor-gradients.ts.
+       *
+       * Copy sits below the 68% scrim line (justify-end + the hero's own
+       * padding). Above it the eyebrow fails AA. See globals.css --hero-scrim.
        */}
-      <section
-        data-dark-hero
-        className="on-dark relative flex min-h-[88svh] flex-col justify-end bg-[color:var(--color-onyx)] pt-28 pb-[clamp(3rem,2rem+4vw,6rem)]"
+      <ImageStreamHero
+        cards={9}
+        speed={22}
+        axis={58}
+        className="min-h-[88svh] bg-[color:var(--color-midnight)] pt-28 pb-[clamp(3rem,2rem+4vw,6rem)]"
       >
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0"
-          style={{ background: "var(--hero-scrim)" }}
-        />
-        <Container className="relative">
+        <Container>
           <Eyebrow tone="dark">Est. 1987 · Mehsana, Gujarat</Eyebrow>
           <h1 className="max-w-[16ch] text-[length:var(--text-4xl)]">
             {COMPANY.positioning}
@@ -46,7 +44,7 @@ export default function Page() {
             Roads, bridges, irrigation and river protection works.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <span className="rounded-[3px] bg-[color:var(--color-brass-light)] px-6 py-3 text-sm font-medium text-[color:var(--color-onyx)]">
+            <span className="rounded-[3px] bg-[color:var(--color-brass-light)] px-6 py-3 text-sm font-medium text-[color:var(--color-midnight)]">
               View projects
             </span>
             <span className="rounded-[3px] border border-[color:var(--color-paper)]/40 px-6 py-3 text-sm font-medium">
@@ -54,10 +52,16 @@ export default function Page() {
             </span>
           </div>
         </Container>
-      </section>
+      </ImageStreamHero>
 
-      {/* Dark moment 2 of 3 — credentials strip on --midnight, per R3 §1. */}
-      <div className="on-dark bg-[color:var(--color-midnight)]">
+      {/*
+       * Credentials strip — now --indigo (R4 §1), and now load-bearing.
+       * R4 §3.1: with an abstract hero the corridor "no longer makes an
+       * argument", so this is the first substantive thing on the page.
+       * brass-light numerals are 4.61:1 on indigo. NOTE rule 3: plain --brass
+       * here would be 2.67:1 and is prohibited.
+       */}
+      <div className="on-dark bg-[color:var(--color-indigo)]">
         <Container width="shell">
           <dl className="grid grid-cols-2 divide-[color:var(--color-paper)]/15 md:grid-cols-4 md:divide-x">
             {CREDENTIALS.map((c) => (
@@ -65,7 +69,7 @@ export default function Page() {
                 <dt className="text-xs tracking-[0.14em] text-[color:var(--color-paper)]/70 uppercase">
                   {c.label}
                 </dt>
-                {/* brass-light numerals: 6.52:1 on midnight, legal inside .on-dark */}
+                {/* brass-light numerals: 4.61:1 on indigo, legal inside .on-dark */}
                 <dd className="measurement mt-2 text-[length:var(--text-lg)] text-[color:var(--color-brass-light)]">
                   {c.value}
                 </dd>
@@ -81,24 +85,28 @@ export default function Page() {
           <Eyebrow>Km 1.200 · Design tokens</Eyebrow>
           <h2 className="text-[length:var(--text-2xl)]">Brass &amp; Midnight</h2>
           <p className="mt-4 max-w-[62ch] text-[color:var(--color-muted)]">
-            All 22 ratios in the R3 §1 table were recomputed and match exactly.
-            The two enforcement rules are the load-bearing part:{" "}
+            Every published ratio in R3 §1 and R4 §1 was recomputed and matched
+            exactly. The three enforcement rules are the load-bearing part:{" "}
             <strong className="text-[color:var(--color-brass-deep)]">
               --brass never carries body text on a light ground
             </strong>{" "}
-            (2.99:1), and{" "}
+            (2.99:1),{" "}
             <strong className="text-[color:var(--color-brass-deep)]">
               --brass-light never appears on a light ground at all
             </strong>{" "}
-            (1.73:1).
+            (1.73:1), and — new in R4 —{" "}
+            <strong className="text-[color:var(--color-brass-deep)]">
+              --brass never sits on --indigo
+            </strong>{" "}
+            (2.67:1), which was legal back when the deep band was --onyx.
           </p>
 
           <ul className="mt-10 grid grid-cols-2 gap-px bg-[color:var(--color-rule)] md:grid-cols-3">
             {[
-              { n: "--indigo", h: "#3B498C", r: "7.99:1 on paper" },
-              { n: "--midnight", h: "#2A3465", r: "band only" },
-              { n: "--onyx", h: "#22201C", r: "hero, footer" },
-              { n: "--brass", h: "#B08D3F", r: "marks · never body text" },
+              { n: "--indigo", h: "#3B498C", r: "7.99:1 · credentials strip" },
+              { n: "--midnight", h: "#2A3465", r: "hero, footer" },
+              { n: "--rule-strong", h: "#9B9070", r: "3.04:1 — interactive borders" },
+              { n: "--brass", h: "#B08D3F", r: "never on indigo — 2.67:1" },
               { n: "--brass-deep", h: "#775C29", r: "6.01:1 — text-safe" },
               { n: "--brass-light", h: "#D9BE7A", r: "on-dark ONLY" },
               { n: "--paper", h: "#FBFAF7", r: "page ground" },

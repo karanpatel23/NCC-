@@ -15,7 +15,7 @@ import { COMPANY, OFFICES } from "@/lib/company"
  */
 export function SiteFooter() {
   return (
-    <footer className="mt-auto on-dark bg-[color:var(--color-onyx)]">
+    <footer className="mt-auto on-dark bg-[color:var(--color-midnight)]">
       <Container width="shell" className="py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>

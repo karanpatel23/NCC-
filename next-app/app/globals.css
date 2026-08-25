@@ -2,27 +2,41 @@
 
 /* ============================================================================
    NCC Infraspace — design tokens
-   Source of truth: docs/01-requirements-r3.md §1 "Brass & Midnight".
-   R3 supersedes the "Signboard" palette in the main brief §4.1 entirely.
+   Source of truth: docs/01-requirements-r4.md §1 "Brass & Midnight", which
+   deletes --onyx from R3. R3 had already replaced the main brief's §4.1
+   "Signboard" palette entirely. Where they disagree, the later revision wins.
 
-   All 22 ratios in the R3 §1 table were recomputed and match exactly.
-   Two additions were needed; both are documented at their token below.
+   Every published ratio in R3 §1 and R4 §1 was recomputed independently and
+   matched exactly. Additions made here are documented at their token below.
 
-   ENFORCEMENT RULES — R3 §1, reproduced here so they survive the next person:
+   ENFORCEMENT RULES — reproduced so they survive the next person:
 
      1. --brass NEVER carries body text on a light ground.   2.99:1 on paper.
      2. --brass-light NEVER appears on a light ground at all. 1.73:1 on paper.
+     3. --brass NEVER sits on --indigo.                       2.67:1.  (R4 §1)
 
-   Both colours are correct ONLY in the roles listed in the surface table.
+   Rule 3 is new and is the one most likely to be violated by accident,
+   because brass on the deep band WAS legal while that band was --onyx
+   (5.21:1). Brass marks on --indigo move to --brass-light (4.61:1). On
+   --midnight, --brass is 3.78:1 — large text only, never body copy.
+
+   All three colours are correct ONLY in the roles listed in the surface table.
    ========================================================================= */
 
 @theme {
   /* --- brand ------------------------------------------------------------- */
-  --color-indigo: #3b498c; /* exact logo blue. Links, primary buttons, active */
-  --color-midnight: #2a3465; /* deep band. Credentials strip, stat blocks     */
+  --color-indigo: #3b498c; /* logo blue. Links, buttons, credentials strip   */
+  --color-midnight: #2a3465; /* THE deep surface. Hero, footer                */
 
-  /* --- deep surface: warm, a stone colour not a night colour -------------- */
-  --color-onyx: #22201c; /* hero, footer */
+  /*
+   * R4 §1: --onyx is DELETED. The site now has exactly one dark hue and it is
+   * the brand's own. Hero and footer move to --midnight; the credentials strip
+   * moves to --indigo. Do not reintroduce a second dark token.
+   *
+   * --ink stays warm (#23221E) deliberately: the TEXT keeps the warmth while
+   * the SURFACES go blue. Warm ink on warm ground with cool brand surfaces is
+   * a tighter system than the all-warm version, not a compromise of it.
+   */
 
   /* --- accent: the Nataraja's brass --------------------------------------- */
   --color-brass: #b08d3f; /* marks, rules, progress fills, LARGE type only    */
@@ -51,29 +65,31 @@
 
   /* --- function ----------------------------------------------------------- */
   --color-focus: #3b498c; /* 7.99:1 on paper */
-  --color-focus-on-dark: #d9be7a; /* 8.98:1 on onyx  */
+  --color-focus-on-dark: #d9be7a; /* 6.52:1 on midnight, 4.61:1 on indigo */
 
   /*
-   * ADDITION 2 — hero scrim stops.
-   * R3 §2 specifies 0.55 -> 0.82 -> solid and states headline text holds at
-   * AAA. Measured over the worst realistic case, a blown-out sky (§2.3 asks
-   * for "wide skies"), the TOP stop does not hold:
+   * Hero scrim — R4 §2.4, midnight-based now that --onyx is gone.
    *
-   *     0.55 alpha -> --paper text 3.58:1  FAILS AA
-   *                   --brass-light eyebrow 2.06:1  FAILS badly
-   *     0.82 alpha -> --paper text 8.73:1  AAA
-   *                   --brass-light eyebrow 5.03:1  AA
+   * The EYEBROW is the binding constraint, not the headline: --brass-light
+   * needs alpha >= 0.90 to clear AA, where --paper clears at 0.70.
    *
-   * The gradient is kept exactly as specified, because a darker top stop
-   * would mud the corridor, which is the whole point of the component.
-   * Instead the content block is anchored into the lower band where the
-   * scrim is already >=0.82. Hero copy must never rise above the 62% line.
+   * Measured against the lightest gradient stop (#D9BE7A), which is the
+   * lightest surface the corridor can now produce:
+   *
+   *     0.40 -> --paper  3.38  FAIL   --brass-light 1.95  FAIL
+   *     0.70 -> --paper  6.18  pass   --brass-light 3.56  FAIL
+   *     0.96 -> --paper 10.44  pass   --brass-light 6.02  pass
+   *
+   * HERO COPY MUST NEVER RISE ABOVE THE 68% LINE. Do not lighten these stops
+   * to show more of the corridor; the corridor lives in the top 60% and
+   * rushes toward the copy rather than behind it.
    */
   --hero-scrim: linear-gradient(
     180deg,
-    rgb(34 32 28 / 0.55) 0%,
-    rgb(34 32 28 / 0.82) 62%,
-    var(--color-onyx) 100%
+    rgb(42 52 101 / 0.4) 0%,
+    rgb(42 52 101 / 0.7) 42%,
+    rgb(42 52 101 / 0.96) 68%,
+    var(--color-midnight) 100%
   );
 
   /* --- semantic roles ----------------------------------------------------- */
@@ -111,13 +127,17 @@
   --container-content: 1120px;
   --container-shell: 1280px;
   --spacing-section: clamp(4rem, 2.5rem + 6.5vw, 8.75rem);
-  --shadow-header: 0 1px 2px rgb(34 32 28 / 0.06);
+  --shadow-header: 0 1px 2px rgb(35 34 30 / 0.06); /* --ink based */
 }
 
 /*
  * R3 §1 sets `color-scheme: light`. This is a light design with dark BANDS
- * (onyx hero/footer, midnight strip) — not a themeable light/dark pair. No
- * prefers-color-scheme block: the dark surfaces are content, not a theme.
+ * (midnight hero/footer, indigo credentials strip) — not a themeable
+ * light/dark pair. No prefers-color-scheme block: the dark surfaces are
+ * content, not a theme.
+ *
+ * R4 §1: the dark->mid->light step now descends in ONE hue —
+ * midnight hero -> indigo strip -> paper body.
  */
 :root {
   color-scheme: light;
@@ -172,6 +192,69 @@ h4 {
   border-radius: 3px;
 }
 
+/* ---------------------------------------------------------------------------
+   The image corridor — R4 §2.
+   Cards travel toward the viewer along Z. Depth spacing is geometric (each
+   card a fixed fraction further out), which is what stops the ribbon tearing
+   as cards approach the camera; linear spacing bunches at the exit.
+   --------------------------------------------------------------------------- */
+.corridor {
+  container-type: size;
+  transform-style: preserve-3d;
+}
+
+.corridor-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 26cqw;
+  aspect-ratio: 18 / 25; /* R3 §3.1 — same object as the project cards */
+  border-radius: 0.4cqw; /* ~3-5px at real sizes, agrees with --radius 3px */
+  overflow: hidden;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity; /* R4 §2.3 item 4; dropped on pause below */
+  animation-name: corridor-rush;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Depth cue — R4 §2.2. Without it cards read as flat rectangles at exit size. */
+.corridor-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    120% 90% at 30% 15%,
+    rgb(251 250 247 / 0.16),
+    transparent 62%
+  );
+}
+
+@keyframes corridor-rush {
+  0% {
+    transform: translate3d(-50%, -50%, -2400px) translate(var(--x), var(--y));
+    opacity: 0;
+  }
+  12% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 520px) translate(var(--x), var(--y));
+    opacity: 0;
+  }
+}
+
+/* Paused by the control, or by reduced motion. will-change is released so a
+ * frozen corridor stops holding compositor layers. */
+.corridor[data-paused] .corridor-card {
+  animation-play-state: paused;
+  will-change: auto;
+}
+
 /*
  * R3 §3.2: sections rise AND scale 0.985 -> 1, reading as a continuation of
  * the corridor's z-motion. Nothing on this site moves sideways except the
@@ -185,5 +268,20 @@ h4 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  /*
+   * EXEMPTION, and it is load-bearing. R3 §2 / R4 §2.3 require the corridor to
+   * PAUSE under reduced motion, not disable. The blanket rule above would
+   * force animation-duration to 0.01ms, snapping every card to its 100% frame
+   * and collapsing the whole corridor onto the axis — the exact failure the
+   * component was praised for avoiding. Freezing mid-flight instead leaves a
+   * composed still. Do not delete this block when tidying the reset.
+   */
+  .corridor-card {
+    animation-duration: var(--corridor-duration, 22s) !important;
+    animation-iteration-count: infinite !important;
+    animation-play-state: paused !important;
+    will-change: auto;
   }
 }

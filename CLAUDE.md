@@ -29,21 +29,37 @@ truth about what currently exists.
 | B | Sanity project, schemas, Studio at `/studio`, seed projects | ⬜ Next |
 | C | Static homepage + corridor's static poster (not the animation) | ⬜ |
 | D | Projects index + detail template + milestone timeline | ⬜ |
-| D.5 | **Image corridor** integration — added by R3 §4 | ⬜ |
+| D.5 | **Image corridor** — added by R3 §4, unblocked by R4 §2.2 | ✅ Built (gradients) |
 | E | Remaining motion: rail, reveals, counters, marquee | ⬜ |
 | F | 3D project map — **optional since R3 §4**; the corridor took its job | ⬜ |
 | G–H | Remaining pages · SEO, JSON-LD, a11y, Lighthouse | ⬜ |
 
-### Requirements are layered — read both
-`docs/01-requirements.md` is the main brief. **`docs/01-requirements-r3.md` supersedes its §4.1
-palette and §6.1 hero entirely.** Where they disagree, R3 wins. R2 is not in this repo; R3 replaces
-its palette in full, but anything else R2 changed is unrecorded.
+### Requirements are layered — read all of them, latest wins
+| File | Carries |
+|---|---|
+| `docs/01-requirements.md` | the main brief |
+| `docs/01-requirements-r3.md` | replaces main §4.1 palette and §6.1 hero |
+| `docs/01-requirements-r4.md` | **deletes `--onyx`**; corridor ships on gradients |
 
-The live palette is **"Brass & Midnight"**, not "Signboard". Two rules are load-bearing and are
-repeated in `globals.css` so they survive:
+**R2 is missing and cannot be reconstructed.** R4 §4 asks for it. Its content has never been supplied,
+so the favicon/icon-set spec, the logo vector requirement, and the Nataraja handling rules are
+unrecorded anywhere. Paste R2 and it gets committed verbatim; do not invent it.
+
+The live palette is **"Brass & Midnight"**. `--onyx` no longer exists — one dark hue only, descending
+midnight → indigo → paper. **Three** enforcement rules, repeated in `globals.css` so they survive:
 - `--brass` (`#B08D3F`) never carries body text on a light ground — 2.99:1.
-- `--brass-light` (`#D9BE7A`) never appears on a light ground at all — 1.73:1. It is legal only
-  inside `.on-dark`.
+- `--brass-light` (`#D9BE7A`) never appears on a light ground at all — 1.73:1; legal only in `.on-dark`.
+- `--brass` never sits on `--indigo` — 2.67:1. **New in R4 and the easiest to break by accident,**
+  because it was legal (5.21:1) while the deep band was `--onyx`.
+
+### Two constraints that will get "tidied away" — don't
+- **Hero copy must stay below the 68% scrim line.** Above it the `--brass-light` eyebrow fails AA.
+- **The corridor is exempt from the global reduced-motion reset.** Without the exemption the blanket
+  `animation-duration: 0.01ms` collapses every card onto the axis. It must *pause*, not disable.
+
+### The gradient hero is INTERIM
+R4 §3: swap to real project photography before launch. An abstract hero on a road contractor's site
+is "a placeholder that looks finished" — the same way the competitor's Lorem ipsum shipped and stayed.
 
 ### Where the rebuild lives
 **`next-app/`, not `site/`.** The directory contract below names `site/`; the owner scaffolded
