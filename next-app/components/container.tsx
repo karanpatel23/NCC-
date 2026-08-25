@@ -43,10 +43,25 @@ export function Section({
 /*
  * Eyebrow label. §4.2 permits all-caps only here and in the chainage rail.
  * Set in mono because these read as document references, not prose.
+ *
+ * tone="dark" switches to --brass-light, which is legal ONLY on a dark ground
+ * (1.73:1 on paper vs 8.98:1 on onyx — R3 §1 enforcement rule 2). On light
+ * ground the eyebrow uses --brass-deep, the text-safe brass at 6.01:1, rather
+ * than --brass itself, which is 2.99:1 and fails.
  */
-export function Eyebrow({ children }: { children: ReactNode }) {
+export function Eyebrow({
+  children,
+  tone = "light",
+}: {
+  children: ReactNode
+  tone?: "light" | "dark"
+}) {
+  const color =
+    tone === "dark"
+      ? "text-[color:var(--color-brass-light)]"
+      : "text-[color:var(--color-brass-deep)]"
   return (
-    <p className="measurement mb-4 text-[color:var(--color-primary)] text-xs tracking-[0.14em] uppercase">
+    <p className={`measurement mb-4 text-xs tracking-[0.14em] uppercase ${color}`}>
       {children}
     </p>
   )

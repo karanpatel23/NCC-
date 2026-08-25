@@ -2,61 +2,94 @@
 
 /* ============================================================================
    NCC Infraspace — design tokens
-   Source of truth: docs/01-requirements.md §4.1 "Signboard" palette.
+   Source of truth: docs/01-requirements-r3.md §1 "Brass & Midnight".
+   R3 supersedes the "Signboard" palette in the main brief §4.1 entirely.
 
-   Two values deviate from the brief, both to meet the WCAG 2.1 AA floor that
-   §9 requires. Every ratio below is computed, not estimated.
+   All 22 ratios in the R3 §1 table were recomputed and match exactly.
+   Two additions were needed; both are documented at their token below.
 
-   1. --rebar  #8A8F98 -> #62666F
-      The brief flags this itself ("check --rebar on --chalk and darken it if
-      it fails"). It fails: 3.03:1 on chalk, 2.63:1 on concrete. The original
-      is kept as --rebar-line for hairlines and dividers, which are non-text
-      and carry no contrast requirement. Only metadata TEXT takes the darker
-      value, so the light hairline look the brief wants is preserved.
+   ENFORCEMENT RULES — R3 §1, reproduced here so they survive the next person:
 
-   2. --retro as focus ring -> --focus
-      §9 specifies "visible keyboard focus (--retro 2px ring)". --retro is
-      1.52:1 on --chalk, well under the 3:1 WCAG 1.4.11 requires of a focus
-      indicator, so on light surfaces the ring would be effectively invisible.
-      It scores 11.44:1 on --bitumen and is unchanged there. --focus carries a
-      hue-preserving darkened yellow on light surfaces and flips back to
-      --retro in dark mode.
+     1. --brass NEVER carries body text on a light ground.   2.99:1 on paper.
+     2. --brass-light NEVER appears on a light ground at all. 1.73:1 on paper.
+
+   Both colours are correct ONLY in the roles listed in the surface table.
    ========================================================================= */
 
 @theme {
-  /* --- brand, per §4.1 ---------------------------------------------------- */
-  --color-bitumen: #101315; /* deep base: hero, footer, immersive bands   */
-  --color-signboard: #0b5d3b; /* primary brand: NH directional-sign green   */
-  --color-retro: #f5c518; /* accent, <=5% of viewport, marks not fills  */
-  --color-concrete: #eae7e1; /* light surface: cards, alternating sections */
-  --color-chalk: #f8f7f4; /* page background                            */
+  /* --- brand ------------------------------------------------------------- */
+  --color-indigo: #3b498c; /* exact logo blue. Links, primary buttons, active */
+  --color-midnight: #2a3465; /* deep band. Credentials strip, stat blocks     */
 
-  /* --- rebar, split by use ------------------------------------------------ */
-  --color-rebar: #62666f; /* metadata TEXT  5.37:1 chalk / 4.66:1 concrete */
-  --color-rebar-line: #8a8f98; /* hairlines, dividers — non-text, brief value   */
+  /* --- deep surface: warm, a stone colour not a night colour -------------- */
+  --color-onyx: #22201c; /* hero, footer */
 
-  /* --- accessible accent variants (hue 45deg preserved) ------------------- */
-  --color-retro-ink: #af8a08; /* rings / large text on light  3.03:1 on chalk */
-  --color-retro-text: #886b06; /* body text on light           4.72:1 on chalk */
+  /* --- accent: the Nataraja's brass --------------------------------------- */
+  --color-brass: #b08d3f; /* marks, rules, progress fills, LARGE type only    */
+  --color-brass-deep: #775c29; /* the text-safe brass on light ground  6.01:1 */
+  --color-brass-light: #d9be7a; /* accent inside .on-dark ONLY          1.73:1 on light */
+
+  /* --- ground ------------------------------------------------------------- */
+  --color-paper: #fbfaf7; /* page background            */
+  --color-cloud: #f2f0ea; /* primary warm surface, cards */
+  --color-sand: #e6e3da; /* alternating section band    */
+  --color-rule: #dad6ca; /* hairlines, card borders — NON-TEXT, decorative  */
+
+  /*
+   * ADDITION 1 — --rule-strong.
+   * --rule is 1.39:1 on paper. That is correct for decorative hairlines and
+   * card borders, which carry no contrast requirement. It is NOT sufficient
+   * for a boundary that identifies a UI component — a form input border, a
+   * focusable card outline — which WCAG 1.4.11 holds to 3:1. Use --rule for
+   * dividers, --rule-strong for anything interactive.
+   */
+  --color-rule-strong: #9b9070; /* 3.04:1 on paper */
+
+  /* --- type --------------------------------------------------------------- */
+  --color-ink: #23221e; /* warm near-black body text  15.25:1 on paper */
+  --color-muted: #5d5b54; /* metadata, secondary         6.51:1 on paper */
+
+  /* --- function ----------------------------------------------------------- */
+  --color-focus: #3b498c; /* 7.99:1 on paper */
+  --color-focus-on-dark: #d9be7a; /* 8.98:1 on onyx  */
+
+  /*
+   * ADDITION 2 — hero scrim stops.
+   * R3 §2 specifies 0.55 -> 0.82 -> solid and states headline text holds at
+   * AAA. Measured over the worst realistic case, a blown-out sky (§2.3 asks
+   * for "wide skies"), the TOP stop does not hold:
+   *
+   *     0.55 alpha -> --paper text 3.58:1  FAILS AA
+   *                   --brass-light eyebrow 2.06:1  FAILS badly
+   *     0.82 alpha -> --paper text 8.73:1  AAA
+   *                   --brass-light eyebrow 5.03:1  AA
+   *
+   * The gradient is kept exactly as specified, because a darker top stop
+   * would mud the corridor, which is the whole point of the component.
+   * Instead the content block is anchored into the lower band where the
+   * scrim is already >=0.82. Hero copy must never rise above the 62% line.
+   */
+  --hero-scrim: linear-gradient(
+    180deg,
+    rgb(34 32 28 / 0.55) 0%,
+    rgb(34 32 28 / 0.82) 62%,
+    var(--color-onyx) 100%
+  );
 
   /* --- semantic roles ----------------------------------------------------- */
-  --color-background: var(--color-chalk);
-  --color-foreground: var(--color-bitumen); /* 17.41:1 */
-  --color-surface: var(--color-concrete);
-  --color-muted: var(--color-rebar);
-  --color-border: var(--color-rebar-line);
-  --color-primary: var(--color-signboard); /* 7.42:1 on chalk */
-  --color-on-primary: var(--color-chalk);
-  --color-accent: var(--color-retro);
-  --color-on-accent: var(--color-bitumen); /* 11.44:1 */
-  --color-focus: var(--color-retro-ink); /* 3.03:1 on chalk */
+  --color-background: var(--color-paper);
+  --color-foreground: var(--color-ink);
+  --color-surface: var(--color-cloud);
+  --color-band: var(--color-sand);
+  --color-border: var(--color-rule);
+  --color-primary: var(--color-indigo);
+  --color-on-primary: #ffffff; /* 8.34:1 on indigo */
 
-  /* --- type, per §4.2 ----------------------------------------------------- */
+  /* --- type, per main brief §4.2 (unchanged by R3) ------------------------ */
   --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
 
-  /* Fluid 1.25 ratio, clamped 390px -> 1440px. H1 caps 40px mobile / 72px desktop. */
   --text-xs: clamp(0.75rem, 0.73rem + 0.09vw, 0.8rem);
   --text-sm: clamp(0.875rem, 0.85rem + 0.11vw, 0.95rem);
   --text-base: clamp(1rem, 0.97rem + 0.14vw, 1.125rem);
@@ -66,43 +99,28 @@
   --text-3xl: clamp(2.25rem, 1.8rem + 2.05vw, 3.75rem);
   --text-4xl: clamp(2.5rem, 1.55rem + 3.9vw, 4.5rem); /* 40px -> 72px */
 
-  /* --- geometry, per §4.6 ------------------------------------------------- */
-  --radius-none: 0px;
-  --radius-DEFAULT: 2px; /* infrastructure isn't soft */
-  --radius-pin: 9999px; /* the ONLY rounded thing on the site */
+  /* --- geometry ----------------------------------------------------------- */
+  /* R3 §3.3: 2px -> 3px, so cards, buttons and the corridor agree. */
+  --radius-DEFAULT: 3px;
+  --radius-pin: 9999px; /* still the only rounded thing on the site */
+
+  /* R3 §3.1: the corridor's card ratio, 18:25, becomes the project-card image
+   * ratio everywhere — index, related, gallery thumbs. */
+  --aspect-card: 18 / 25;
 
   --container-content: 1120px;
   --container-shell: 1280px;
-
-  --spacing-section: clamp(4rem, 2.5rem + 6.5vw, 8.75rem); /* 64 -> 140px */
-
-  /* §4.6: one shadow token, sticky header only */
-  --shadow-header: 0 1px 2px rgb(16 19 21 / 0.06);
+  --spacing-section: clamp(4rem, 2.5rem + 6.5vw, 8.75rem);
+  --shadow-header: 0 1px 2px rgb(34 32 28 / 0.06);
 }
 
-/* --- dark surfaces ------------------------------------------------------- */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --color-background: var(--color-bitumen);
-    --color-foreground: var(--color-chalk);
-    --color-surface: #1a1e21;
-    --color-muted: #9aa0a8;
-    --color-border: #2a2f33;
-    --color-primary: #2f9c6a;
-    --color-on-primary: var(--color-bitumen);
-    --color-focus: var(--color-retro); /* 11.44:1 on bitumen */
-  }
-}
-
-:root[data-theme="dark"] {
-  --color-background: var(--color-bitumen);
-  --color-foreground: var(--color-chalk);
-  --color-surface: #1a1e21;
-  --color-muted: #9aa0a8;
-  --color-border: #2a2f33;
-  --color-primary: #2f9c6a;
-  --color-on-primary: var(--color-bitumen);
-  --color-focus: var(--color-retro);
+/*
+ * R3 §1 sets `color-scheme: light`. This is a light design with dark BANDS
+ * (onyx hero/footer, midnight strip) — not a themeable light/dark pair. No
+ * prefers-color-scheme block: the dark surfaces are content, not a theme.
+ */
+:root {
+  color-scheme: light;
 }
 
 /* --- base ---------------------------------------------------------------- */
@@ -121,13 +139,25 @@ h3,
 h4 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-stretch: 125%; /* Archivo expanded — reads as signage, not startup */
+  font-stretch: 125%; /* Archivo expanded — reads as signage */
   line-height: 1.05;
   letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
-/* §4.2: every number on this site is a measurement, so measurements set in mono. */
+/*
+ * Dark-surface scope. Inside .on-dark, --brass-light becomes legal and the
+ * focus ring flips. This is the mechanism that keeps enforcement rule 2
+ * honest: if a component is not inside .on-dark, brass-light is simply the
+ * wrong token and reviewers can see that at a glance.
+ */
+.on-dark {
+  color: var(--color-paper);
+  --color-focus: var(--color-focus-on-dark);
+  --color-border: rgb(251 250 247 / 0.18);
+}
+
+/* Main brief §4.2: every number on this site is a measurement. */
 .measurement,
 [data-measurement] {
   font-family: var(--font-mono);
@@ -135,14 +165,18 @@ h4 {
   font-weight: 500;
 }
 
-/* §9 accessibility floor: visible keyboard focus on every interactive element. */
+/* §9 accessibility floor. */
 :focus-visible {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
-  border-radius: 2px;
+  border-radius: 3px;
 }
 
-/* §4.4 hard rule: reduced motion disables transform and opacity animation. */
+/*
+ * R3 §3.2: sections rise AND scale 0.985 -> 1, reading as a continuation of
+ * the corridor's z-motion. Nothing on this site moves sideways except the
+ * corridor. Motion proper lands in phase E; this is the token only.
+ */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

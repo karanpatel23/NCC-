@@ -10,6 +10,18 @@ import { NAV, CONTACT_LINK } from "@/lib/nav"
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [darkHero, setDarkHero] = useState(false)
+
+  /*
+   * The transparent treatment (--paper text, --brass-light logo dot) is only
+   * legal when a dark band sits behind the header. R3 §3 gives /contact
+   * "--cloud, no dark band at all", where --brass-light measures 1.73:1 and
+   * breaks R3 §1 enforcement rule 2. Pages opt in by marking their hero
+   * [data-dark-hero]; every other page gets the solid treatment immediately.
+   */
+  useEffect(() => {
+    setDarkHero(!!document.querySelector("[data-dark-hero]"))
+  }, [])
 
   /*
    * §6.1: transparent over the hero, solidifies past 80px.
@@ -32,23 +44,23 @@ export function SiteHeader() {
 
   return (
     <header
-      data-scrolled={scrolled || undefined}
       /*
-       * §6.1: transparent over the hero, solidifying to --chalk past 80px.
-       * The hero is --bitumen, so in the transparent state the header sits on a
-       * dark surface and its text must be --chalk (17.41:1). Once solidified the
-       * surface is light, so text flips back to --foreground. Without the flip
-       * the logo and nav render dark-on-dark and disappear entirely.
+       * data-solid is the single switch. It is set when the user has scrolled
+       * past 80px OR when the page has no dark hero to sit on. Solid means
+       * --paper background, --ink text, --brass-deep dot (6.01:1). Transparent
+       * means --paper text (15.58:1 on onyx) and --brass-light dot (8.98:1) —
+       * legal only because a dark band is behind it.
        */
-      className="fixed inset-x-0 top-0 z-50 h-14 border-b border-transparent text-[color:var(--color-chalk)] transition-colors duration-200 [--nav-hover:var(--color-retro)] [--logo-dot:var(--color-retro)] data-[scrolled]:border-[color:var(--color-border)] data-[scrolled]:bg-[color:var(--color-background)] data-[scrolled]:text-[color:var(--color-foreground)] data-[scrolled]:shadow-[0_1px_2px_rgb(16_19_21/0.06)] data-[scrolled]:[--nav-hover:var(--color-primary)] data-[scrolled]:[--logo-dot:var(--color-primary)] md:h-18"
+      data-solid={scrolled || !darkHero || undefined}
+      className="fixed inset-x-0 top-0 z-50 h-14 border-b border-transparent text-[color:var(--color-paper)] transition-colors duration-200 [--nav-hover:var(--color-brass-light)] [--logo-dot:var(--color-brass-light)] data-[solid]:border-[color:var(--color-border)] data-[solid]:bg-[color:var(--color-background)] data-[solid]:text-[color:var(--color-foreground)] data-[solid]:shadow-[0_1px_2px_rgb(34_32_28/0.06)] data-[solid]:[--nav-hover:var(--color-primary)] data-[solid]:[--logo-dot:var(--color-brass-deep)] md:h-18"
     >
       <Container width="shell" className="flex h-full items-center justify-between gap-6">
         <Link
           href="/"
           className="font-[family-name:var(--font-archivo)] text-lg font-extrabold tracking-tight"
         >
-          {/* Dot flips with the header surface: --signboard is only 2.35:1 on
-              --bitumen, so over the hero it uses --retro (11.44:1) instead. */}
+          {/* Dot flips with the header surface: --brass-light is 8.98:1 on --onyx but only 1.73:1 on light, so it
+              flips to --brass-deep (6.01:1) once the header solidifies. */}
           NCC<span className="text-[color:var(--logo-dot)]">.</span>
           <span className="sr-only"> Infraspace — home</span>
         </Link>
@@ -71,7 +83,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-3">
           <Link
             href="/contact"
-            className="hidden rounded-[2px] bg-[color:var(--color-primary)] px-5 py-2.5 text-sm font-medium text-[color:var(--color-on-primary)] transition-opacity hover:opacity-90 md:inline-block"
+            className="hidden rounded-[3px] bg-[color:var(--color-primary)] px-5 py-2.5 text-sm font-medium text-[color:var(--color-on-primary)] transition-opacity hover:opacity-90 md:inline-block"
           >
             Enquire
           </Link>

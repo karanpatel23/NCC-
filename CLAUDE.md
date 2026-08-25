@@ -27,7 +27,23 @@ truth about what currently exists.
 |---|---|---|
 | A | Scaffold, design tokens, fonts, layout primitives, header/footer | ✅ Complete |
 | B | Sanity project, schemas, Studio at `/studio`, seed projects | ⬜ Next |
-| C–H | Homepage · projects · motion · 3D map · remaining pages · SEO | ⬜ |
+| C | Static homepage + corridor's static poster (not the animation) | ⬜ |
+| D | Projects index + detail template + milestone timeline | ⬜ |
+| D.5 | **Image corridor** integration — added by R3 §4 | ⬜ |
+| E | Remaining motion: rail, reveals, counters, marquee | ⬜ |
+| F | 3D project map — **optional since R3 §4**; the corridor took its job | ⬜ |
+| G–H | Remaining pages · SEO, JSON-LD, a11y, Lighthouse | ⬜ |
+
+### Requirements are layered — read both
+`docs/01-requirements.md` is the main brief. **`docs/01-requirements-r3.md` supersedes its §4.1
+palette and §6.1 hero entirely.** Where they disagree, R3 wins. R2 is not in this repo; R3 replaces
+its palette in full, but anything else R2 changed is unrecorded.
+
+The live palette is **"Brass & Midnight"**, not "Signboard". Two rules are load-bearing and are
+repeated in `globals.css` so they survive:
+- `--brass` (`#B08D3F`) never carries body text on a light ground — 2.99:1.
+- `--brass-light` (`#D9BE7A`) never appears on a light ground at all — 1.73:1. It is legal only
+  inside `.on-dark`.
 
 ### Where the rebuild lives
 **`next-app/`, not `site/`.** The directory contract below names `site/`; the owner scaffolded
