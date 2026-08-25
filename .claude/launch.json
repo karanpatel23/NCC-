@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "ncc-site",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "next-app", "run", "dev"],
+      "port": 3000
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   NCC Infraspace — design tokens
+   Source of truth: docs/01-requirements.md §4.1 "Signboard" palette.
+
+   Two values deviate from the brief, both to meet the WCAG 2.1 AA floor that
+   §9 requires. Every ratio below is computed, not estimated.
+
+   1. --rebar  #8A8F98 -> #62666F
+      The brief flags this itself ("check --rebar on --chalk and darken it if
+      it fails"). It fails: 3.03:1 on chalk, 2.63:1 on concrete. The original
+      is kept as --rebar-line for hairlines and dividers, which are non-text
+      and carry no contrast requirement. Only metadata TEXT takes the darker
+      value, so the light hairline look the brief wants is preserved.
+
+   2. --retro as focus ring -> --focus
+      §9 specifies "visible keyboard focus (--retro 2px ring)". --retro is
+      1.52:1 on --chalk, well under the 3:1 WCAG 1.4.11 requires of a focus
+      indicator, so on light surfaces the ring would be effectively invisible.
+      It scores 11.44:1 on --bitumen and is unchanged there. --focus carries a
+      hue-preserving darkened yellow on light surfaces and flips back to
+      --retro in dark mode.
+   ========================================================================= */
+
+@theme {
+  /* --- brand, per §4.1 ---------------------------------------------------- */
+  --color-bitumen: #101315; /* deep base: hero, footer, immersive bands   */
+  --color-signboard: #0b5d3b; /* primary brand: NH directional-sign green   */
+  --color-retro: #f5c518; /* accent, <=5% of viewport, marks not fills  */
+  --color-concrete: #eae7e1; /* light surface: cards, alternating sections */
+  --color-chalk: #f8f7f4; /* page background                            */
+
+  /* --- rebar, split by use ------------------------------------------------ */
+  --color-rebar: #62666f; /* metadata TEXT  5.37:1 chalk / 4.66:1 concrete */
+  --color-rebar-line: #8a8f98; /* hairlines, dividers — non-text, brief value   */
+
+  /* --- accessible accent variants (hue 45deg preserved) ------------------- */
+  --color-retro-ink: #af8a08; /* rings / large text on light  3.03:1 on chalk */
+  --color-retro-text: #886b06; /* body text on light           4.72:1 on chalk */
+
+  /* --- semantic roles ----------------------------------------------------- */
+  --color-background: var(--color-chalk);
+  --color-foreground: var(--color-bitumen); /* 17.41:1 */
+  --color-surface: var(--color-concrete);
+  --color-muted: var(--color-rebar);
+  --color-border: var(--color-rebar-line);
+  --color-primary: var(--color-signboard); /* 7.42:1 on chalk */
+  --color-on-primary: var(--color-chalk);
+  --color-accent: var(--color-retro);
+  --color-on-accent: var(--color-bitumen); /* 11.44:1 */
+  --color-focus: var(--color-retro-ink); /* 3.03:1 on chalk */
+
+  /* --- type, per §4.2 ----------------------------------------------------- */
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* Fluid 1.25 ratio, clamped 390px -> 1440px. H1 caps 40px mobile / 72px desktop. */
+  --text-xs: clamp(0.75rem, 0.73rem + 0.09vw, 0.8rem);
+  --text-sm: clamp(0.875rem, 0.85rem + 0.11vw, 0.95rem);
+  --text-base: clamp(1rem, 0.97rem + 0.14vw, 1.125rem);
+  --text-lg: clamp(1.25rem, 1.19rem + 0.27vw, 1.5rem);
+  --text-xl: clamp(1.5rem, 1.38rem + 0.55vw, 2rem);
+  --text-2xl: clamp(1.875rem, 1.65rem + 1.05vw, 2.75rem);
+  --text-3xl: clamp(2.25rem, 1.8rem + 2.05vw, 3.75rem);
+  --text-4xl: clamp(2.5rem, 1.55rem + 3.9vw, 4.5rem); /* 40px -> 72px */
+
+  /* --- geometry, per §4.6 ------------------------------------------------- */
+  --radius-none: 0px;
+  --radius-DEFAULT: 2px; /* infrastructure isn't soft */
+  --radius-pin: 9999px; /* the ONLY rounded thing on the site */
+
+  --container-content: 1120px;
+  --container-shell: 1280px;
+
+  --spacing-section: clamp(4rem, 2.5rem + 6.5vw, 8.75rem); /* 64 -> 140px */
+
+  /* §4.6: one shadow token, sticky header only */
+  --shadow-header: 0 1px 2px rgb(16 19 21 / 0.06);
+}
+
+/* --- dark surfaces ------------------------------------------------------- */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-background: var(--color-bitumen);
+    --color-foreground: var(--color-chalk);
+    --color-surface: #1a1e21;
+    --color-muted: #9aa0a8;
+    --color-border: #2a2f33;
+    --color-primary: #2f9c6a;
+    --color-on-primary: var(--color-bitumen);
+    --color-focus: var(--color-retro); /* 11.44:1 on bitumen */
+  }
+}
+
+:root[data-theme="dark"] {
+  --color-background: var(--color-bitumen);
+  --color-foreground: var(--color-chalk);
+  --color-surface: #1a1e21;
+  --color-muted: #9aa0a8;
+  --color-border: #2a2f33;
+  --color-primary: #2f9c6a;
+  --color-on-primary: var(--color-bitumen);
+  --color-focus: var(--color-retro);
+}
+
+/* --- base ---------------------------------------------------------------- */
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 125%; /* Archivo expanded — reads as signage, not startup */
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+/* §4.2: every number on this site is a measurement, so measurements set in mono. */
+.measurement,
+[data-measurement] {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+/* §9 accessibility floor: visible keyboard focus on every interactive element. */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* §4.4 hard rule: reduced motion disables transform and opacity animation. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
