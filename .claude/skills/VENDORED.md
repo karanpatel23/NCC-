@@ -1,28 +1,36 @@
 # Vendored third-party skills
 
-Two upstreams are vendored here. Neither was installed through the plugin
-marketplace — `/plugin` is unavailable in this environment — so both were
-reviewed and copied by hand.
+Only **one** upstream is vendored into this repo. `/plugin` is unavailable in
+this environment, so it was reviewed and copied by hand.
 
-| Skills | Upstream | Version | License |
-|---|---|---|---|
-| `ui-ux-pro-max`, `design`, `design-system`, `brand`, `ui-styling`, `banner-design`, `slides` | nextlevelbuilder/ui-ux-pro-max-skill | 2.13.0 | MIT |
-| `21st-ai`, `21st-cli-use`, `21st-registry`, `21st-design-sync` | 21st-dev/claude-code-plugin | 0.4.0 | Apache-2.0 |
+| Skills | Upstream | Version | License | Where |
+|---|---|---|---|---|
+| `ui-ux-pro-max`, `design`, `design-system`, `brand`, `ui-styling`, `banner-design`, `slides` | nextlevelbuilder/ui-ux-pro-max-skill | 2.13.0 | MIT | vendored here |
+| `21st-*` (7 skills) | 21st.dev | — | Apache-2.0 | **global**, not vendored |
 
 ---
 
-## 2. 21st.dev (`21st-*`)
+## 2. 21st.dev (`21st-*`) — installed globally, deliberately not vendored
 
-Source:  https://github.com/21st-dev/claude-code-plugin
-Commit:  887200a32152ad2a4af240d4ebb2f2da631f1c23 (2026-07-10)
-Version: 0.4.0
-License: Apache-2.0
+Install command (reproducible — re-run it on a new machine):
 
-Copied from `plugins/21st/skills/`. No `${CLAUDE_PLUGIN_ROOT}` references —
-these skills shell out to the `@21st-dev/cli` npm package via npx, so they work
-unchanged as project skills.
+```bash
+npx @21st-dev/cli install-skill
+```
 
-### ⚠️ Two of these four PUBLISH PUBLICLY
+That installs 7 skills into `~/.claude/skills/` (and `~/.cursor/skills`,
+`~/.codex/skills`): `21st-cli-use`, `21st-ai`, `21st-registry`,
+`21st-design-sync`, `21st-ui-build`, `21st-ui-explore`, `21st-ui-review`.
+It touches nothing inside this repo.
+
+**Why they are not vendored.** Four of them were briefly copied into
+`.claude/skills/` from `21st-dev/claude-code-plugin@887200a` before the official
+installer was run. That was a mistake: project skills shadow global ones, and
+the vendored `21st-registry` was stale (7.8 KB vs the installer's 18 KB), so the
+repo copy would have silently overridden the newer one. The copies were removed.
+Use the install command above instead.
+
+### ⚠️ Two of the seven PUBLISH PUBLICLY
 
 - **`21st-design-sync`** runs `21st publish-theme`, which uploads the project's
   CSS variables and colour tokens to the 21st.dev **public community gallery**.
@@ -34,7 +42,17 @@ Infraspace's brand palette. Publishing it to a public gallery would disclose a
 client's brand system without their consent. Do not invoke either skill without
 explicit, per-action authorisation from the repo owner. Neither has been run.
 
-The other two (`21st-ai`, `21st-cli-use`) only search and pull code inward.
+The other five only pull inward: `21st-ai` and `21st-cli-use` (search/generate),
+plus `21st-ui-build`, `21st-ui-explore` and `21st-ui-review`.
+
+### ⚠️ Do NOT install ui-ux-pro-max through the 21st CLI
+
+`21st skills catalog` lists exactly one curated external skill: `ui-ux-pro-max`
+pinned at **v2.5.0**, installed via `npx uipro-cli@2.5.0` into
+`.claude/skills/ui-ux-pro-max` — the same directory used below. That is a
+**downgrade** from the v2.13.0 vendored here, and it would overwrite the version
+the design system was built with. Update ui-ux-pro-max from its own upstream
+instead.
 
 ### MCP server
 
