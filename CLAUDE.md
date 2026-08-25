@@ -11,22 +11,38 @@ truth about what currently exists.
 
 ## Current phase
 
-**PHASE 1 — FORENSIC EXTRACTION.** Not rebuilding yet.
+**PHASE 4 — REBUILD.** The gates are cleared; building is now the work.
 
 | Phase | Status | Gate to advance |
 |---|---|---|
 | 0 — Remote recon | ✅ Complete | `docs/00-phase0-forensic-report.md` |
-| 1 — Browser extraction | 🔄 In progress | `forensics/out/HANDOFF-INPUT.md` exists and is populated |
-| 2 — Full forensic report | ⬜ Blocked on 1 | `docs/02-reconstruction-handoff.md` written |
-| 3 — Requirements | ⬜ Blocked on 2 | `docs/01-requirements.md` written by the repo owner |
-| 4 — Rebuild | ⬜ Blocked on 3 | — |
+| 1 — Browser extraction | ✅ Complete | `forensics/out/HANDOFF-INPUT.md` exists and is populated |
+| 2 — Full forensic report | ⏭️ Skipped | Superseded — the owner went straight to requirements |
+| 3 — Requirements | ✅ Complete | `docs/01-requirements.md`, written by the repo owner |
+| 4 — Rebuild | 🔄 In progress | See the A–H sub-phases in `docs/01-requirements.md` §10 |
 
-### Hard rule
-**Do not write any code under `site/` until phase 3 is complete.** The owner has not yet
-specified what to preserve, what to remove, what to redesign, which stack to use, or what
-functionality to add. Building before that produces work that gets thrown away.
+### Phase 4 sub-phases (`docs/01-requirements.md` §10)
 
-If asked to "start building" while phases 1–3 are incomplete, say so and point at the gate.
+| | Deliverable | Status |
+|---|---|---|
+| A | Scaffold, design tokens, fonts, layout primitives, header/footer | ✅ Complete |
+| B | Sanity project, schemas, Studio at `/studio`, seed projects | ⬜ Next |
+| C–H | Homepage · projects · motion · 3D map · remaining pages · SEO | ⬜ |
+
+### Where the rebuild lives
+**`next-app/`, not `site/`.** The directory contract below names `site/`; the owner scaffolded
+`next-app/` instead and that is the real application. `site/` is a stale empty placeholder — delete
+it or rename `next-app/` to match, but do not create a second app.
+
+### Hard rules that still apply
+- **Never invent project content.** `docs/01-requirements.md` §11 items 1–4 are outstanding, so
+  contact details, project records, and photography do not exist yet. §7 is explicit: an incomplete
+  field renders nothing rather than a placeholder. The §2 competitor teardown exists precisely
+  because that site ships `+1 (859) 254-6589` and `Lorem ipsum` in production. Do not repeat it.
+- **Verify contrast, never estimate it.** Three specified token values failed WCAG and were
+  corrected — see the implementation notes appended to `docs/01-requirements.md`.
+- Phases run in order and each has a gate. Do not jump to motion (E) or the 3D map (F) before the
+  static content templates (C, D) exist.
 
 ## Directory contract
 
