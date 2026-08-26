@@ -2,106 +2,112 @@
 
 /* ============================================================================
    NCC Infraspace — design tokens
-   Source of truth: docs/01-requirements-r4.md §1 "Brass & Midnight", which
-   deletes --onyx from R3. R3 had already replaced the main brief's §4.1
-   "Signboard" palette entirely. Where they disagree, the later revision wins.
+   Source of truth: docs/01-requirements-r5.md §2.
 
-   Every published ratio in R3 §1 and R4 §1 was recomputed independently and
-   matched exactly. Additions made here are documented at their token below.
+   R5 withdraws "Brass & Midnight" (R3 §1 / R4 §1) IN FULL. Per R5 §7 this is a
+   clean break: --midnight, --onyx, --indigo, --brass*, --cloud and --sand are
+   gone and are NOT aliased, so any straggler fails loudly instead of quietly
+   rendering the wrong colour.
 
-   ENFORCEMENT RULES — reproduced so they survive the next person:
+   R5 §2's published ratios were recomputed. The four core colours, all three
+   -ink variants, and the entire §5 scrim table match exactly. Two notes:
 
-     1. --brass NEVER carries body text on a light ground.   2.99:1 on paper.
-     2. --brass-light NEVER appears on a light ground at all. 1.73:1 on paper.
-     3. --brass NEVER sits on --indigo.                       2.67:1.  (R4 §1)
+     - The §2 "on --paper" column actually carries §1's WHITE-based figures.
+       Real paper values run ~0.3 lower (gold-ink 6.87, orange-ink 7.17,
+       slate-ink 6.38). All still pass comfortably; noted so nobody "fixes"
+       them later.
+     - --rule-strong as given (#9AA9B2) measures 2.31 on paper and 2.07 on
+       mist, against the 3:1 that WCAG 1.4.11 requires of the exact thing it
+       exists for. Corrected below, hue preserved.
 
-   Rule 3 is new and is the one most likely to be violated by accident,
-   because brass on the deep band WAS legal while that band was --onyx
-   (5.21:1). Brass marks on --indigo move to --brass-light (4.61:1). On
-   --midnight, --brass is 3.78:1 — large text only, never body copy.
+   ENFORCEMENT RULES — R5 §3, replacing R4's three. In globals.css and in the
+   audit script:
 
-   All three colours are correct ONLY in the roles listed in the surface table.
+     1. --gold, --orange, --slate NEVER carry text on --paper or --mist.
+        1.80 / 3.26 / 2.47. Use the -ink variants.
+     2. --gold-ink, --orange-ink, --slate-ink NEVER appear on --navy.
+        2.19 / 2.10 / 2.36 — all under 3:1.
+     3. ORANGE BUTTONS TAKE --navy TEXT, NEVER WHITE. White on orange is
+        3.41 and fails; navy on orange is 4.61 and passes. R5 §1 calls this
+        the single most likely bug in the palette, because white-on-orange
+        looks fine to a sighted designer at full size and is what everyone
+        reaches for by default.
+     4. --orange appears ONLY in status contexts (see the role table below).
    ========================================================================= */
 
 @theme {
-  /* --- brand ------------------------------------------------------------- */
-  --color-indigo: #3b498c; /* logo blue. Links, buttons, credentials strip   */
-  --color-midnight: #2a3465; /* THE deep surface. Hero, footer                */
-
-  /*
-   * R4 §1: --onyx is DELETED. The site now has exactly one dark hue and it is
-   * the brand's own. Hero and footer move to --midnight; the credentials strip
-   * moves to --indigo. Do not reintroduce a second dark token.
-   *
-   * --ink stays warm (#23221E) deliberately: the TEXT keeps the warmth while
-   * the SURFACES go blue. Warm ink on warm ground with cool brand surfaces is
-   * a tighter system than the all-warm version, not a compromise of it.
+  /* --- the core four, exactly as given -------------------------------------
+   * This palette is built FOR DARK SURFACES. Three of the four are legible
+   * only ON the navy, and none can carry text on a light ground. That is a
+   * direction, not a flaw: the site leans darker, with light sections as
+   * relief rather than as the default.
    */
+  --color-navy: #112532; /* deep surface AND body text — it does both jobs */
+  --color-gold: #f4b044; /* primary accent                        8.35 on navy */
+  --color-orange: #e0680e; /* STATUS ONLY — see role table          4.61 on navy */
+  --color-slate: #88a5b7; /* structural / quiet                    6.08 on navy */
 
-  /* --- accent: the Nataraja's brass --------------------------------------- */
-  --color-brass: #b08d3f; /* marks, rules, progress fills, LARGE type only    */
-  --color-brass-deep: #775c29; /* the text-safe brass on light ground  6.01:1 */
-  --color-brass-light: #d9be7a; /* accent inside .on-dark ONLY          1.73:1 on light */
+  /* --- text-safe variants (the four above cannot carry text on light) ------ */
+  --color-gold-ink: #7a4e05; /* 7.19 on white · 6.87 on paper */
+  --color-orange-ink: #8f3b06; /* 7.51 on white · 7.17 on paper */
+  --color-slate-ink: #3f6076; /* 6.67 on white · 6.38 on paper */
 
-  /* --- ground ------------------------------------------------------------- */
-  --color-paper: #fbfaf7; /* page background            */
-  --color-cloud: #f2f0ea; /* primary warm surface, cards */
-  --color-sand: #e6e3da; /* alternating section band    */
-  --color-rule: #dad6ca; /* hairlines, card borders — NON-TEXT, decorative  */
+  /* --- ground family: cool, so warmth stays purely accent ------------------ */
+  --color-paper: #f8fafb; /* page background */
+  --color-mist: #e9eef1; /* alternating band, cards on paper */
+  --color-rule: #d3dbe0; /* decorative hairlines — 1.34, NON-TEXT only */
 
   /*
-   * ADDITION 1 — --rule-strong.
-   * --rule is 1.39:1 on paper. That is correct for decorative hairlines and
-   * card borders, which carry no contrast requirement. It is NOT sufficient
-   * for a boundary that identifies a UI component — a form input border, a
-   * focusable card outline — which WCAG 1.4.11 holds to 3:1. Use --rule for
-   * dividers, --rule-strong for anything interactive.
+   * CORRECTED from R5 §2. Given as #9AA9B2, which is 2.31 on paper and 2.07
+   * on mist — below the 3:1 WCAG 1.4.11 demands of a boundary that identifies
+   * a UI component, which is the sole reason this token exists. Hue and
+   * saturation preserved; lightness lowered until it clears on the harder of
+   * the two grounds (mist).
    */
-  --color-rule-strong: #9b9070; /* 3.04:1 on paper */
+  --color-rule-strong: #778b98; /* 3.38 on paper · 3.03 on mist */
 
-  /* --- type --------------------------------------------------------------- */
-  --color-ink: #23221e; /* warm near-black body text  15.25:1 on paper */
-  --color-muted: #5d5b54; /* metadata, secondary         6.51:1 on paper */
+  /* --- type ---------------------------------------------------------------- */
+  --color-ink: #112532; /* = navy. 15.03 on paper */
+  --color-muted: #4e7086; /* 5.27 on white · 5.03 on paper */
 
-  /* --- function ----------------------------------------------------------- */
-  --color-focus: #3b498c; /* 7.99:1 on paper */
-  --color-focus-on-dark: #d9be7a; /* 6.52:1 on midnight, 4.61:1 on indigo */
+  /* --- deeper surface for stacking ----------------------------------------- */
+  --color-navy-deep: #0a1720; /* footer, when it must sit under a navy hero */
+
+  /* --- function ------------------------------------------------------------ */
+  --color-focus: #8f3b06; /* orange-ink, 7.17 on paper */
+  --color-focus-on-dark: #f4b044; /* gold, 8.35 on navy */
 
   /*
-   * Hero scrim — R4 §2.4, midnight-based now that --onyx is gone.
+   * Hero scrim — R5 §5, recomputed for navy. The whole table verifies exactly
+   * against the lightest card the corridor can produce (#F4B044):
    *
-   * The EYEBROW is the binding constraint, not the headline: --brass-light
-   * needs alpha >= 0.90 to clear AA, where --paper clears at 0.70.
+   *     0.60 -> paper  6.15  gold 3.41 FAIL
+   *     0.70 -> paper  7.84  gold 4.35 marginal
+   *     0.80 -> paper  9.96  gold 5.53 pass
+   *     0.94 -> paper 13.54  gold 7.52 pass   <- the 68% stop
    *
-   * Measured against the lightest gradient stop (#D9BE7A), which is the
-   * lightest surface the corridor can now produce:
-   *
-   *     0.40 -> --paper  3.38  FAIL   --brass-light 1.95  FAIL
-   *     0.70 -> --paper  6.18  pass   --brass-light 3.56  FAIL
-   *     0.96 -> --paper 10.44  pass   --brass-light 6.02  pass
-   *
-   * HERO COPY MUST NEVER RISE ABOVE THE 68% LINE. Do not lighten these stops
-   * to show more of the corridor; the corridor lives in the top 60% and
-   * rushes toward the copy rather than behind it.
+   * THE GOLD EYEBROW STILL BINDS, so HERO COPY MUST STAY BELOW THE 68% LINE.
+   * Navy being darker than the old midnight is what lets the top stop lift
+   * from 0.40 to 0.35 — more of the corridor is visible than under R4. Do not
+   * lift it further to show even more; the eyebrow is what breaks.
    */
   --hero-scrim: linear-gradient(
     180deg,
-    rgb(42 52 101 / 0.4) 0%,
-    rgb(42 52 101 / 0.7) 42%,
-    rgb(42 52 101 / 0.96) 68%,
-    var(--color-midnight) 100%
+    rgb(17 37 50 / 0.35) 0%,
+    rgb(17 37 50 / 0.65) 42%,
+    rgb(17 37 50 / 0.94) 68%,
+    var(--color-navy) 100%
   );
 
-  /* --- semantic roles ----------------------------------------------------- */
+  /* --- semantic roles ------------------------------------------------------ */
   --color-background: var(--color-paper);
   --color-foreground: var(--color-ink);
-  --color-surface: var(--color-cloud);
-  --color-band: var(--color-sand);
+  --color-surface: var(--color-mist);
   --color-border: var(--color-rule);
-  --color-primary: var(--color-indigo);
-  --color-on-primary: #ffffff; /* 8.34:1 on indigo */
+  --color-primary: var(--color-navy);
+  --color-on-primary: var(--color-paper); /* 15.03 */
 
-  /* --- type, per main brief §4.2 (unchanged by R3) ------------------------ */
+  /* --- type, per main brief §4.2 (unchanged by R5) ------------------------- */
   --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
@@ -115,29 +121,20 @@
   --text-3xl: clamp(2.25rem, 1.8rem + 2.05vw, 3.75rem);
   --text-4xl: clamp(2.5rem, 1.55rem + 3.9vw, 4.5rem); /* 40px -> 72px */
 
-  /* --- geometry ----------------------------------------------------------- */
-  /* R3 §3.3: 2px -> 3px, so cards, buttons and the corridor agree. */
+  /* --- geometry (unchanged) ------------------------------------------------ */
   --radius-DEFAULT: 3px;
   --radius-pin: 9999px; /* still the only rounded thing on the site */
-
-  /* R3 §3.1: the corridor's card ratio, 18:25, becomes the project-card image
-   * ratio everywhere — index, related, gallery thumbs. */
-  --aspect-card: 18 / 25;
+  --aspect-card: 18 / 25; /* R3 §3.1 — the corridor's card ratio, sitewide */
 
   --container-content: 1120px;
   --container-shell: 1280px;
   --spacing-section: clamp(4rem, 2.5rem + 6.5vw, 8.75rem);
-  --shadow-header: 0 1px 2px rgb(35 34 30 / 0.06); /* --ink based */
+  --shadow-header: 0 1px 2px rgb(17 37 50 / 0.06);
 }
 
 /*
- * R3 §1 sets `color-scheme: light`. This is a light design with dark BANDS
- * (midnight hero/footer, indigo credentials strip) — not a themeable
- * light/dark pair. No prefers-color-scheme block: the dark surfaces are
- * content, not a theme.
- *
- * R4 §1: the dark->mid->light step now descends in ONE hue —
- * midnight hero -> indigo strip -> paper body.
+ * R2 §1 / R5 §2: light-only. Dark BANDS remain (navy hero, footer, credentials
+ * strip) but they are surfaces, not a theme. No prefers-color-scheme block.
  */
 :root {
   color-scheme: light;
@@ -166,15 +163,15 @@ h4 {
 }
 
 /*
- * Dark-surface scope. Inside .on-dark, --brass-light becomes legal and the
- * focus ring flips. This is the mechanism that keeps enforcement rule 2
- * honest: if a component is not inside .on-dark, brass-light is simply the
- * wrong token and reviewers can see that at a glance.
+ * Dark-surface scope. Inside .on-dark the three saturated accents become legal
+ * and the focus ring flips to --gold. This is what keeps enforcement rules 1
+ * and 2 honest: outside .on-dark, --gold/--orange/--slate are simply the wrong
+ * tokens, and a reviewer can see that at a glance.
  */
 .on-dark {
   color: var(--color-paper);
   --color-focus: var(--color-focus-on-dark);
-  --color-border: rgb(251 250 247 / 0.18);
+  --color-border: rgb(136 165 183 / 0.28); /* --slate hairlines on dark, R5 §6 */
 }
 
 /* Main brief §4.2: every number on this site is a measurement. */
@@ -226,7 +223,7 @@ h4 {
   inset: 0;
   background: radial-gradient(
     120% 90% at 30% 15%,
-    rgb(251 250 247 / 0.16),
+    rgb(248 250 251 / 0.14),
     transparent 62%
   );
 }

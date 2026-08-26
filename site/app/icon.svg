@@ -7,8 +7,18 @@
     about this. The monogram carries the mark at small sizes; the statue only
     appears in the full lockup.
 
-    Colours are R4 tokens, which supersede R2 §2. --indigo #3B498C is identical
-    in both, so there is no conflict here; --paper is R4's #FBFAF7.
+    ⚠️ PENDING R5 §4 DECISION. This uses #3B498C, the exact logo blue — which
+    R5 withdrew from the token system. The mark is therefore off-palette: on
+    the site's own --navy (#112532) the logo blue measures 1.89:1, essentially
+    invisible, which is the "two blues collision" R5 §4 describes.
+
+    Deliberately NOT recoloured here. R5 §4 offers three routes and recolouring
+    the wordmark is option 2, a brand decision needing the client's sign-off.
+    Changing a company's mark without that is not ours to do. Option 1 (mono
+    lockup on dark surfaces) is the recommendation and needs no permission, but
+    it concerns the LOCKUP, not this monogram.
+
+    Resolve §4, then revisit. --paper is R5's #F8FAFB.
 
     Square with no radius, per R2 and the sitewide "infrastructure isn't soft"
     rule. The only rounded thing on this site is the map pin.
@@ -17,7 +27,7 @@
   <path
     d="M19 46 V18 L45 46 V18"
     fill="none"
-    stroke="#FBFAF7"
+    stroke="#F8FAFB"
     stroke-width="7"
     stroke-linecap="butt"
     stroke-linejoin="miter"

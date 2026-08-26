@@ -57,7 +57,8 @@ export default function RootLayout({
      * `suppressHydrationWarning` that only existed to cover next-themes'
      * pre-hydration class write.
      *
-     * The site still has DARK BANDS — the midnight hero and footer. That is a
+     * The site still has DARK BANDS — the navy hero, credentials strip
+     * and footer. That is a
      * SURFACE, not a theme. Foregrounds flip via `.on-dark` scoped to those
      * sections. R2 is explicit that surface-scoped rather than theme-scoped is
      * what prevents the phase-A bug where dark text rendered on a dark hero.

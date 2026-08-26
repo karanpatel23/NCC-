@@ -6,7 +6,7 @@ import { Pause, Play } from "lucide-react"
 import { buildCards, type StreamCard } from "@/lib/corridor-gradients"
 
 /*
- * The image corridor — docs/01-requirements-r4.md §2, replacing R3 §6.1 hero.
+ * The image corridor — R4 §2, with R5 §5 gradients and scrim.
  *
  * Cards travel toward the viewer along Z inside a perspective container.
  *
@@ -104,22 +104,22 @@ export function ImageStreamHero({
       </div>
 
       {/*
-       * Scrim — R4 §2.4 exactly. The eyebrow is the binding constraint, not
-       * the headline: --brass-light needs alpha >= 0.90 to clear AA where
-       * --paper clears at 0.70. Content anchors below the 68% line where the
-       * wash is effectively solid.
+       * Scrim — R5 §5, read from the --hero-scrim token so the stops live in
+       * one place with their measurements. The GOLD EYEBROW binds, not the
+       * headline: against the lightest card (#F4B044) gold needs alpha >= 0.80,
+       * where --paper already clears at 0.60. Content anchors below the 68%
+       * line, where the wash is 0.94 and gold measures 7.52:1.
        *
-       * DO NOT lighten these stops to "show more of the corridor". Measured
-       * against the lightest gradient stop (#D9BE7A), the 96% stop gives
-       * --paper 10.44:1 and --brass-light 6.02:1. At 40% they are 3.38 and
-       * 1.95 — both failing.
+       * Navy being darker than the old midnight is what lets the top stop sit
+       * at 0.35 rather than 0.40 — more corridor is visible than under R4. Do
+       * not lift it further; the eyebrow is what breaks first.
        */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgb(42 52 101 / .40) 0%, rgb(42 52 101 / .70) 42%, rgb(42 52 101 / .96) 68%, var(--color-midnight) 100%)",
+            "var(--hero-scrim)",
         }}
       />
 

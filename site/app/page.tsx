@@ -3,15 +3,16 @@ import { ImageStreamHero } from "@/components/image-stream-hero"
 import { COMPANY, CREDENTIALS } from "@/lib/company"
 
 /*
- * Palette per docs/01-requirements-r4.md §1, which deletes --onyx from R3.
+ * Palette per docs/01-requirements-r5.md §2, which withdraws Brass & Midnight
+ * in full.
  *
- * R4 §2.2 unblocked the corridor by replacing the six-photo gate with
- * deterministic gradients, so the hero is now the real component rather than
- * R3's single-band fallback.
+ * R5 §6 changes the composition: there is no mid-blue surface in this palette,
+ * so the credentials strip is --navy like the hero rather than a separate
+ * band, and the two are separated by a --gold hairline instead. Simpler and
+ * stronger than inventing a fifth colour.
  *
- * R3 §1 caps a page at three dark moments. This page uses exactly three, and
- * they now descend in ONE hue (R4 §1): midnight hero -> indigo credentials
- * strip -> paper body, with the midnight footer closing it.
+ * The corridor still carries the hero (R4 §2.2 unblocked it with gradients;
+ * R5 §5 replaces the gradient set).
  */
 export default function Page() {
   return (
@@ -32,7 +33,7 @@ export default function Page() {
         cards={9}
         speed={22}
         axis={58}
-        className="min-h-[88svh] bg-[color:var(--color-midnight)] pt-28 pb-[clamp(3rem,2rem+4vw,6rem)]"
+        className="min-h-[88svh] bg-[color:var(--color-navy)] pt-28 pb-[clamp(3rem,2rem+4vw,6rem)]"
       >
         <Container>
           <Eyebrow tone="dark">Est. 1987 · Mehsana, Gujarat</Eyebrow>
@@ -44,7 +45,7 @@ export default function Page() {
             Roads, bridges, irrigation and river protection works.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <span className="rounded-[3px] bg-[color:var(--color-brass-light)] px-6 py-3 text-sm font-medium text-[color:var(--color-midnight)]">
+            <span className="rounded-[3px] bg-[color:var(--color-gold)] px-6 py-3 text-sm font-medium text-[color:var(--color-navy)]">
               View projects
             </span>
             <span className="rounded-[3px] border border-[color:var(--color-paper)]/40 px-6 py-3 text-sm font-medium">
@@ -55,22 +56,24 @@ export default function Page() {
       </ImageStreamHero>
 
       {/*
-       * Credentials strip — now --indigo (R4 §1), and now load-bearing.
-       * R4 §3.1: with an abstract hero the corridor "no longer makes an
-       * argument", so this is the first substantive thing on the page.
-       * brass-light numerals are 4.61:1 on indigo. NOTE rule 3: plain --brass
-       * here would be 2.67:1 and is prohibited.
+       * Credentials strip — R5 §6: --navy, not a separate blue. This palette
+       * has no mid-blue surface and inventing one would add a fifth colour, so
+       * the strip is separated from the hero by a --gold hairline instead.
+       *
+       * Still load-bearing: with an abstract hero the corridor "no longer
+       * makes an argument" (R4 §3.1), so this is the first substantive thing
+       * on the page. Gold numerals are 8.35:1 on navy.
        */}
-      <div className="on-dark bg-[color:var(--color-indigo)]">
+      <div className="on-dark border-t-2 border-[color:var(--color-gold)] bg-[color:var(--color-navy)]">
         <Container width="shell">
-          <dl className="grid grid-cols-2 divide-[color:var(--color-paper)]/15 md:grid-cols-4 md:divide-x">
+          <dl className="grid grid-cols-2 divide-[color:var(--color-slate)]/28 md:grid-cols-4 md:divide-x">
             {CREDENTIALS.map((c) => (
               <div key={c.label} className="px-2 py-8 md:px-6">
                 <dt className="text-xs tracking-[0.14em] text-[color:var(--color-paper)]/70 uppercase">
                   {c.label}
                 </dt>
-                {/* brass-light numerals: 4.61:1 on indigo, legal inside .on-dark */}
-                <dd className="measurement mt-2 text-[length:var(--text-lg)] text-[color:var(--color-brass-light)]">
+                {/* --gold numerals: 8.35:1 on navy, legal inside .on-dark */}
+                <dd className="measurement mt-2 text-[length:var(--text-lg)] text-[color:var(--color-gold)]">
                   {c.value}
                 </dd>
               </div>
@@ -83,38 +86,44 @@ export default function Page() {
       <Section>
         <Container>
           <Eyebrow>Km 1.200 · Design tokens</Eyebrow>
-          <h2 className="text-[length:var(--text-2xl)]">Brass &amp; Midnight</h2>
+          <h2 className="text-[length:var(--text-2xl)]">Four colours, four jobs</h2>
           <p className="mt-4 max-w-[62ch] text-[color:var(--color-muted)]">
-            Every published ratio in R3 §1 and R4 §1 was recomputed and matched
-            exactly. The three enforcement rules are the load-bearing part:{" "}
-            <strong className="text-[color:var(--color-brass-deep)]">
-              --brass never carries body text on a light ground
+            R5 §3 gives each colour exactly one job, because four accents
+            competing for the same surfaces looks like a carnival within three
+            pages. The one that earns its keep is{" "}
+            <strong className="text-[color:var(--color-orange-ink)]">
+              orange as status only
             </strong>{" "}
-            (2.99:1),{" "}
-            <strong className="text-[color:var(--color-brass-deep)]">
-              --brass-light never appears on a light ground at all
-            </strong>{" "}
-            (1.73:1), and — new in R4 —{" "}
-            <strong className="text-[color:var(--color-brass-deep)]">
-              --brass never sits on --indigo
-            </strong>{" "}
-            (2.67:1), which was legal back when the deep band was --onyx.
+            — ongoing work glows orange, completed work is gold and navy. That
+            turns a fourth colour from a decoration problem into an information
+            channel, and it is the distinction this site is built around.
+          </p>
+          <p className="mt-4 max-w-[62ch] text-[color:var(--color-muted)]">
+            The rule most likely to be broken:{" "}
+            <strong className="text-[color:var(--color-orange-ink)]">
+              orange buttons take navy text, never white
+            </strong>
+            . White on orange is 3.41:1 and fails; navy on orange is 4.61:1.
           </p>
 
           <ul className="mt-10 grid grid-cols-2 gap-px bg-[color:var(--color-rule)] md:grid-cols-3">
             {[
-              { n: "--indigo", h: "#3B498C", r: "7.99:1 · credentials strip" },
-              { n: "--midnight", h: "#2A3465", r: "hero, footer" },
-              { n: "--rule-strong", h: "#9B9070", r: "3.04:1 — interactive borders" },
-              { n: "--brass", h: "#B08D3F", r: "never on indigo — 2.67:1" },
-              { n: "--brass-deep", h: "#775C29", r: "6.01:1 — text-safe" },
-              { n: "--brass-light", h: "#D9BE7A", r: "on-dark ONLY" },
-              { n: "--paper", h: "#FBFAF7", r: "page ground" },
-              { n: "--cloud", h: "#F2F0EA", r: "cards, panels" },
-              { n: "--sand", h: "#E6E3DA", r: "alternating band" },
+              { n: "--navy", h: "#112532", r: "surface + body text" },
+              { n: "--gold", h: "#F4B044", r: "primary accent · 8.35 on navy" },
+              { n: "--orange", h: "#E0680E", r: "STATUS ONLY · 4.61 on navy" },
+              { n: "--slate", h: "#88A5B7", r: "structural quiet · 6.08" },
+              { n: "--gold-ink", h: "#7A4E05", r: "6.87 on paper — text-safe" },
+              { n: "--orange-ink", h: "#8F3B06", r: "7.17 on paper — text-safe" },
+              { n: "--slate-ink", h: "#3F6076", r: "6.38 on paper — text-safe" },
+              { n: "--paper", h: "#F8FAFB", r: "page ground" },
+              { n: "--mist", h: "#E9EEF1", r: "alternating band, cards" },
             ].map((t) => (
               <li key={t.n} className="bg-[color:var(--color-background)] p-5">
+                {/* data-swatch: this is the colour being DOCUMENTED, not used.
+                    The R5 §3 rule-4 audit skips these, or every token proof
+                    reads as an orange-outside-status violation. */}
                 <span
+                  data-swatch
                   className="block h-14 w-full rounded-[3px] border border-[color:var(--color-rule)]"
                   style={{ backgroundColor: t.h }}
                 />
@@ -128,8 +137,8 @@ export default function Page() {
         </Container>
       </Section>
 
-      {/* Alternating --sand band, per the R3 §1 surface table. */}
-      <Section className="bg-[color:var(--color-sand)]">
+      {/* Alternating --mist band, per the R5 §6 surface table. */}
+      <Section className="bg-[color:var(--color-mist)]">
         <Container>
           <Eyebrow>Km 2.450 · Card ratio</Eyebrow>
           <h2 className="text-[length:var(--text-2xl)]">18:25 everywhere</h2>
@@ -141,7 +150,7 @@ export default function Page() {
           <ul className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
             {["Highways", "Bridges", "Irrigation", "Protection"].map((s) => (
               <li key={s}>
-                <div className="aspect-[18/25] rounded-[3px] border border-[color:var(--color-rule)] bg-[color:var(--color-cloud)]" />
+                <div className="aspect-[18/25] rounded-[3px] border border-[color:var(--color-rule)] bg-[color:var(--color-mist)]" />
                 <p className="mt-3 text-sm">{s}</p>
                 <p className="measurement text-xs text-[color:var(--color-muted)]">
                   awaiting photography

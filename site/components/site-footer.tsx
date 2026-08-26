@@ -15,12 +15,12 @@ import { COMPANY, OFFICES } from "@/lib/company"
  */
 export function SiteFooter() {
   return (
-    <footer className="mt-auto on-dark bg-[color:var(--color-midnight)]">
+    <footer className="mt-auto on-dark bg-[color:var(--color-navy)]">
       <Container width="shell" className="py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="font-[family-name:var(--font-archivo)] text-lg font-extrabold">
-              NCC<span className="text-[color:var(--color-brass-light)]">.</span>
+              NCC<span className="text-[color:var(--color-gold)]">.</span>
             </p>
             <p className="mt-3 max-w-[28ch] text-sm text-[color:var(--color-paper)]/65">
               {COMPANY.positioning}
@@ -28,7 +28,7 @@ export function SiteFooter() {
           </div>
 
           <nav aria-label="Footer">
-            <h2 className="measurement text-xs tracking-[0.14em] text-[color:var(--color-brass-light)] uppercase">
+            <h2 className="measurement text-xs tracking-[0.14em] text-[color:var(--color-gold)] uppercase">
               Site
             </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -36,7 +36,7 @@ export function SiteFooter() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[color:var(--color-paper)]/80 transition-colors hover:text-[color:var(--color-brass-light)]"
+                    className="text-[color:var(--color-paper)]/80 transition-colors hover:text-[color:var(--color-gold)]"
                   >
                     {item.label}
                   </Link>
@@ -47,7 +47,7 @@ export function SiteFooter() {
 
           {OFFICES.map((office) => (
             <address key={office.label} className="text-sm not-italic">
-              <h2 className="measurement text-xs tracking-[0.14em] text-[color:var(--color-brass-light)] uppercase">
+              <h2 className="measurement text-xs tracking-[0.14em] text-[color:var(--color-gold)] uppercase">
                 {office.label}
               </h2>
               <p className="mt-4 text-[color:var(--color-paper)]/65">
@@ -55,7 +55,7 @@ export function SiteFooter() {
               </p>
               {office.phone && (
                 <a
-                  className="measurement mt-2 block transition-colors hover:text-[color:var(--color-brass-light)]"
+                  className="measurement mt-2 block transition-colors hover:text-[color:var(--color-gold)]"
                   href={`tel:${office.phone.replace(/\s/g, "")}`}
                 >
                   {office.phone}
@@ -63,7 +63,7 @@ export function SiteFooter() {
               )}
               {office.email && (
                 <a
-                  className="mt-1 block transition-colors hover:text-[color:var(--color-brass-light)]"
+                  className="mt-1 block transition-colors hover:text-[color:var(--color-gold)]"
                   href={`mailto:${office.email}`}
                 >
                   {office.email}

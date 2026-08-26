@@ -47,16 +47,16 @@ export function Section({
  * "INFRASPACE PVT. LTD." line is set in widely letterspaced caps, so making
  * that the sitewide eyebrow is what makes the site and the printed stationery
  * visibly belong to each other. Spec: IBM Plex Sans 500, 11px, 0.18em,
- * uppercase, --brass-deep.
+ * uppercase. R5 moves the colour to --gold-ink on light / --gold on dark.
  *
  * NOTE this is Plex SANS, not Plex Mono — it replaces the mono treatment used
  * in phase A. Mono remains correct for measurements in body content (main
  * brief §4.2); the eyebrow is chrome, not a measurement, even when it happens
  * to carry a chainage value.
  *
- * tone="dark" switches to --brass-light, legal ONLY on a dark ground (1.73:1
- * on paper vs 6.52:1 on midnight — enforcement rule 2). On light ground the
- * eyebrow uses --brass-deep at 6.01:1, never --brass itself, which is 2.99:1.
+ * tone="dark" switches to --gold, legal ONLY on a dark ground (1.80:1 on
+ * paper vs 8.35:1 on navy — R5 §3 rule 1). On light ground the eyebrow uses
+ * --gold-ink at 6.87:1, never --gold itself.
  */
 export function Eyebrow({
   children,
@@ -67,8 +67,8 @@ export function Eyebrow({
 }) {
   const color =
     tone === "dark"
-      ? "text-[color:var(--color-brass-light)]"
-      : "text-[color:var(--color-brass-deep)]"
+      ? "text-[color:var(--color-gold)]"
+      : "text-[color:var(--color-gold-ink)]"
   return (
     <p
       className={`mb-4 font-[family-name:var(--font-plex-sans)] text-[11px] font-medium tracking-[0.18em] uppercase ${color}`}

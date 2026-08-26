@@ -26,7 +26,7 @@ truth about what currently exists.
 | | Deliverable | Status |
 |---|---|---|
 | A | Scaffold, design tokens, fonts, layout primitives, header/footer | ✅ Complete |
-| B | Sanity project, schemas, Studio at `/studio`, seed projects | ⬜ Next |
+| B | **No CMS (R6).** `content/` tree, Zod schemas, loader, `content:check` | 🔄 Built; seeding blocked |
 | C | Static homepage + corridor's static poster (not the animation) | ⬜ |
 | D | Projects index + detail template + milestone timeline | ⬜ |
 | D.5 | **Image corridor** — added by R3 §4, unblocked by R4 §2.2 | ✅ Built (gradients) |
@@ -39,25 +39,44 @@ truth about what currently exists.
 |---|---|---|
 | `docs/01-requirements.md` | the main brief | §4.1 "Signboard" — **superseded** |
 | `docs/01-requirements-r2.md` | light-only, brand assets, Nataraja rules | §2 "Brass & Indigo" — **superseded** |
-| `docs/01-requirements-r3.md` | replaces main §4.1 palette and §6.1 hero | §1 "Brass & Midnight" — **live** |
-| `docs/01-requirements-r4.md` | **deletes `--onyx`**; corridor on gradients | §1 amendment — **live** |
+| `docs/01-requirements-r3.md` | replaces main §4.1 palette and §6.1 hero | §1 "Brass & Midnight" — **superseded** |
+| `docs/01-requirements-r4.md` | deletes `--onyx`; corridor on gradients | §1 amendment — **superseded** |
+| `docs/01-requirements-r5.md` | **the live palette**; corridor gradients + scrim | §2 four-colour — **LIVE** |
+| `docs/01-requirements-r6.md` | **no CMS** — typed MDX in `content/`, Zod at build | — |
 
 **R2 arrived after R3 and R4 were built.** Its §2 palette is two revisions stale and was deliberately
 NOT applied. Everything else in R2 — dark-mode removal, the eyebrow treatment, the brand-asset and
 favicon spec, and the Nataraja rules — is live. `--indigo` `#3B498C` is the one value identical across
 every revision.
 
-The live palette is **"Brass & Midnight"**. `--onyx` no longer exists — one dark hue only, descending
-midnight → indigo → paper. **Three** enforcement rules, repeated in `globals.css` so they survive:
-- `--brass` (`#B08D3F`) never carries body text on a light ground — 2.99:1.
-- `--brass-light` (`#D9BE7A`) never appears on a light ground at all — 1.73:1; legal only in `.on-dark`.
-- `--brass` never sits on `--indigo` — 2.67:1. **New in R4 and the easiest to break by accident,**
-  because it was legal (5.21:1) while the deep band was `--onyx`.
+The live palette is **R5's four colours**: `--navy` `#112532` · `--gold` `#F4B044` · `--orange`
+`#E0680E` · `--slate` `#88A5B7`, plus derived `-ink` variants and a cool ground family. Brass &
+Midnight is withdrawn; those tokens are gone and **not aliased**, so stragglers fail loudly.
+
+**Four** enforcement rules, in `globals.css` and the audit script:
+1. `--gold` / `--orange` / `--slate` never carry text on `--paper` or `--mist` (1.80 / 3.26 / 2.47).
+   Use the `-ink` variants.
+2. `--gold-ink` / `--orange-ink` / `--slate-ink` never appear on `--navy` (2.19 / 2.10 / 2.36).
+3. **Orange buttons take `--navy` text, NEVER white.** White on orange is 3.41 and fails; navy is
+   4.61. R5 §1 calls this the likeliest bug in the palette — white-on-orange looks fine at full size
+   and is what everyone reaches for.
+4. `--orange` is **status only** — ongoing pills, live progress, "in progress" milestones, the
+   `as of` stamp. Never decoration, CTAs or section headers. That single meaning is what turns a
+   fourth colour into an information channel.
 
 ### Two constraints that will get "tidied away" — don't
 - **Hero copy must stay below the 68% scrim line.** Above it the `--brass-light` eyebrow fails AA.
 - **The corridor is exempt from the global reduced-motion reset.** Without the exemption the blanket
   `animation-duration: 0.01ms` collapses every card onto the axis. It must *pause*, not disable.
+
+### Content is typed MDX in `content/`, not a CMS (R6)
+No Sanity, no Studio, no API keys. `lib/content/schema.ts` is the enforcement layer and
+`lib/content/load.ts` uses `.parse()`, not `safeParse` — a malformed project **fails the build**
+rather than rendering half a card. Do not "improve" that by catching and skipping; skipping is how
+`Lorem ipsum` reaches production. `npm run content:check` reports everything at once and exits 1.
+
+Verified: a deliberately broken project is rejected on all six rules and the loader throws. What is
+**not** done is seeding three real projects — that needs real project data, now the critical path.
 
 ### The Nataraja is a religious icon, not a graphic element (R2 §4)
 **Non-negotiable.** Never rotate, distort, recolour outside its own brass range, animate, use as a
