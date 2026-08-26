@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="NCC Infraspace">
+  <!--
+    R2 §4 favicon spec: N monogram, --paper on --indigo, square, NO radius.
+
+    The Nataraja explicitly CANNOT be the favicon — at 16px and 32px its detail
+    (the arch of flames, the individual arms) becomes noise. R2 §4 is direct
+    about this. The monogram carries the mark at small sizes; the statue only
+    appears in the full lockup.
+
+    Colours are R4 tokens, which supersede R2 §2. --indigo #3B498C is identical
+    in both, so there is no conflict here; --paper is R4's #FBFAF7.
+
+    Square with no radius, per R2 and the sitewide "infrastructure isn't soft"
+    rule. The only rounded thing on this site is the map pin.
+  -->
+  <rect width="64" height="64" fill="#3B498C"/>
+  <path
+    d="M19 46 V18 L45 46 V18"
+    fill="none"
+    stroke="#FBFAF7"
+    stroke-width="7"
+    stroke-linecap="butt"
+    stroke-linejoin="miter"
+  />
+</svg>

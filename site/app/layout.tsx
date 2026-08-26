@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { Archivo, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 
@@ -52,17 +51,25 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
+    /*
+     * R2 §1: dark mode is REMOVED, not defaulted to light. next-themes, the
+     * ThemeProvider and the theme toggle are all deleted, and with them the
+     * `suppressHydrationWarning` that only existed to cover next-themes'
+     * pre-hydration class write.
+     *
+     * The site still has DARK BANDS — the midnight hero and footer. That is a
+     * SURFACE, not a theme. Foregrounds flip via `.on-dark` scoped to those
+     * sections. R2 is explicit that surface-scoped rather than theme-scoped is
+     * what prevents the phase-A bug where dark text rendered on a dark hero.
+     */
     <html
       lang="en"
-      suppressHydrationWarning
       className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable}`}
     >
       <body className="flex min-h-dvh flex-col">
-        <ThemeProvider>
-          <SiteHeader />
-          <main className="flex-1">{children}</main>
-          <SiteFooter />
-        </ThemeProvider>
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
       </body>
     </html>
   )

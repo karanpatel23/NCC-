@@ -35,15 +35,17 @@ truth about what currently exists.
 | G–H | Remaining pages · SEO, JSON-LD, a11y, Lighthouse | ⬜ |
 
 ### Requirements are layered — read all of them, latest wins
-| File | Carries |
-|---|---|
-| `docs/01-requirements.md` | the main brief |
-| `docs/01-requirements-r3.md` | replaces main §4.1 palette and §6.1 hero |
-| `docs/01-requirements-r4.md` | **deletes `--onyx`**; corridor ships on gradients |
+| File | Carries | Palette status |
+|---|---|---|
+| `docs/01-requirements.md` | the main brief | §4.1 "Signboard" — **superseded** |
+| `docs/01-requirements-r2.md` | light-only, brand assets, Nataraja rules | §2 "Brass & Indigo" — **superseded** |
+| `docs/01-requirements-r3.md` | replaces main §4.1 palette and §6.1 hero | §1 "Brass & Midnight" — **live** |
+| `docs/01-requirements-r4.md` | **deletes `--onyx`**; corridor on gradients | §1 amendment — **live** |
 
-**R2 is missing and cannot be reconstructed.** R4 §4 asks for it. Its content has never been supplied,
-so the favicon/icon-set spec, the logo vector requirement, and the Nataraja handling rules are
-unrecorded anywhere. Paste R2 and it gets committed verbatim; do not invent it.
+**R2 arrived after R3 and R4 were built.** Its §2 palette is two revisions stale and was deliberately
+NOT applied. Everything else in R2 — dark-mode removal, the eyebrow treatment, the brand-asset and
+favicon spec, and the Nataraja rules — is live. `--indigo` `#3B498C` is the one value identical across
+every revision.
 
 The live palette is **"Brass & Midnight"**. `--onyx` no longer exists — one dark hue only, descending
 midnight → indigo → paper. **Three** enforcement rules, repeated in `globals.css` so they survive:
@@ -57,14 +59,23 @@ midnight → indigo → paper. **Three** enforcement rules, repeated in `globals
 - **The corridor is exempt from the global reduced-motion reset.** Without the exemption the blanket
   `animation-duration: 0.01ms` collapses every card onto the axis. It must *pause*, not disable.
 
+### The Nataraja is a religious icon, not a graphic element (R2 §4)
+**Non-negotiable.** Never rotate, distort, recolour outside its own brass range, animate, use as a
+loading spinner, crop it partially, or place it as a decorative background watermark. It appears in
+the logo lockup, at full figure, with clear space equal to the height of the "N", and nowhere else.
+Getting this wrong reads as disrespectful to exactly the regional audience the site is for.
+
+Consequences already in force: the statue **cannot** be the favicon (detail becomes noise at 16px —
+the `N` monogram carries small sizes instead), and `icon-512.png` is not attempted until the logo
+vector exists, because a bad autotrace of the flame arch and the arms is worse than no asset.
+
 ### The gradient hero is INTERIM
 R4 §3: swap to real project photography before launch. An abstract hero on a road contractor's site
 is "a placeholder that looks finished" — the same way the competitor's Lorem ipsum shipped and stayed.
 
 ### Where the rebuild lives
-**`next-app/`, not `site/`.** The directory contract below names `site/`; the owner scaffolded
-`next-app/` instead and that is the real application. `site/` is a stale empty placeholder — delete
-it or rename `next-app/` to match, but do not create a second app.
+**`site/`** — matching the directory contract below. The app was scaffolded as `next-app/` and was
+renamed per R2 §6; the empty `site/` placeholder is gone. There is one app, at `site/`.
 
 ### Hard rules that still apply
 - **Never invent project content.** `docs/01-requirements.md` §11 items 1–4 are outstanding, so
@@ -83,7 +94,7 @@ it or rename `next-app/` to match, but do not create a second app.
   `forensics/out/`. Do not delete `forensics/out/` to "clean up" — it is the only record
   of a site that cannot be read without a browser.
 - `docs/` — analysis and specifications. Append and revise freely.
-- `site/` — the rebuild. Empty until phase 4.
+- `site/` — the rebuild. Next.js 16 + TypeScript + Tailwind v4. Live since phase A.
 
 ## Critical technical context
 

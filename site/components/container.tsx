@@ -41,13 +41,22 @@ export function Section({
 }
 
 /*
- * Eyebrow label. §4.2 permits all-caps only here and in the chainage rail.
- * Set in mono because these read as document references, not prose.
+ * Eyebrow label — R2 §3.
  *
- * tone="dark" switches to --brass-light, which is legal ONLY on a dark ground
- * (1.73:1 on paper vs 8.98:1 on onyx — R3 §1 enforcement rule 2). On light
- * ground the eyebrow uses --brass-deep, the text-safe brass at 6.01:1, rather
- * than --brass itself, which is 2.99:1 and fails.
+ * The treatment is lifted straight off the letterhead: the logo's
+ * "INFRASPACE PVT. LTD." line is set in widely letterspaced caps, so making
+ * that the sitewide eyebrow is what makes the site and the printed stationery
+ * visibly belong to each other. Spec: IBM Plex Sans 500, 11px, 0.18em,
+ * uppercase, --brass-deep.
+ *
+ * NOTE this is Plex SANS, not Plex Mono — it replaces the mono treatment used
+ * in phase A. Mono remains correct for measurements in body content (main
+ * brief §4.2); the eyebrow is chrome, not a measurement, even when it happens
+ * to carry a chainage value.
+ *
+ * tone="dark" switches to --brass-light, legal ONLY on a dark ground (1.73:1
+ * on paper vs 6.52:1 on midnight — enforcement rule 2). On light ground the
+ * eyebrow uses --brass-deep at 6.01:1, never --brass itself, which is 2.99:1.
  */
 export function Eyebrow({
   children,
@@ -61,7 +70,9 @@ export function Eyebrow({
       ? "text-[color:var(--color-brass-light)]"
       : "text-[color:var(--color-brass-deep)]"
   return (
-    <p className={`measurement mb-4 text-xs tracking-[0.14em] uppercase ${color}`}>
+    <p
+      className={`mb-4 font-[family-name:var(--font-plex-sans)] text-[11px] font-medium tracking-[0.18em] uppercase ${color}`}
+    >
       {children}
     </p>
   )

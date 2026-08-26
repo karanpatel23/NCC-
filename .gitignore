@@ -70,9 +70,9 @@ Thumbs.db
 tmp/
 scratch/
 
-# Next.js app (next-app/)
-/next-app/node_modules/
-/next-app/.next/
-/next-app/out/
-/next-app/next-env.d.ts
-/next-app/.vercel/
+# Next.js app (site/)
+/site/node_modules/
+/site/.next/
+/site/out/
+/site/next-env.d.ts
+/site/.vercel/

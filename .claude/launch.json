@@ -4,7 +4,7 @@
     {
       "name": "ncc-site",
       "runtimeExecutable": "npm",
-      "runtimeArgs": ["--prefix", "next-app", "run", "dev"],
+      "runtimeArgs": ["--prefix", "site", "run", "dev"],
       "port": 3000
     }
   ]
