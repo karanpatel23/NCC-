@@ -13,7 +13,23 @@
 export const COMPANY = {
   legalName: "NCC Infraspace Private Limited",
   tradingName: "NCC Infraspace",
-  /* §3 positioning line — draft, flagged there for refinement with the client. */
+  /*
+   * The client's own motto. Replaces the "Building Gujarat's roads and
+   * bridges since 1987" line, which was always flagged in main brief §3 as a
+   * draft for refinement with the client.
+   *
+   * NOTE what the swap costs. §3's whole argument for the old line was that
+   * it stated a checkable fact — 1987, Class AA, Gujarat — where both
+   * competitors lead with unverifiable promises ("Creating infrastructure
+   * that endures", "Pioneering Construction for a Modern World"). A motto is
+   * the same species as those. So the facts do not disappear: they move to
+   * the hero eyebrow, which now reads "Est. 1987 · Class AA · Mehsana,
+   * Gujarat" directly above the motto, and to the credentials strip below.
+   * The motto leads; the evidence sits immediately under it.
+   */
+  motto: "Every milestone is our vision.",
+  /* Kept for the meta description and SEO, where the checkable facts still
+   * do the work — §9 targets "road contractor Gujarat", not the motto. */
   positioning: "Building Gujarat's roads and bridges since 1987.",
   cin: "U45200GJ2015PTC082845",
   foundedYear: 1987,

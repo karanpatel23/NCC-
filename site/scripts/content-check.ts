@@ -28,10 +28,14 @@ function main() {
     process.exit(0)
   }
 
-  const slugs = fs
+  const all = fs
     .readdirSync(ROOT, { withFileTypes: true })
     .filter((e) => e.isDirectory())
     .map((e) => e.name)
+  /* `_`-prefixed directories are drafts: skipped by the build, still reported
+   * here so an incomplete project cannot be quietly forgotten. */
+  const slugs = all.filter((s) => !s.startsWith("_"))
+  const drafts = all.filter((s) => s.startsWith("_"))
 
   if (slugs.length === 0) {
     console.log("content/projects/ is empty — nothing to check.")
@@ -75,6 +79,24 @@ function main() {
   }
 
   console.log(`\ncontent:check — ${slugs.length} project(s)\n`)
+
+  if (drafts.length) {
+    console.log(`  ${drafts.length} draft(s), skipped by the build:`)
+    for (const d of drafts) {
+      const f = path.join(ROOT, d, "index.mdx")
+      let missing = "—"
+      if (fs.existsSync(f)) {
+        const r = Project.safeParse(matter(fs.readFileSync(f, "utf8")).data)
+        if (!r.success) {
+          missing = [...new Set(r.error.issues.map((i) => i.path.join(".") || "-"))].join(", ")
+        } else {
+          missing = "valid — rename to publish"
+        }
+      }
+      console.log(`    · ${d.replace(/^_/, "")}  needs: ${missing}`)
+    }
+    console.log()
+  }
 
   if (problems.length === 0) {
     console.log(`  ✓ all ${ok} valid\n`)

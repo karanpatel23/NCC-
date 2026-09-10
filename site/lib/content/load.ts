@@ -24,11 +24,23 @@ export type LoadedProject = ProjectData & {
   body: string
 }
 
+/*
+ * A directory prefixed with `_` is a DRAFT and is skipped by the loader and
+ * the build.
+ *
+ * This is not a loophole in R6 §3. The rule is that invalid content cannot
+ * ship, and it still cannot: a draft is opted out explicitly, the underscore
+ * is visible in the directory name and in every diff, and `content:check`
+ * lists drafts separately with the fields they are still missing, so nothing
+ * quietly disappears. What it prevents is the opposite failure — a
+ * half-gathered project blocking every deploy until the last field arrives,
+ * which is the pressure that makes people invent values.
+ */
 function readDirSafe(dir: string): string[] {
   if (!fs.existsSync(dir)) return []
   return fs
     .readdirSync(dir, { withFileTypes: true })
-    .filter((e) => e.isDirectory())
+    .filter((e) => e.isDirectory() && !e.name.startsWith("_"))
     .map((e) => e.name)
 }
 

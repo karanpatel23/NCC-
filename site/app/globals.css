@@ -163,6 +163,24 @@ h4 {
   --color-border: rgb(124 135 156 / 0.35); /* --slate-light hairline on navy */
 }
 
+/* Reel fade — the list dissolves at both ends rather than clipping hard. */
+.reel-mask {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 24%,
+    black 76%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 24%,
+    black 76%,
+    transparent 100%
+  );
+}
+
 .measurement,
 [data-measurement] {
   font-family: var(--font-mono);

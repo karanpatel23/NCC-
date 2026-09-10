@@ -1,6 +1,7 @@
 import { Container, Section, Eyebrow } from "@/components/container"
-import { ImageStreamHero } from "@/components/image-stream-hero"
+import { ProjectReelHero, type ReelProject } from "@/components/project-reel-hero"
 import { COMPANY, CREDENTIALS } from "@/lib/company"
+import { loadProjects } from "@/lib/content/load"
 
 /*
  * FINAL palette — docs/01-requirements-r7.md. Five colours, closed by the
@@ -14,45 +15,41 @@ import { COMPANY, CREDENTIALS } from "@/lib/company"
  * five. Photography swap is still pre-launch.
  */
 export default function Page() {
+  /*
+   * Real project records drive the reel. loadProjects() throws on invalid
+   * content by design (R6 §3), so this is also the point where the homepage
+   * starts depending on the schema — a malformed project now fails the build
+   * rather than only failing content:check.
+   */
+  const reel: ReelProject[] = loadProjects().map((p) => ({
+    slug: p.slug,
+    title: p.title,
+    client: p.client,
+    valueCr: p.contractValueCr,
+    chainage: p.chainageFrom && p.chainageTo ? `${p.chainageFrom}–${p.chainageTo}` : undefined,
+    district: p.district,
+  }))
+
   return (
     <>
       {/*
-       * Hero — the image corridor, R4 §2. Now built: R4 §2.2 replaces the
-       * six-photo gate with deterministic gradients, so phase D.5 is unblocked.
+       * Hero — the project reel. Adapted from the 21st.dev
+       * scroll-locked-video-hero; see components/project-reel-hero.tsx for
+       * what was kept and what was stripped, and why.
        *
-       * INTERIM. R4 §3 is blunt that this "no longer makes an argument" — a
-       * stream of real project work IS the credibility claim, and gradients
-       * say nothing about NCC. Swap to photography before launch; see
-       * lib/corridor-gradients.ts.
+       * Fed from content/, so the reel shows real projects with real client
+       * names and real contract values. Falls back to no reel if none
+       * validate, rather than inventing rows.
        *
-       * Copy sits below the 70% scrim line (justify-end + the hero's own
-       * padding). Above it the eyebrow fails AA. See globals.css --hero-scrim.
+       * The corridor (R3 §2 / R4 §2) is superseded here as the homepage hero.
+       * It still exists in components/image-stream-hero.tsx and can carry a
+       * different page.
        */}
-      <ImageStreamHero
-        cards={9}
-        speed={22}
-        axis={58}
-        className="min-h-[88svh] bg-[color:var(--color-navy)] pt-28 pb-[clamp(3rem,2rem+4vw,6rem)]"
-      >
-        <Container>
-          <Eyebrow tone="dark">Est. 1987 · Mehsana, Gujarat</Eyebrow>
-          <h1 className="max-w-[16ch] text-[length:var(--text-4xl)]">
-            {COMPANY.positioning}
-          </h1>
-          <p className="mt-6 max-w-[52ch] text-[color:var(--color-white)]/80">
-            Class AA contractor registered with the Government of Gujarat.
-            Roads, bridges, irrigation and river protection works.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <span className="rounded-[3px] bg-[color:var(--color-copper-deep)] px-6 py-3 text-sm font-medium text-[color:var(--color-white)]">
-              View projects
-            </span>
-            <span className="rounded-[3px] border border-[color:var(--color-white)]/40 px-6 py-3 text-sm font-medium">
-              Company profile PDF
-            </span>
-          </div>
-        </Container>
-      </ImageStreamHero>
+      <ProjectReelHero
+        motto={COMPANY.motto}
+        strapline="Class AA contractor registered with the Government of Gujarat. Roads, bridges, irrigation and river protection works since 1987."
+        projects={reel}
+      />
 
       {/*
        * Credentials strip — --navy like the hero, separated by a --copper
