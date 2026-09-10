@@ -6,11 +6,14 @@ import { DISPLAY_FAMILY } from "@/lib/fonts"
 /*
  * The homepage hero — GlyphPortal, skinned to R7 and NCC's content.
  *
- * WORD: "MILESTONE".
- * Not decorative wordplay. A milestone is a physical roadside marker — the
- * object a road contractor literally installs — and it is the noun in the
- * client's own motto, "Every milestone is our vision". The camera flies
- * through its O, so the word is both the subject and the doorway.
+ * WORD: the whole slogan, "EVERY MILESTONE IS OUR VISION", with the camera
+ * flying through the O of MILESTONE.
+ *
+ * A milestone is a physical roadside marker — the object a road contractor
+ * installs — so the letter you enter through is also the subject of the
+ * sentence. Twenty-nine characters on one line means the type sets much
+ * smaller than a single word would; the trade is that the visitor reads the
+ * whole claim before the camera moves, rather than one noun out of context.
  *
  * NO PHOTOGRAPHY OR VIDEO, per the owner's instruction. The field behind the
  * letters is a token gradient. Worth recording that this reverses R4 §3,
@@ -36,15 +39,19 @@ const CREDENTIALS = [
   { label: "Credit rating", value: "Crisil BBB-/Stable · A3" },
 ]
 
-export function MilestonePortalHero({ motto }: { motto: string }) {
+/*
+ * The slogan IS the type now, so the motto is no longer passed in — it is the
+ * `word` below. Kept as a named export with no props so page.tsx stays simple.
+ */
+export function MilestonePortalHero() {
   return (
     <>
       <style>{`
-        [data-ncc-portal] [data-gp-caption] {
+        .ncc-portal [data-gp-caption] {
           font-family: var(--font-plex-sans), sans-serif;
           letter-spacing: 0.02em;
         }
-        [data-ncc-portal] [data-gp-enter] {
+        .ncc-portal [data-gp-enter] {
           border: 1px solid var(--color-copper);
           border-radius: 3px;
           padding: 0 20px;
@@ -54,8 +61,8 @@ export function MilestonePortalHero({ motto }: { motto: string }) {
           font-weight: 500;
           transition: opacity 0.18s;
         }
-        [data-ncc-portal] [data-gp-enter]:hover { opacity: 0.9; }
-        [data-ncc-portal] [data-gp-hint] {
+        .ncc-portal [data-gp-enter]:hover { opacity: 0.9; }
+        .ncc-portal [data-gp-hint] {
           font-family: var(--font-plex-sans), sans-serif;
           color: var(--color-slate-ink);
         }
@@ -128,16 +135,24 @@ export function MilestonePortalHero({ motto }: { motto: string }) {
       `}</style>
 
       <GlyphPortal
-        word="MILESTONE"
-        /* Fly through the O — the widest interior in the word, and the one a
-         * viewer reads as an opening. Without this the component picks the
-         * largest patch of ink, which is not always the O. */
+        word="EVERY MILESTONE IS OUR VISION"
+        /*
+         * The whole slogan is the type, and the camera flies through one
+         * letter of it — the O of MILESTONE.
+         *
+         * focusChar takes the FIRST match, and the first O in this string is
+         * MILESTONE's. That is the one worth entering: the milestone is the
+         * subject, and the other two Os sit in "OUR" and "VISION", which are
+         * grammar rather than substance. Spaces carry no ink, so the
+         * component's own scan skips them and their letter-buttons disable
+         * themselves.
+         */
         focusChar="O"
         fontFamily={DISPLAY_FAMILY}
         fontWeight={900}
         scrollLength={2.6}
         enterLabel="See our credentials"
-        className="[&]:!font-[family-name:var(--font-plex-sans)]"
+        className="ncc-portal"
         style={{
           /* R7. The component's green defaults are fully replaced. */
           "--gp-paper": "var(--color-white)",
@@ -164,7 +179,9 @@ export function MilestonePortalHero({ motto }: { motto: string }) {
         front={
           <>
             <p data-ncc-eyebrow>Est. 1987 · Class AA · Mehsana, Gujarat</p>
-            <p data-ncc-motto>{motto}</p>
+            <p data-ncc-motto>
+              Roads, bridges, irrigation and river protection works in Gujarat.
+            </p>
           </>
         }
       >

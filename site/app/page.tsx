@@ -28,7 +28,7 @@ export default function Page() {
        * The reel and the corridor both still exist as components and can
        * carry other pages.
        */}
-      <MilestonePortalHero motto={COMPANY.motto} />
+      <MilestonePortalHero />
 
       {/* Token proof — swatches carry the role each colour is legal in. */}
       <Section>
