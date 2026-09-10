@@ -41,33 +41,40 @@ truth about what currently exists.
 | `docs/01-requirements-r2.md` | light-only, brand assets, Nataraja rules | §2 "Brass & Indigo" — **superseded** |
 | `docs/01-requirements-r3.md` | replaces main §4.1 palette and §6.1 hero | §1 "Brass & Midnight" — **superseded** |
 | `docs/01-requirements-r4.md` | deletes `--onyx`; corridor on gradients | §1 amendment — **superseded** |
-| `docs/01-requirements-r5.md` | **the live palette**; corridor gradients + scrim | §2 four-colour — **LIVE** |
+| `docs/01-requirements-r5.md` | corridor gradients + scrim | §2 four-colour — **superseded** |
 | `docs/01-requirements-r6.md` | **no CMS** — typed MDX in `content/`, Zod at build | — |
+| `docs/01-requirements-r7.md` | **THE LIVE PALETTE**, closed by the owner | §1 five-colour — **LIVE** |
 
 **R2 arrived after R3 and R4 were built.** Its §2 palette is two revisions stale and was deliberately
 NOT applied. Everything else in R2 — dark-mode removal, the eyebrow treatment, the brand-asset and
 favicon spec, and the Nataraja rules — is live. `--indigo` `#3B498C` is the one value identical across
 every revision.
 
-The live palette is **R5's four colours**: `--navy` `#112532` · `--gold` `#F4B044` · `--orange`
-`#E0680E` · `--slate` `#88A5B7`, plus derived `-ink` variants and a cool ground family. Brass &
-Midnight is withdrawn; those tokens are gone and **not aliased**, so stragglers fail loudly.
+The live palette is **R7's five colours**, closed by the owner: `--navy` `#18202F` · `--slate`
+`#68748A` · `--mist` `#DCE1E6` · `--white` `#FAF7F2` · `--copper` `#B8734F`, plus derived `-ink`,
+`-light` and `-deep` variants. Every earlier palette is withdrawn and **not aliased**, so stragglers
+fail loudly. The backbone is strong — navy on white is 15.28:1 both ways.
 
-**Four** enforcement rules, in `globals.css` and the audit script:
-1. `--gold` / `--orange` / `--slate` never carry text on `--paper` or `--mist` (1.80 / 3.26 / 2.47).
-   Use the `-ink` variants.
-2. `--gold-ink` / `--orange-ink` / `--slate-ink` never appear on `--navy` (2.19 / 2.10 / 2.36).
-3. **Orange buttons take `--navy` text, NEVER white.** White on orange is 3.41 and fails; navy is
-   4.61. R5 §1 calls this the likeliest bug in the palette — white-on-orange looks fine at full size
-   and is what everyone reaches for.
-4. `--orange` is **status only** — ongoing pills, live progress, "in progress" milestones, the
-   `as of` stamp. Never decoration, CTAs or section headers. That single meaning is what turns a
-   fourth colour into an information channel.
+**Four** enforcement rules, in `globals.css`:
+1. `--slate` and `--copper` never carry body text on ANY ground (slate 4.41/3.58/3.46, copper
+   3.51/2.85/4.36 — six of six below AA). Use `-ink` on light, `-light` on dark.
+2. **No text colour passes AA on raw `--copper`** — white 3.75, warm white 3.51, navy 4.36. A filled
+   copper button uses `--copper-deep` with a `--white` label (4.51). Likeliest bug in the palette,
+   because copper reads as an obvious button fill.
+3. `--mist` is a **surface, never an interactive border** — 1.23:1. Use `--rule-strong`.
+4. `--copper` is the **active-state accent**: CTAs, hover/focus, current step, live status. Not
+   decoration, not headings.
 
-### Two constraints that will get "tidied away" — don't
-- **Hero copy must stay below the 68% scrim line.** Above it the `--brass-light` eyebrow fails AA.
+### Three constraints that will get "tidied away" — don't
 - **The corridor is exempt from the global reduced-motion reset.** Without the exemption the blanket
   `animation-duration: 0.01ms` collapses every card onto the axis. It must *pause*, not disable.
+  It has survived four palette migrations; do not sweep it up in a fifth.
+- **`lib/fonts.ts` exports the PRIMARY family only.** next/font returns
+  `Archivo, "Archivo Fallback"`, and the fallback never loads as a webfont. GlyphPortal decides
+  whether to animate with `available.length < families.length`, so handing it the pair silently
+  disables the entire hero effect with no error anywhere.
+- **Never state a derived number twice on one page.** A hardcoded "thirty-eight years" heading
+  already shipped next to a computed "39". Derive it once.
 
 ### Routes and where content renders
 `/` · `/projects` · `/projects/ongoing` · `/projects/completed` · `/projects/[slug]`
@@ -104,9 +111,15 @@ Consequences already in force: the statue **cannot** be the favicon (detail beco
 the `N` monogram carries small sizes instead), and `icon-512.png` is not attempted until the logo
 vector exists, because a bad autotrace of the flame arch and the arms is worse than no asset.
 
-### The gradient hero is INTERIM
-R4 §3: swap to real project photography before launch. An abstract hero on a road contractor's site
-is "a placeholder that looks finished" — the same way the competitor's Lorem ipsum shipped and stayed.
+### The hero is the MILESTONE glyph portal — and photography is OUT by instruction
+`components/milestone-portal-hero.tsx` wraps `components/ui/glyph-portal.tsx` (MIT, keep the notice).
+The full slogan is the type; the camera flies through the O of MILESTONE. The owner has ruled out
+photography and video in the hero, which **reverses R4 §3** — so the credentials are the content you
+arrive inside the letter, and that is where the evidence now lands. Do not reintroduce a photo hero
+without checking that decision.
+
+The corridor (`image-stream-hero.tsx`) and the project reel (`project-reel-hero.tsx`) both still
+exist and can carry other pages.
 
 ### Where the rebuild lives
 **`site/`** — matching the directory contract below. The app was scaffolded as `next-app/` and was
