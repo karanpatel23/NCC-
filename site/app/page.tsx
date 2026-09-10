@@ -1,7 +1,6 @@
 import { Container, Section, Eyebrow } from "@/components/container"
-import { ProjectReelHero, type ReelProject } from "@/components/project-reel-hero"
+import { MilestonePortalHero } from "@/components/milestone-portal-hero"
 import { COMPANY, CREDENTIALS } from "@/lib/company"
-import { loadProjects } from "@/lib/content/load"
 
 /*
  * FINAL palette — docs/01-requirements-r7.md. Five colours, closed by the
@@ -15,68 +14,21 @@ import { loadProjects } from "@/lib/content/load"
  * five. Photography swap is still pre-launch.
  */
 export default function Page() {
-  /*
-   * Real project records drive the reel. loadProjects() throws on invalid
-   * content by design (R6 §3), so this is also the point where the homepage
-   * starts depending on the schema — a malformed project now fails the build
-   * rather than only failing content:check.
-   */
-  const reel: ReelProject[] = loadProjects().map((p) => ({
-    slug: p.slug,
-    title: p.title,
-    client: p.client,
-    valueCr: p.contractValueCr,
-    chainage: p.chainageFrom && p.chainageTo ? `${p.chainageFrom}–${p.chainageTo}` : undefined,
-    district: p.district,
-  }))
-
   return (
     <>
       {/*
-       * Hero — the project reel. Adapted from the 21st.dev
-       * scroll-locked-video-hero; see components/project-reel-hero.tsx for
-       * what was kept and what was stripped, and why.
+       * Hero — the MILESTONE glyph portal. Replaces the project reel.
        *
-       * Fed from content/, so the reel shows real projects with real client
-       * names and real contract values. Falls back to no reel if none
-       * validate, rather than inventing rows.
+       * Owner's instruction: no photography or video in the hero. That
+       * reverses R4 §3, which argued real project work IS the credibility
+       * claim — so the credentials are now the content you arrive INSIDE the
+       * letter, not a band further down. The evidence still lands first,
+       * it just lands through the type instead of under a photograph.
        *
-       * The corridor (R3 §2 / R4 §2) is superseded here as the homepage hero.
-       * It still exists in components/image-stream-hero.tsx and can carry a
-       * different page.
+       * The reel and the corridor both still exist as components and can
+       * carry other pages.
        */}
-      <ProjectReelHero
-        motto={COMPANY.motto}
-        strapline="Class AA contractor registered with the Government of Gujarat. Roads, bridges, irrigation and river protection works since 1987."
-        projects={reel}
-      />
-
-      {/*
-       * Credentials strip — --navy like the hero, separated by a --copper
-       * hairline. Copper as a 2px rule carries no text, so raw copper is legal
-       * here; rule 1 only bars it from letterforms.
-       *
-       * Still load-bearing: with an abstract hero the corridor "no longer
-       * makes an argument" (R4 §3.1), so this is the first substantive thing
-       * on the page. Copper-light numerals are 4.55:1 on navy.
-       */}
-      <div className="on-dark border-t-2 border-[color:var(--color-copper)] bg-[color:var(--color-navy)]">
-        <Container width="shell">
-          <dl className="grid grid-cols-2 divide-[color:var(--color-slate-light)]/35 md:grid-cols-4 md:divide-x">
-            {CREDENTIALS.map((c) => (
-              <div key={c.label} className="px-2 py-8 md:px-6">
-                <dt className="text-xs tracking-[0.14em] text-[color:var(--color-white)]/70 uppercase">
-                  {c.label}
-                </dt>
-                {/* --copper-light numerals: 4.55:1 on navy, legal inside .on-dark */}
-                <dd className="measurement mt-2 text-[length:var(--text-lg)] text-[color:var(--color-copper-light)]">
-                  {c.value}
-                </dd>
-              </div>
-            ))}
-          </dl>
-        </Container>
-      </div>
+      <MilestonePortalHero motto={COMPANY.motto} />
 
       {/* Token proof — swatches carry the role each colour is legal in. */}
       <Section>

@@ -1,38 +1,9 @@
 import type { Metadata } from "next"
-import { Archivo, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google"
+import { fontDisplay, fontSans, fontMono } from "@/lib/fonts"
 
 import "./globals.css"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
-
-/*
- * §9: fonts self-hosted via next/font. These are build-time downloads emitted
- * from our own origin, not a runtime request to fonts.googleapis.com — which
- * also removes the render-blocking font stylesheet the current live site loads.
- *
- * §4.2: Archivo is variable across weight AND width, so the expanded display
- * width is a font-variation-setting rather than a second font file.
- */
-const fontDisplay = Archivo({
-  subsets: ["latin"],
-  axes: ["wdth"], // width axis; requires the variable font, so no `weight` here
-  variable: "--font-archivo",
-  display: "swap",
-})
-
-const fontSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-plex-sans",
-  display: "swap",
-})
-
-const fontMono = IBM_Plex_Mono({
-  subsets: ["latin"],
-  weight: ["500"],
-  variable: "--font-plex-mono",
-  display: "swap",
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nccinfraspace.com"),
