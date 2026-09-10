@@ -75,17 +75,60 @@ function SeamlessLoopVideo({
   const [aOp, setAOp] = useState(1)
   const [bOp, setBOp] = useState(0)
 
+  /*
+   * `muted` MUST be set imperatively, not only as a JSX prop.
+   *
+   * React's declarative `muted` does not reliably reach the DOM property on
+   * first render, so the browser sees an unmuted <video>, refuses autoplay,
+   * and the play() promise rejects. With a bare .catch() that failure is
+   * silent — the hero just sits on its poster frame looking like a still.
+   *
+   * The original component set this imperatively inside its volume effect;
+   * removing the audio path removed the assignment with it. Hence this.
+   */
+  useEffect(() => {
+    ;[aRef.current, bRef.current].forEach((v) => {
+      if (v) v.muted = true
+    })
+  }, [])
+
   useEffect(() => {
     const active = activeRef.current === "a" ? aRef.current : bRef.current
     if (!active) return
-    if (playing) active.play().catch(() => {})
-    else active.pause()
+    if (playing) {
+      active.muted = true
+      active.play().catch(() => {})
+    } else active.pause()
+  }, [playing])
+
+  /*
+   * Resume on return to the tab.
+   *
+   * Browsers pause media in a backgrounded tab, and play() is not re-issued
+   * on its own — so without this a visitor who switches away and comes back
+   * finds the hero frozen on a still frame, with no way to restart it short
+   * of a reload. Cheap to fix, invisible when it works, and easy to miss
+   * because it never reproduces while you are looking at the page.
+   */
+  useEffect(() => {
+    const onVisible = () => {
+      if (document.visibilityState !== "visible" || !playing) return
+      const active = activeRef.current === "a" ? aRef.current : bRef.current
+      if (active?.paused) {
+        active.muted = true
+        active.play().catch(() => {})
+      }
+    }
+    document.addEventListener("visibilitychange", onVisible)
+    return () => document.removeEventListener("visibilitychange", onVisible)
   }, [playing])
 
   useEffect(() => {
     const a = aRef.current
     const b = bRef.current
     if (!a || !b) return
+    a.muted = true
+    b.muted = true
     a.play().catch(() => {})
     let raf = 0
     const tick = () => {
@@ -96,6 +139,7 @@ function SeamlessLoopVideo({
         if (!fadingRef.current && remaining <= CROSSFADE_S) {
           fadingRef.current = true
           idle.currentTime = 0
+          idle.muted = true
           idle.play().catch(() => {})
         }
         if (fadingRef.current) {
