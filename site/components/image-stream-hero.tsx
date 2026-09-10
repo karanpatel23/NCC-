@@ -6,7 +6,7 @@ import { Pause, Play } from "lucide-react"
 import { buildCards, type StreamCard } from "@/lib/corridor-gradients"
 
 /*
- * The image corridor — R4 §2, with R5 §5 gradients and scrim.
+ * The image corridor — R4 §2, with the final-palette gradients and scrim.
  *
  * Cards travel toward the viewer along Z inside a perspective container.
  *
@@ -104,15 +104,17 @@ export function ImageStreamHero({
       </div>
 
       {/*
-       * Scrim — R5 §5, read from the --hero-scrim token so the stops live in
-       * one place with their measurements. The GOLD EYEBROW binds, not the
-       * headline: against the lightest card (#F4B044) gold needs alpha >= 0.80,
-       * where --paper already clears at 0.60. Content anchors below the 68%
-       * line, where the wash is 0.94 and gold measures 7.52:1.
+       * Scrim — read from --hero-scrim so the stops live in one place with
+       * their measurements. Against the lightest card the corridor can make
+       * (--mist) --white text clears AA from alpha 0.60; the wash reaches 0.96
+       * by the 70% line, giving 13.49:1.
        *
-       * Navy being darker than the old midnight is what lets the top stop sit
-       * at 0.35 rather than 0.40 — more corridor is visible than under R4. Do
-       * not lift it further; the eyebrow is what breaks first.
+       * The eyebrow here is --white, not copper. --copper-light is only 4.55:1
+       * on PURE navy, so it drops below AA as soon as the scrim lets any card
+       * show through — it never clears over the corridor at any usable alpha.
+       * Copper stays on the CTA.
+       *
+       * HERO COPY MUST STAY BELOW THE 70% LINE.
        */}
       <div
         aria-hidden
@@ -136,7 +138,7 @@ export function ImageStreamHero({
         type="button"
         onClick={() => setPaused((v) => !v)}
         aria-pressed={paused}
-        className="absolute right-5 bottom-5 z-20 rounded-[3px] p-2 text-[color:var(--color-paper)]/60 transition-colors hover:text-[color:var(--color-paper)]"
+        className="absolute right-5 bottom-5 z-20 rounded-[3px] p-2 text-[color:var(--color-white)]/60 transition-colors hover:text-[color:var(--color-white)]"
       >
         {paused ? <Play size={16} /> : <Pause size={16} />}
         <span className="sr-only">

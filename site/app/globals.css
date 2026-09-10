@@ -2,112 +2,105 @@
 
 /* ============================================================================
    NCC Infraspace — design tokens
-   Source of truth: docs/01-requirements-r5.md §2.
+   Source of truth: docs/01-requirements-r7.md. FINAL PALETTE — the owner has
+   closed this. R5's four-colour set is withdrawn, as were Signboard, Brass &
+   Indigo and Brass & Midnight before it.
 
-   R5 withdraws "Brass & Midnight" (R3 §1 / R4 §1) IN FULL. Per R5 §7 this is a
-   clean break: --midnight, --onyx, --indigo, --brass*, --cloud and --sand are
-   gone and are NOT aliased, so any straggler fails loudly instead of quietly
-   rendering the wrong colour.
+   Clean break as before: --gold, --orange, --navy-deep, --paper, --rule and
+   the R5 -ink variants are gone and NOT aliased, so stragglers fail loudly.
 
-   R5 §2's published ratios were recomputed. The four core colours, all three
-   -ink variants, and the entire §5 scrim table match exactly. Two notes:
+   The five given values are used EXACTLY as supplied. Nothing was recoloured.
+   What is added below are lightness-only variants of those same hues, because
+   three of the five cannot legally carry text and §9 mandates WCAG 2.1 AA.
+   Every previous revision needed the same and the owner accepted it each time.
 
-     - The §2 "on --paper" column actually carries §1's WHITE-based figures.
-       Real paper values run ~0.3 lower (gold-ink 6.87, orange-ink 7.17,
-       slate-ink 6.38). All still pass comfortably; noted so nobody "fixes"
-       them later.
-     - --rule-strong as given (#9AA9B2) measures 2.31 on paper and 2.07 on
-       mist, against the 3:1 that WCAG 1.4.11 requires of the exact thing it
-       exists for. Corrected below, hue preserved.
+   THE BACKBONE IS EXCELLENT — better than any previous revision:
+     --navy on --white      15.28:1      --white on --navy      15.28:1
+     --navy on --mist       12.40:1      --mist on --navy       12.40:1
 
-   ENFORCEMENT RULES — R5 §3, replacing R4's three. In globals.css and in the
-   audit script:
+   ENFORCEMENT RULES:
 
-     1. --gold, --orange, --slate NEVER carry text on --paper or --mist.
-        1.80 / 3.26 / 2.47. Use the -ink variants.
-     2. --gold-ink, --orange-ink, --slate-ink NEVER appear on --navy.
-        2.19 / 2.10 / 2.36 — all under 3:1.
-     3. ORANGE BUTTONS TAKE --navy TEXT, NEVER WHITE. White on orange is
-        3.41 and fails; navy on orange is 4.61 and passes. R5 §1 calls this
-        the single most likely bug in the palette, because white-on-orange
-        looks fine to a sighted designer at full size and is what everyone
-        reaches for by default.
-     4. --orange appears ONLY in status contexts (see the role table below).
+     1. --slate and --copper NEVER carry body text on ANY ground.
+        slate  4.41 white / 3.58 mist / 3.46 navy
+        copper 3.51 white / 2.85 mist / 4.36 navy
+        All below 4.5. Use the -ink variants on light, -light on dark.
+
+     2. NO TEXT COLOUR PASSES AA ON RAW --copper.
+        white 3.75 · warm-white 3.51 · navy 4.36. A filled copper CTA must
+        use --copper-deep with a --white label (4.51). This is the single
+        most likely bug in this palette: copper reads as an obvious button
+        fill and every label you reach for fails on it.
+
+     3. --mist is a SURFACE, never an interactive border. 1.23:1 on --white.
+        Use --rule-strong for anything WCAG 1.4.11 applies to.
+
+     4. --copper is the ACTIVE-STATE accent, per its own definition. CTAs,
+        hover/focus, current step, live status. Not decoration, not headings.
    ========================================================================= */
 
 @theme {
-  /* --- the core four, exactly as given -------------------------------------
-   * This palette is built FOR DARK SURFACES. Three of the four are legible
-   * only ON the navy, and none can carry text on a light ground. That is a
-   * direction, not a flaw: the site leans darker, with light sections as
-   * relief rather than as the default.
-   */
-  --color-navy: #112532; /* deep surface AND body text — it does both jobs */
-  --color-gold: #f4b044; /* primary accent                        8.35 on navy */
-  --color-orange: #e0680e; /* STATUS ONLY — see role table          4.61 on navy */
-  --color-slate: #88a5b7; /* structural / quiet                    6.08 on navy */
+  /* --- the five, exactly as supplied ------------------------------------- */
+  --color-navy: #18202f; /* Midnight Navy — executive premium dark surface  */
+  --color-slate: #68748a; /* Slate Blue — muted corporate secondary         */
+  --color-mist: #dce1e6; /* Mist Gray — cool metal interface background    */
+  --color-white: #faf7f2; /* Warm White — clean editorial light surface     */
+  --color-copper: #b8734f; /* Copper — warm mechanical ACTIVE-STATE accent   */
 
-  /* --- text-safe variants (the four above cannot carry text on light) ------ */
-  --color-gold-ink: #7a4e05; /* 7.19 on white · 6.87 on paper */
-  --color-orange-ink: #8f3b06; /* 7.51 on white · 7.17 on paper */
-  --color-slate-ink: #3f6076; /* 6.67 on white · 6.38 on paper */
+  /* --- text-safe on light grounds (solved against --mist, the harder one) - */
+  --color-copper-ink: #8e5639; /* 5.55 on white · 4.51 on mist */
+  --color-slate-ink: #5a6477; /* 5.58 on white · 4.53 on mist */
 
-  /* --- ground family: cool, so warmth stays purely accent ------------------ */
-  --color-paper: #f8fafb; /* page background */
-  --color-mist: #e9eef1; /* alternating band, cards on paper */
-  --color-rule: #d3dbe0; /* decorative hairlines — 1.34, NON-TEXT only */
+  /* --- filled CTA. Raw copper cannot carry a label; this can -------------- */
+  --color-copper-deep: #a26241; /* --white label on it = 4.51 */
 
-  /*
-   * CORRECTED from R5 §2. Given as #9AA9B2, which is 2.31 on paper and 2.07
-   * on mist — below the 3:1 WCAG 1.4.11 demands of a boundary that identifies
-   * a UI component, which is the sole reason this token exists. Hue and
-   * saturation preserved; lightness lowered until it clears on the harder of
-   * the two grounds (mist).
-   */
-  --color-rule-strong: #778b98; /* 3.38 on paper · 3.03 on mist */
+  /* --- accents legal only inside .on-dark --------------------------------- */
+  --color-copper-light: #ba7754; /* 4.55 on navy */
+  --color-slate-light: #7c879c; /* 4.51 on navy */
 
-  /* --- type ---------------------------------------------------------------- */
-  --color-ink: #112532; /* = navy. 15.03 on paper */
-  --color-muted: #4e7086; /* 5.27 on white · 5.03 on paper */
+  /* --- interactive borders, WCAG 1.4.11 ----------------------------------- */
+  --color-rule: #dce1e6; /* = --mist. Decorative hairlines ONLY, 1.23:1   */
+  --color-rule-strong: #6c8196; /* 3.77 on white · 3.06 on mist            */
 
-  /* --- deeper surface for stacking ----------------------------------------- */
-  --color-navy-deep: #0a1720; /* footer, when it must sit under a navy hero */
+  /* --- type --------------------------------------------------------------- */
+  --color-ink: #18202f; /* = navy. 15.28 on white */
+  --color-muted: #5a6477; /* = slate-ink. 5.58 on white · 4.53 on mist */
 
   /* --- function ------------------------------------------------------------ */
-  --color-focus: #8f3b06; /* orange-ink, 7.17 on paper */
-  --color-focus-on-dark: #f4b044; /* gold, 8.35 on navy */
+  --color-focus: #8e5639; /* copper-ink, 5.55 on white */
+  --color-focus-on-dark: #ba7754; /* copper-light, 4.55 on navy */
 
   /*
-   * Hero scrim — R5 §5, recomputed for navy. The whole table verifies exactly
-   * against the lightest card the corridor can produce (#F4B044):
+   * Hero scrim. Measured against the lightest card the corridor can produce
+   * (--mist), --white text clears AA from alpha 0.60 up:
    *
-   *     0.60 -> paper  6.15  gold 3.41 FAIL
-   *     0.70 -> paper  7.84  gold 4.35 marginal
-   *     0.80 -> paper  9.96  gold 5.53 pass
-   *     0.94 -> paper 13.54  gold 7.52 pass   <- the 68% stop
+   *     0.50 -> 3.72 FAIL      0.70 -> 6.50      0.95 -> 13.49
+   *     0.60 -> 4.88 ok        0.80 -> 8.77      1.00 -> 15.28
    *
-   * THE GOLD EYEBROW STILL BINDS, so HERO COPY MUST STAY BELOW THE 68% LINE.
-   * Navy being darker than the old midnight is what lets the top stop lift
-   * from 0.40 to 0.35 — more of the corridor is visible than under R4. Do not
-   * lift it further to show even more; the eyebrow is what breaks.
+   * --copper-light does NOT clear until the wash is fully solid (4.02 at
+   * 0.95, 4.55 at 1.00), because it is only 4.55:1 on pure navy to begin
+   * with. So the hero eyebrow is --white, not copper. Copper stays on the
+   * CTA, which is its stated job anyway.
+   *
+   * HERO COPY MUST STAY BELOW THE 70% LINE.
    */
   --hero-scrim: linear-gradient(
     180deg,
-    rgb(17 37 50 / 0.35) 0%,
-    rgb(17 37 50 / 0.65) 42%,
-    rgb(17 37 50 / 0.94) 68%,
+    rgb(24 32 47 / 0.35) 0%,
+    rgb(24 32 47 / 0.7) 42%,
+    rgb(24 32 47 / 0.96) 70%,
     var(--color-navy) 100%
   );
 
   /* --- semantic roles ------------------------------------------------------ */
-  --color-background: var(--color-paper);
+  --color-background: var(--color-white);
   --color-foreground: var(--color-ink);
   --color-surface: var(--color-mist);
   --color-border: var(--color-rule);
   --color-primary: var(--color-navy);
-  --color-on-primary: var(--color-paper); /* 15.03 */
+  --color-on-primary: var(--color-white);
+  --color-accent: var(--color-copper);
 
-  /* --- type, per main brief §4.2 (unchanged by R5) ------------------------- */
+  /* --- type, per main brief §4.2 (unchanged) ------------------------------- */
   --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
@@ -123,24 +116,21 @@
 
   /* --- geometry (unchanged) ------------------------------------------------ */
   --radius-DEFAULT: 3px;
-  --radius-pin: 9999px; /* still the only rounded thing on the site */
-  --aspect-card: 18 / 25; /* R3 §3.1 — the corridor's card ratio, sitewide */
+  --radius-pin: 9999px;
+  --aspect-card: 18 / 25;
 
   --container-content: 1120px;
   --container-shell: 1280px;
   --spacing-section: clamp(4rem, 2.5rem + 6.5vw, 8.75rem);
-  --shadow-header: 0 1px 2px rgb(17 37 50 / 0.06);
+  --shadow-header: 0 1px 2px rgb(24 32 47 / 0.06);
 }
 
-/*
- * R2 §1 / R5 §2: light-only. Dark BANDS remain (navy hero, footer, credentials
- * strip) but they are surfaces, not a theme. No prefers-color-scheme block.
- */
+/* Light-only with dark BANDS (navy hero, credentials strip, footer). Surfaces,
+ * not a theme — no prefers-color-scheme block. */
 :root {
   color-scheme: light;
 }
 
-/* --- base ---------------------------------------------------------------- */
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
@@ -156,25 +146,23 @@ h3,
 h4 {
   font-family: var(--font-display);
   font-weight: 700;
-  font-stretch: 125%; /* Archivo expanded — reads as signage */
+  font-stretch: 125%;
   line-height: 1.05;
   letter-spacing: -0.015em;
   text-wrap: balance;
 }
 
 /*
- * Dark-surface scope. Inside .on-dark the three saturated accents become legal
- * and the focus ring flips to --gold. This is what keeps enforcement rules 1
- * and 2 honest: outside .on-dark, --gold/--orange/--slate are simply the wrong
- * tokens, and a reviewer can see that at a glance.
+ * Dark-surface scope. Inside .on-dark the -light accents become legal and the
+ * focus ring flips. Outside it they are simply the wrong tokens, which is what
+ * keeps rule 1 reviewable at a glance.
  */
 .on-dark {
-  color: var(--color-paper);
+  color: var(--color-white);
   --color-focus: var(--color-focus-on-dark);
-  --color-border: rgb(136 165 183 / 0.28); /* --slate hairlines on dark, R5 §6 */
+  --color-border: rgb(124 135 156 / 0.35); /* --slate-light hairline on navy */
 }
 
-/* Main brief §4.2: every number on this site is a measurement. */
 .measurement,
 [data-measurement] {
   font-family: var(--font-mono);
@@ -182,7 +170,6 @@ h4 {
   font-weight: 500;
 }
 
-/* §9 accessibility floor. */
 :focus-visible {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
@@ -223,7 +210,7 @@ h4 {
   inset: 0;
   background: radial-gradient(
     120% 90% at 30% 15%,
-    rgb(248 250 251 / 0.14),
+    rgb(250 247 242 / 0.14),
     transparent 62%
   );
 }

@@ -47,16 +47,18 @@ export function Section({
  * "INFRASPACE PVT. LTD." line is set in widely letterspaced caps, so making
  * that the sitewide eyebrow is what makes the site and the printed stationery
  * visibly belong to each other. Spec: IBM Plex Sans 500, 11px, 0.18em,
- * uppercase. R5 moves the colour to --gold-ink on light / --gold on dark.
+ * uppercase. Final palette: --copper-ink on light, --white/85 on dark.
  *
  * NOTE this is Plex SANS, not Plex Mono — it replaces the mono treatment used
  * in phase A. Mono remains correct for measurements in body content (main
  * brief §4.2); the eyebrow is chrome, not a measurement, even when it happens
  * to carry a chainage value.
  *
- * tone="dark" switches to --gold, legal ONLY on a dark ground (1.80:1 on
- * paper vs 8.35:1 on navy — R5 §3 rule 1). On light ground the eyebrow uses
- * --gold-ink at 6.87:1, never --gold itself.
+ * tone="dark" is --white, NOT copper. --copper-light is only 4.55:1 on pure
+ * navy and drops below AA the moment the hero scrim lets any card through, so
+ * a copper eyebrow over the corridor fails. Copper stays on the CTA, which is
+ * its stated job. On light ground the eyebrow is --copper-ink (5.55:1); raw
+ * --copper is 3.51:1 and is barred by rule 1.
  */
 export function Eyebrow({
   children,
@@ -67,8 +69,8 @@ export function Eyebrow({
 }) {
   const color =
     tone === "dark"
-      ? "text-[color:var(--color-gold)]"
-      : "text-[color:var(--color-gold-ink)]"
+      ? "text-[color:var(--color-white)]/85"
+      : "text-[color:var(--color-copper-ink)]"
   return (
     <p
       className={`mb-4 font-[family-name:var(--font-plex-sans)] text-[11px] font-medium tracking-[0.18em] uppercase ${color}`}

@@ -13,10 +13,10 @@ export function SiteHeader() {
   const [darkHero, setDarkHero] = useState(false)
 
   /*
-   * The transparent treatment (--paper text, --gold logo dot) is only
-   * legal when a dark band sits behind the header. R5 §6 gives /contact
-   * "--paper, no dark band", where --gold measures 1.80:1 and
-   * breaks R5 §3 enforcement rule 1. Pages opt in by marking their hero
+   * The transparent treatment (--paper text, --copper-light logo dot) is only
+   * legal when a dark band sits behind the header. the page table gives /contact
+   * "--white, no dark band", where --copper-light measures 1.86:1 and
+   * breaks enforcement rule 1. Pages opt in by marking their hero
    * [data-dark-hero]; every other page gets the solid treatment immediately.
    */
   useEffect(() => {
@@ -47,20 +47,20 @@ export function SiteHeader() {
       /*
        * data-solid is the single switch. It is set when the user has scrolled
        * past 80px OR when the page has no dark hero to sit on. Solid means
-       * --paper background, --ink text, --navy dot (15.03:1). Transparent
+       * --paper background, --ink text, --copper-ink dot (5.55:1). Transparent
        * means --paper text (15.58:1 on onyx) and --brass-light dot (8.98:1) —
        * legal only because a dark band is behind it.
        */
       data-solid={scrolled || !darkHero || undefined}
-      className="fixed inset-x-0 top-0 z-50 h-14 border-b border-transparent text-[color:var(--color-paper)] transition-colors duration-200 [--nav-hover:var(--color-gold)] [--logo-dot:var(--color-gold)] data-[solid]:border-[color:var(--color-border)] data-[solid]:bg-[color:var(--color-background)] data-[solid]:text-[color:var(--color-foreground)] data-[solid]:shadow-[0_1px_2px_rgb(17_37_50/0.06)] data-[solid]:[--nav-hover:var(--color-navy)] data-[solid]:[--logo-dot:var(--color-navy)] md:h-18"
+      className="fixed inset-x-0 top-0 z-50 h-14 border-b border-transparent text-[color:var(--color-white)] transition-colors duration-200 [--nav-hover:var(--color-copper-light)] [--logo-dot:var(--color-copper-light)] data-[solid]:border-[color:var(--color-border)] data-[solid]:bg-[color:var(--color-background)] data-[solid]:text-[color:var(--color-foreground)] data-[solid]:shadow-[0_1px_2px_rgb(24_32_47/0.06)] data-[solid]:[--nav-hover:var(--color-copper-ink)] data-[solid]:[--logo-dot:var(--color-copper-ink)] md:h-18"
     >
       <Container width="shell" className="flex h-full items-center justify-between gap-6">
         <Link
           href="/"
           className="font-[family-name:var(--font-archivo)] text-lg font-extrabold tracking-tight"
         >
-          {/* R5 §7: dot is --gold over the navy hero (8.35:1) and --navy once
-              the header solidifies. Gold on light is 1.80:1 — rule 1. */}
+          {/* Dot is --copper-light over the navy hero (4.55:1) and --copper-ink
+              once solid (5.55:1). Raw copper on light is 3.51:1 — rule 1. */}
           NCC<span className="text-[color:var(--logo-dot)]">.</span>
           <span className="sr-only"> Infraspace — home</span>
         </Link>

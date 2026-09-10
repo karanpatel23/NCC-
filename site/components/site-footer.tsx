@@ -20,15 +20,15 @@ export function SiteFooter() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <p className="font-[family-name:var(--font-archivo)] text-lg font-extrabold">
-              NCC<span className="text-[color:var(--color-gold)]">.</span>
+              NCC<span className="text-[color:var(--color-copper-light)]">.</span>
             </p>
-            <p className="mt-3 max-w-[28ch] text-sm text-[color:var(--color-paper)]/65">
+            <p className="mt-3 max-w-[28ch] text-sm text-[color:var(--color-white)]/65">
               {COMPANY.positioning}
             </p>
           </div>
 
           <nav aria-label="Footer">
-            <h2 className="measurement text-xs tracking-[0.14em] text-[color:var(--color-gold)] uppercase">
+            <h2 className="measurement text-xs tracking-[0.14em] text-[color:var(--color-copper-light)] uppercase">
               Site
             </h2>
             <ul className="mt-4 space-y-2.5 text-sm">
@@ -36,7 +36,7 @@ export function SiteFooter() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[color:var(--color-paper)]/80 transition-colors hover:text-[color:var(--color-gold)]"
+                    className="text-[color:var(--color-white)]/80 transition-colors hover:text-[color:var(--color-copper-light)]"
                   >
                     {item.label}
                   </Link>
@@ -47,15 +47,15 @@ export function SiteFooter() {
 
           {OFFICES.map((office) => (
             <address key={office.label} className="text-sm not-italic">
-              <h2 className="measurement text-xs tracking-[0.14em] text-[color:var(--color-gold)] uppercase">
+              <h2 className="measurement text-xs tracking-[0.14em] text-[color:var(--color-copper-light)] uppercase">
                 {office.label}
               </h2>
-              <p className="mt-4 text-[color:var(--color-paper)]/65">
+              <p className="mt-4 text-[color:var(--color-white)]/65">
                 {office.address}
               </p>
               {office.phone && (
                 <a
-                  className="measurement mt-2 block transition-colors hover:text-[color:var(--color-gold)]"
+                  className="measurement mt-2 block transition-colors hover:text-[color:var(--color-copper-light)]"
                   href={`tel:${office.phone.replace(/\s/g, "")}`}
                 >
                   {office.phone}
@@ -63,7 +63,7 @@ export function SiteFooter() {
               )}
               {office.email && (
                 <a
-                  className="mt-1 block transition-colors hover:text-[color:var(--color-gold)]"
+                  className="mt-1 block transition-colors hover:text-[color:var(--color-copper-light)]"
                   href={`mailto:${office.email}`}
                 >
                   {office.email}
@@ -73,7 +73,7 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-[color:var(--color-paper)]/65 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-[color:var(--color-white)]/65 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {new Date().getFullYear()} {COMPANY.legalName}. All rights reserved.
           </p>

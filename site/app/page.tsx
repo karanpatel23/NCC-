@@ -3,16 +3,15 @@ import { ImageStreamHero } from "@/components/image-stream-hero"
 import { COMPANY, CREDENTIALS } from "@/lib/company"
 
 /*
- * Palette per docs/01-requirements-r5.md §2, which withdraws Brass & Midnight
- * in full.
+ * FINAL palette — docs/01-requirements-r7.md. Five colours, closed by the
+ * owner.
  *
- * R5 §6 changes the composition: there is no mid-blue surface in this palette,
- * so the credentials strip is --navy like the hero rather than a separate
- * band, and the two are separated by a --gold hairline instead. Simpler and
- * stronger than inventing a fifth colour.
+ * The credentials strip stays --navy like the hero, separated by a --copper
+ * hairline. Copper as a 2px rule is non-text, so raw copper is legal there
+ * (rule 1 only bars it from carrying text).
  *
- * The corridor still carries the hero (R4 §2.2 unblocked it with gradients;
- * R5 §5 replaces the gradient set).
+ * The corridor still carries the hero, with a gradient set rebuilt from the
+ * five. Photography swap is still pre-launch.
  */
 export default function Page() {
   return (
@@ -26,7 +25,7 @@ export default function Page() {
        * say nothing about NCC. Swap to photography before launch; see
        * lib/corridor-gradients.ts.
        *
-       * Copy sits below the 68% scrim line (justify-end + the hero's own
+       * Copy sits below the 70% scrim line (justify-end + the hero's own
        * padding). Above it the eyebrow fails AA. See globals.css --hero-scrim.
        */}
       <ImageStreamHero
@@ -40,15 +39,15 @@ export default function Page() {
           <h1 className="max-w-[16ch] text-[length:var(--text-4xl)]">
             {COMPANY.positioning}
           </h1>
-          <p className="mt-6 max-w-[52ch] text-[color:var(--color-paper)]/80">
+          <p className="mt-6 max-w-[52ch] text-[color:var(--color-white)]/80">
             Class AA contractor registered with the Government of Gujarat.
             Roads, bridges, irrigation and river protection works.
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <span className="rounded-[3px] bg-[color:var(--color-gold)] px-6 py-3 text-sm font-medium text-[color:var(--color-navy)]">
+            <span className="rounded-[3px] bg-[color:var(--color-copper-deep)] px-6 py-3 text-sm font-medium text-[color:var(--color-white)]">
               View projects
             </span>
-            <span className="rounded-[3px] border border-[color:var(--color-paper)]/40 px-6 py-3 text-sm font-medium">
+            <span className="rounded-[3px] border border-[color:var(--color-white)]/40 px-6 py-3 text-sm font-medium">
               Company profile PDF
             </span>
           </div>
@@ -56,24 +55,24 @@ export default function Page() {
       </ImageStreamHero>
 
       {/*
-       * Credentials strip — R5 §6: --navy, not a separate blue. This palette
-       * has no mid-blue surface and inventing one would add a fifth colour, so
-       * the strip is separated from the hero by a --gold hairline instead.
+       * Credentials strip — --navy like the hero, separated by a --copper
+       * hairline. Copper as a 2px rule carries no text, so raw copper is legal
+       * here; rule 1 only bars it from letterforms.
        *
        * Still load-bearing: with an abstract hero the corridor "no longer
        * makes an argument" (R4 §3.1), so this is the first substantive thing
-       * on the page. Gold numerals are 8.35:1 on navy.
+       * on the page. Copper-light numerals are 4.55:1 on navy.
        */}
-      <div className="on-dark border-t-2 border-[color:var(--color-gold)] bg-[color:var(--color-navy)]">
+      <div className="on-dark border-t-2 border-[color:var(--color-copper)] bg-[color:var(--color-navy)]">
         <Container width="shell">
-          <dl className="grid grid-cols-2 divide-[color:var(--color-slate)]/28 md:grid-cols-4 md:divide-x">
+          <dl className="grid grid-cols-2 divide-[color:var(--color-slate-light)]/35 md:grid-cols-4 md:divide-x">
             {CREDENTIALS.map((c) => (
               <div key={c.label} className="px-2 py-8 md:px-6">
-                <dt className="text-xs tracking-[0.14em] text-[color:var(--color-paper)]/70 uppercase">
+                <dt className="text-xs tracking-[0.14em] text-[color:var(--color-white)]/70 uppercase">
                   {c.label}
                 </dt>
-                {/* --gold numerals: 8.35:1 on navy, legal inside .on-dark */}
-                <dd className="measurement mt-2 text-[length:var(--text-lg)] text-[color:var(--color-gold)]">
+                {/* --copper-light numerals: 4.55:1 on navy, legal inside .on-dark */}
+                <dd className="measurement mt-2 text-[length:var(--text-lg)] text-[color:var(--color-copper-light)]">
                   {c.value}
                 </dd>
               </div>
@@ -86,37 +85,36 @@ export default function Page() {
       <Section>
         <Container>
           <Eyebrow>Km 1.200 · Design tokens</Eyebrow>
-          <h2 className="text-[length:var(--text-2xl)]">Four colours, four jobs</h2>
+          <h2 className="text-[length:var(--text-2xl)]">Midnight &amp; Copper</h2>
           <p className="mt-4 max-w-[62ch] text-[color:var(--color-muted)]">
-            R5 §3 gives each colour exactly one job, because four accents
-            competing for the same surfaces looks like a carnival within three
-            pages. The one that earns its keep is{" "}
-            <strong className="text-[color:var(--color-orange-ink)]">
-              orange as status only
-            </strong>{" "}
-            — ongoing work glows orange, completed work is gold and navy. That
-            turns a fourth colour from a decoration problem into an information
-            channel, and it is the distinction this site is built around.
+            The backbone is unusually strong — navy on warm white measures{" "}
+            <strong className="text-[color:var(--color-ink)]">15.28:1</strong>,
+            the highest of any revision. Slate and copper are both mid-tones,
+            so neither can carry body text on any ground; the{" "}
+            <strong className="text-[color:var(--color-copper-ink)]">-ink</strong>{" "}
+            variants exist for that and are the same hues at lower lightness.
           </p>
           <p className="mt-4 max-w-[62ch] text-[color:var(--color-muted)]">
             The rule most likely to be broken:{" "}
-            <strong className="text-[color:var(--color-orange-ink)]">
-              orange buttons take navy text, never white
-            </strong>
-            . White on orange is 3.41:1 and fails; navy on orange is 4.61:1.
+            <strong className="text-[color:var(--color-copper-ink)]">
+              no text colour passes AA on raw copper
+            </strong>{" "}
+            — white 3.75, warm white 3.51, navy 4.36. A filled copper button
+            uses <code className="measurement">--copper-deep</code> with a warm
+            white label, which is 4.51:1.
           </p>
 
           <ul className="mt-10 grid grid-cols-2 gap-px bg-[color:var(--color-rule)] md:grid-cols-3">
             {[
-              { n: "--navy", h: "#112532", r: "surface + body text" },
-              { n: "--gold", h: "#F4B044", r: "primary accent · 8.35 on navy" },
-              { n: "--orange", h: "#E0680E", r: "STATUS ONLY · 4.61 on navy" },
-              { n: "--slate", h: "#88A5B7", r: "structural quiet · 6.08" },
-              { n: "--gold-ink", h: "#7A4E05", r: "6.87 on paper — text-safe" },
-              { n: "--orange-ink", h: "#8F3B06", r: "7.17 on paper — text-safe" },
-              { n: "--slate-ink", h: "#3F6076", r: "6.38 on paper — text-safe" },
-              { n: "--paper", h: "#F8FAFB", r: "page ground" },
-              { n: "--mist", h: "#E9EEF1", r: "alternating band, cards" },
+              { n: "--navy", h: "#18202F", r: "surface + body text · 15.28" },
+              { n: "--slate", h: "#68748A", r: "structural · never body text" },
+              { n: "--mist", h: "#DCE1E6", r: "alt band · surface only" },
+              { n: "--white", h: "#FAF7F2", r: "page ground" },
+              { n: "--copper", h: "#B8734F", r: "ACTIVE STATE · non-text" },
+              { n: "--copper-deep", h: "#A26241", r: "filled CTA · 4.51 label" },
+              { n: "--copper-ink", h: "#8E5639", r: "5.55 on white — text-safe" },
+              { n: "--slate-ink", h: "#5A6477", r: "5.58 on white — text-safe" },
+              { n: "--rule-strong", h: "#6C8196", r: "3.06 on mist — borders" },
             ].map((t) => (
               <li key={t.n} className="bg-[color:var(--color-background)] p-5">
                 {/* data-swatch: this is the colour being DOCUMENTED, not used.
@@ -137,7 +135,7 @@ export default function Page() {
         </Container>
       </Section>
 
-      {/* Alternating --mist band, per the R5 §6 surface table. */}
+      {/* Alternating --mist band. */}
       <Section className="bg-[color:var(--color-mist)]">
         <Container>
           <Eyebrow>Km 2.450 · Card ratio</Eyebrow>
