@@ -1,6 +1,19 @@
 import { z } from "zod"
 
 /*
+ * YAML frontmatter auto-parses an unquoted `2026-08-01` into a JS Date, while a
+ * quoted "2026-08-01" stays a string. z.string().date() rejects the former, so
+ * a perfectly valid date in frontmatter fails validation depending purely on
+ * whether the author happened to quote it. That is a trap, not a rule.
+ *
+ * dateString accepts either and normalises to an ISO yyyy-mm-dd string.
+ */
+const dateString = z.preprocess(
+  (v) => (v instanceof Date ? v.toISOString().slice(0, 10) : v),
+  z.string().date(),
+)
+
+/*
  * Content schema — docs/01-requirements-r6.md §3.
  *
  * R6 supersedes the main brief §7 (Sanity) and §8 (maintenance workflow). No
@@ -18,7 +31,7 @@ import { z } from "zod"
 
 export const Milestone = z.object({
   title: z.string().min(3),
-  date: z.string().date(),
+  date: dateString,
   description: z.string().min(20),
   status: z.enum(["complete", "current", "upcoming"]),
   chainage: z.string().optional(), // 'Km 84/500'
@@ -47,12 +60,12 @@ export const Project = z
     state: z.string().default("Gujarat"),
     location: z.tuple([z.number(), z.number()]).optional(), // [lat, lng]
 
-    startDate: z.string().date().optional(),
-    completionDate: z.string().date().optional(),
-    expectedDate: z.string().date().optional(),
+    startDate: dateString.optional(),
+    completionDate: dateString.optional(),
+    expectedDate: dateString.optional(),
 
     progressPercent: z.number().min(0).max(100).optional(),
-    progressUpdated: z.string().date().optional(),
+    progressUpdated: dateString.optional(),
 
     milestones: z.array(Milestone).default([]),
 
@@ -78,12 +91,32 @@ export const Project = z
       .object({ title: z.string().max(60), description: z.string().max(155) })
       .optional(),
   })
-  .refine(
-    (p) =>
-      p.status !== "ongoing" ||
-      (p.progressPercent !== undefined && p.progressUpdated),
-    { message: "Ongoing projects require progressPercent AND progressUpdated" },
-  )
+  /*
+   * RELAXED from R6 §3, deliberately and narrowly.
+   *
+   * R6 §3 required an ongoing project to carry BOTH progressPercent and
+   * progressUpdated. That blocked recording an ongoing project at all when the
+   * percentage was not to hand, and the owner's instinct was to drop the
+   * progress feature entirely to get unblocked.
+   *
+   * Dropping it would cost a lot: R5 §3 gives --orange exactly one job, status,
+   * and without progress the fourth colour has no semantic role left — rule 4
+   * forbids it as decoration. The main brief §2 also calls the
+   * ongoing-with-percentage pattern the one thing the competitor does right.
+   *
+   * So progress becomes OPTIONAL, and the half that actually prevents the
+   * failure is kept: a percentage without a date is still rejected. That is the
+   * anti-staleness guarantee — main brief §8 wants a visible "as of" stamp
+   * precisely so a stale number is embarrassing. An undated 73% is worse than
+   * no number, because it looks current forever.
+   *
+   * Net effect: a project can be ongoing with no bar (the component renders
+   * nothing, per §7), but it can never show a bar with no date.
+   */
+  .refine((p) => p.progressPercent === undefined || !!p.progressUpdated, {
+    message:
+      "progressPercent requires progressUpdated — an undated percentage looks current forever",
+  })
   .refine((p) => p.status !== "completed" || p.completionDate, {
     message: "Completed projects require completionDate",
   })
@@ -136,7 +169,7 @@ export const Certification = z.object({
   name: z.string().min(3),
   issuer: z.string().min(2),
   number: z.string().optional(),
-  validUntil: z.string().date().optional(),
+  validUntil: dateString.optional(),
   document: z.string().optional(),
 })
 
