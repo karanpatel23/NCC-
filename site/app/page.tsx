@@ -2,6 +2,8 @@ import Link from "next/link"
 
 import { Container, Section, Eyebrow } from "@/components/container"
 import { ProjectCard } from "@/components/project-card"
+import { Reveal } from "@/components/reveal"
+import { Counter } from "@/components/counter"
 import { MilestonePortalHero } from "@/components/milestone-portal-hero"
 import { COMPANY } from "@/lib/company"
 import { loadProjects, projectsByStatus, projectTotals } from "@/lib/content/load"
@@ -70,8 +72,10 @@ export default function Page() {
               </Link>
             </div>
             <div className="mt-12 grid gap-12 md:grid-cols-2">
-              {ongoing.slice(0, 4).map((p) => (
-                <ProjectCard key={p.slug} project={p} />
+              {ongoing.slice(0, 4).map((p, i) => (
+                <Reveal key={p.slug} delay={i * 60}>
+                  <ProjectCard project={p} />
+                </Reveal>
               ))}
             </div>
           </Container>
@@ -88,12 +92,12 @@ export default function Page() {
           <Eyebrow>Km 2.450 · Capabilities</Eyebrow>
           <h2 className="text-[length:var(--text-2xl)]">What we build.</h2>
           <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {SEGMENTS.map((seg) => {
+            {SEGMENTS.map((seg, i) => {
               const n = all.filter((p) => p.category === seg.slug).length
               return (
+                <Reveal key={seg.slug} delay={i * 70} className="contents">
                 <li
-                  key={seg.slug}
-                  className="border-t-2 border-[color:var(--color-rule-strong)] pt-5"
+                  className="lift border-t-2 border-[color:var(--color-rule-strong)] pt-5"
                 >
                   <h3 className="text-[length:var(--text-lg)] leading-tight">
                     {seg.title}
@@ -107,6 +111,7 @@ export default function Page() {
                     </p>
                   )}
                 </li>
+                </Reveal>
               )
             })}
           </ul>
@@ -124,19 +129,26 @@ export default function Page() {
           <Eyebrow>Km 3.100 · On record</Eyebrow>
           <dl className="mt-8 grid grid-cols-2 gap-8 md:grid-cols-4">
             {[
-              ["Years active", String(new Date().getFullYear() - COMPANY.foundedYear)],
-              ["Projects published", String(totals.count)],
-              ["Contract value", `₹${totals.valueCr} Cr`],
-              ["Under execution", String(totals.ongoing)],
-            ].map(([label, value]) => (
-              <div key={label} className="border-t-2 border-[color:var(--color-copper)] pt-4">
+              { label: "Years active", value: new Date().getFullYear() - COMPANY.foundedYear },
+              { label: "Projects published", value: totals.count },
+              { label: "Contract value", value: totals.valueCr, prefix: "₹", suffix: " Cr", decimals: 2 },
+              { label: "Under execution", value: totals.ongoing },
+            ].map((t, i) => (
+              <Reveal key={t.label} delay={i * 70} className="border-t-2 border-[color:var(--color-copper)] pt-4">
                 <dt className="text-[10px] tracking-[0.14em] text-[color:var(--color-muted)] uppercase">
-                  {label}
+                  {t.label}
                 </dt>
                 <dd className="measurement mt-2 text-[length:var(--text-xl)]">
-                  {value}
+                  {/* §4.4: the true figure is server-rendered; JS only
+                      animates toward it. See components/counter.tsx. */}
+                  <Counter
+                    value={t.value}
+                    prefix={t.prefix}
+                    suffix={t.suffix}
+                    decimals={t.decimals}
+                  />
                 </dd>
-              </div>
+              </Reveal>
             ))}
           </dl>
           <p className="mt-6 max-w-[58ch] text-xs text-[color:var(--color-muted)]">

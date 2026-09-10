@@ -188,6 +188,47 @@ h4 {
   font-weight: 500;
 }
 
+
+/* ---------------------------------------------------------------------------
+   Motion — main brief §4.4, R3 §3.2 depth grammar.
+
+   The hidden state is keyed on [data-reveal=pending], an attribute only ever
+   set by JS. Nothing is hidden by the stylesheet alone, so no-JS and
+   observer-failure both leave content visible. §9 requires every page to
+   render fully without JavaScript, and hiding-then-unhiding is the usual way
+   reveal animations quietly break that.
+
+   R3 §3.2: rise AND scale, never a lateral slide.
+   --------------------------------------------------------------------------- */
+[data-reveal="pending"] {
+  opacity: 0;
+  transform: translateY(24px) scale(0.985);
+}
+
+[data-reveal] {
+  transition:
+    opacity 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+[data-reveal="in"] {
+  opacity: 1;
+  transform: none;
+  will-change: auto;
+}
+
+/* §4.4 cards: 1.5px lift, hairline shifts to the accent, 200ms. */
+.lift {
+  transition:
+    transform 200ms ease-out,
+    border-color 200ms ease-out;
+}
+.lift:hover {
+  transform: translateY(-1.5px);
+  border-color: var(--color-copper);
+}
+
 :focus-visible {
   outline: 2px solid var(--color-focus);
   outline-offset: 2px;
@@ -270,6 +311,18 @@ h4 {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  /*
+   * Reveals: force the FINAL state. The blanket reset above kills the
+   * transition, which would otherwise strand an element at
+   * [data-reveal=pending] — invisible, permanently. Reveal.tsx also returns
+   * early under reduced motion, so this is belt and braces; both matter,
+   * because the attribute can be set before the media query is consulted.
+   */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 
   /*

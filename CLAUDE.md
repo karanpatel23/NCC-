@@ -30,7 +30,7 @@ truth about what currently exists.
 | C | Static homepage — hero, ongoing, capabilities, numbers | ✅ Complete |
 | D | Projects index + detail template + milestone timeline | ✅ Built |
 | D.5 | **Image corridor** — added by R3 §4, unblocked by R4 §2.2 | ✅ Built (gradients) |
-| E | Remaining motion: rail, reveals, counters, marquee | ⬜ |
+| E | Motion: chainage rail, reveals, counters, card lift | ✅ Built (marquee blocked) |
 | F | 3D project map — **optional since R3 §4**; the corridor took its job | ⬜ |
 | G–H | Remaining pages · SEO, JSON-LD, a11y, Lighthouse | ⬜ |
 
@@ -64,6 +64,21 @@ fail loudly. The backbone is strong — navy on white is 15.28:1 both ways.
 3. `--mist` is a **surface, never an interactive border** — 1.23:1. Use `--rule-strong`.
 4. `--copper` is the **active-state accent**: CTAs, hover/focus, current step, live status. Not
    decoration, not headings.
+
+### Motion is CSS + IntersectionObserver, not Framer Motion
+§9 names Framer Motion, but §9 also caps initial JS at **180 KB gzipped** and the client chunks
+already measure ~199 KB. Adding ~50 KB for reveals that CSS transitions do natively fails the
+harder constraint for no visual gain. `motion` stays installed but unused by the motion layer.
+
+**Two invariants the motion layer must keep**, both verified in the built CSS and the SSR HTML:
+- **Counters ship the true figure server-side.** §4.4: "the correct number is in the HTML from the
+  start; JS only animates toward it." Both competitors render "0 +" in production because their
+  counter animates from a hardcoded zero. Starting from the truth makes the worst case a number
+  that does not animate, rather than one that is wrong.
+- **Nothing is hidden by the stylesheet.** `[data-reveal=pending]` is set only by JS, and `Reveal`
+  carries a **1.2s failsafe** that shows the element whether or not the observer ever fires.
+  IntersectionObserver callbacks do not run in a hidden document, so without it a page opened in a
+  background tab finishes loading with its whole body at opacity 0 — observed, not theoretical.
 
 ### Three constraints that will get "tidied away" — don't
 - **The corridor is exempt from the global reduced-motion reset.** Without the exemption the blanket

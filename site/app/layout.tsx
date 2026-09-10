@@ -4,6 +4,7 @@ import { fontDisplay, fontSans, fontMono } from "@/lib/fonts"
 import "./globals.css"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { ChainageRail } from "@/components/chainage-rail"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nccinfraspace.com"),
@@ -39,6 +40,7 @@ export default function RootLayout({
       className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable}`}
     >
       <body className="flex min-h-dvh flex-col">
+        <ChainageRail />
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

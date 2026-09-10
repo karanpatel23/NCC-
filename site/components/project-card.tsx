@@ -50,7 +50,7 @@ export function ProjectCard({ project }: { project: LoadedProject }) {
       : null
 
   return (
-    <article className="group border-t border-[color:var(--color-rule-strong)] pt-5">
+    <article className="lift group border-t border-[color:var(--color-rule-strong)] pt-5">
       <div className="mb-3 flex items-center gap-3">
         <span
           className={`measurement rounded-[3px] px-2.5 py-1 text-[10px] tracking-[0.12em] uppercase ${s.className}`}
