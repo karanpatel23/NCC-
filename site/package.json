@@ -10,7 +10,10 @@
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
-    "content:check": "tsx scripts/content-check.ts"
+    "content:check": "tsx scripts/content-check.ts",
+    "sync:media": "tsx scripts/sync-media.ts",
+    "prebuild": "npm run sync:media",
+    "predev": "npm run sync:media"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",

@@ -85,3 +85,35 @@ export function featuredProjects(): LoadedProject[] {
 export function corridorImages(): string[] {
   return featuredProjects().map((p) => p.heroImage.src)
 }
+
+/** One project by slug, or null. Used by the detail route's generateStaticParams pair. */
+export function getProject(slug: string): LoadedProject | null {
+  return loadProjects().find((p) => p.slug === slug) ?? null
+}
+
+/**
+ * Projects filtered by status.
+ *
+ * docs/03-competitor-maxel.md §4.1: ongoing and completed become real routes
+ * rather than only filter state. A tender evaluator wants "finished work of
+ * comparable value" as a destination they can bookmark and send to a
+ * committee, not a filter they have to set.
+ */
+export function projectsByStatus(
+  status: ProjectData["status"],
+): LoadedProject[] {
+  return loadProjects().filter((p) => p.status === status)
+}
+
+/** Totals for the index headers. Real arithmetic over real records, never a
+ * hardcoded counter — the competitor teardowns both show "0 +" in production. */
+export function projectTotals() {
+  const all = loadProjects()
+  return {
+    count: all.length,
+    valueCr: Math.round(all.reduce((sum, p) => sum + p.contractValueCr, 0) * 100) / 100,
+    ongoing: all.filter((p) => p.status === "ongoing").length,
+    completed: all.filter((p) => p.status === "completed").length,
+    awarded: all.filter((p) => p.status === "awarded").length,
+  }
+}

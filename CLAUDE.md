@@ -26,9 +26,9 @@ truth about what currently exists.
 | | Deliverable | Status |
 |---|---|---|
 | A | Scaffold, design tokens, fonts, layout primitives, header/footer | ✅ Complete |
-| B | **No CMS (R6).** `content/` tree, Zod schemas, loader, `content:check` | 🔄 Built; seeding blocked |
-| C | Static homepage + corridor's static poster (not the animation) | ⬜ |
-| D | Projects index + detail template + milestone timeline | ⬜ |
+| B | **No CMS (R6).** `content/` tree, Zod schemas, loader, `content:check` | ✅ Gate closed |
+| C | Static homepage — hero, ongoing, capabilities, numbers | ✅ Complete |
+| D | Projects index + detail template + milestone timeline | ✅ Built |
 | D.5 | **Image corridor** — added by R3 §4, unblocked by R4 §2.2 | ✅ Built (gradients) |
 | E | Remaining motion: rail, reveals, counters, marquee | ⬜ |
 | F | 3D project map — **optional since R3 §4**; the corridor took its job | ⬜ |
@@ -68,6 +68,22 @@ Midnight is withdrawn; those tokens are gone and **not aliased**, so stragglers 
 - **Hero copy must stay below the 68% scrim line.** Above it the `--brass-light` eyebrow fails AA.
 - **The corridor is exempt from the global reduced-motion reset.** Without the exemption the blanket
   `animation-duration: 0.01ms` collapses every card onto the axis. It must *pause*, not disable.
+
+### Routes and where content renders
+`/` · `/projects` · `/projects/ongoing` · `/projects/completed` · `/projects/[slug]`
+
+Ongoing and completed are **real routes**, not filter state — `docs/03-competitor-maxel.md` §4.1:
+an evaluator wants "finished work of comparable value" as a destination they can send to a
+committee. Every route has its own `<h1>` and `<title>`; the competitor ships one `<title>` sitewide.
+
+**Project images live in `content/`, are served from `public/`.** `scripts/sync-media.ts` copies them
+at build (`prebuild`/`predev`), skipping drafts. `public/content/` is generated and gitignored — edit
+the originals beside their project, never the copies.
+
+**Numbers are counted, never typed.** Both competitors render "0 +" in production because a
+hardcoded counter was never wired up. `projectTotals()` does arithmetic over real records. Do not
+reintroduce a literal — and do not state a derived figure twice on one page, which already produced
+a "thirty-eight years" heading beside a computed "39".
 
 ### Content is typed MDX in `content/`, not a CMS (R6)
 No Sanity, no Studio, no API keys. `lib/content/schema.ts` is the enforcement layer and

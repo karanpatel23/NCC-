@@ -1,6 +1,10 @@
+import Link from "next/link"
+
 import { Container, Section, Eyebrow } from "@/components/container"
+import { ProjectCard } from "@/components/project-card"
 import { MilestonePortalHero } from "@/components/milestone-portal-hero"
-import { COMPANY, CREDENTIALS } from "@/lib/company"
+import { COMPANY } from "@/lib/company"
+import { loadProjects, projectsByStatus, projectTotals } from "@/lib/content/load"
 
 /*
  * FINAL palette — docs/01-requirements-r7.md. Five colours, closed by the
@@ -13,7 +17,18 @@ import { COMPANY, CREDENTIALS } from "@/lib/company"
  * The corridor still carries the hero, with a gradient set rebuilt from the
  * five. Photography swap is still pre-launch.
  */
+const SEGMENTS = [
+  { slug: "highways" as const, title: "Highways", summary: "National and state highway widening, strengthening and resurfacing." },
+  { slug: "bridges" as const, title: "Bridges", summary: "Major bridges, ROB and RUB structures, and river crossings." },
+  { slug: "irrigation" as const, title: "Irrigation", summary: "Canal works and water distribution infrastructure." },
+  { slug: "protection" as const, title: "River & protection", summary: "River front development and bank protection works." },
+]
+
 export default function Page() {
+  const all = loadProjects()
+  const ongoing = projectsByStatus("ongoing")
+  const totals = projectTotals()
+
   return (
     <>
       {/*
@@ -30,83 +45,107 @@ export default function Page() {
        */}
       <MilestonePortalHero />
 
-      {/* Token proof — swatches carry the role each colour is legal in. */}
-      <Section>
-        <Container>
-          <Eyebrow>Km 1.200 · Design tokens</Eyebrow>
-          <h2 className="text-[length:var(--text-2xl)]">Midnight &amp; Copper</h2>
-          <p className="mt-4 max-w-[62ch] text-[color:var(--color-muted)]">
-            The backbone is unusually strong — navy on warm white measures{" "}
-            <strong className="text-[color:var(--color-ink)]">15.28:1</strong>,
-            the highest of any revision. Slate and copper are both mid-tones,
-            so neither can carry body text on any ground; the{" "}
-            <strong className="text-[color:var(--color-copper-ink)]">-ink</strong>{" "}
-            variants exist for that and are the same hues at lower lightness.
-          </p>
-          <p className="mt-4 max-w-[62ch] text-[color:var(--color-muted)]">
-            The rule most likely to be broken:{" "}
-            <strong className="text-[color:var(--color-copper-ink)]">
-              no text colour passes AA on raw copper
-            </strong>{" "}
-            — white 3.75, warm white 3.51, navy 4.36. A filled copper button
-            uses <code className="measurement">--copper-deep</code> with a warm
-            white label, which is 4.51:1.
-          </p>
+      {/*
+       * §6.1 item 4 — ongoing work. Proves the company is CURRENTLY working,
+       * which no static brochure site does, and it is the pattern the main
+       * brief §2 singles out as the one thing the competitor does right.
+       * Renders from real records; shows nothing rather than filler if none
+       * are published.
+       */}
+      {ongoing.length > 0 && (
+        <Section>
+          <Container>
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <div>
+                <Eyebrow>Km 1.200 · Under execution</Eyebrow>
+                <h2 className="text-[length:var(--text-2xl)]">
+                  Work currently on site.
+                </h2>
+              </div>
+              <Link
+                href="/projects/ongoing"
+                className="measurement text-sm text-[color:var(--color-copper-ink)] underline-offset-4 hover:underline"
+              >
+                All ongoing projects →
+              </Link>
+            </div>
+            <div className="mt-12 grid gap-12 md:grid-cols-2">
+              {ongoing.slice(0, 4).map((p) => (
+                <ProjectCard key={p.slug} project={p} />
+              ))}
+            </div>
+          </Container>
+        </Section>
+      )}
 
-          <ul className="mt-10 grid grid-cols-2 gap-px bg-[color:var(--color-rule)] md:grid-cols-3">
-            {[
-              { n: "--navy", h: "#18202F", r: "surface + body text · 15.28" },
-              { n: "--slate", h: "#68748A", r: "structural · never body text" },
-              { n: "--mist", h: "#DCE1E6", r: "alt band · surface only" },
-              { n: "--white", h: "#FAF7F2", r: "page ground" },
-              { n: "--copper", h: "#B8734F", r: "ACTIVE STATE · non-text" },
-              { n: "--copper-deep", h: "#A26241", r: "filled CTA · 4.51 label" },
-              { n: "--copper-ink", h: "#8E5639", r: "5.55 on white — text-safe" },
-              { n: "--slate-ink", h: "#5A6477", r: "5.58 on white — text-safe" },
-              { n: "--rule-strong", h: "#6C8196", r: "3.06 on mist — borders" },
-            ].map((t) => (
-              <li key={t.n} className="bg-[color:var(--color-background)] p-5">
-                {/* data-swatch: this is the colour being DOCUMENTED, not used.
-                    The R5 §3 rule-4 audit skips these, or every token proof
-                    reads as an orange-outside-status violation. */}
-                <span
-                  data-swatch
-                  className="block h-14 w-full rounded-[3px] border border-[color:var(--color-rule)]"
-                  style={{ backgroundColor: t.h }}
-                />
-                <p className="measurement mt-3 text-sm">{t.n}</p>
-                <p className="measurement text-xs text-[color:var(--color-muted)]">
-                  {t.h} · {t.r}
-                </p>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </Section>
-
-      {/* Alternating --mist band. */}
+      {/*
+       * §6.1 item 5 — capabilities. The four segments are named in the brief
+       * and taken as the sector standard, so this needs no content that does
+       * not exist. Counts come from real records.
+       */}
       <Section className="bg-[color:var(--color-mist)]">
         <Container>
-          <Eyebrow>Km 2.450 · Card ratio</Eyebrow>
-          <h2 className="text-[length:var(--text-2xl)]">18:25 everywhere</h2>
-          <p className="mt-4 max-w-[62ch] text-[color:var(--color-muted)]">
-            R3 §3.1 propagates the corridor&apos;s card ratio to every project
-            image, so the hero&apos;s cards and the index&apos;s cards read as
-            the same object at different depths. Corner radius is 3px sitewide.
-          </p>
-          <ul className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
-            {["Highways", "Bridges", "Irrigation", "Protection"].map((s) => (
-              <li key={s}>
-                <div className="aspect-[18/25] rounded-[3px] border border-[color:var(--color-rule)] bg-[color:var(--color-mist)]" />
-                <p className="mt-3 text-sm">{s}</p>
-                <p className="measurement text-xs text-[color:var(--color-muted)]">
-                  awaiting photography
-                </p>
-              </li>
-            ))}
+          <Eyebrow>Km 2.450 · Capabilities</Eyebrow>
+          <h2 className="text-[length:var(--text-2xl)]">What we build.</h2>
+          <ul className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {SEGMENTS.map((seg) => {
+              const n = all.filter((p) => p.category === seg.slug).length
+              return (
+                <li
+                  key={seg.slug}
+                  className="border-t-2 border-[color:var(--color-rule-strong)] pt-5"
+                >
+                  <h3 className="text-[length:var(--text-lg)] leading-tight">
+                    {seg.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-[color:var(--color-muted)]">
+                    {seg.summary}
+                  </p>
+                  {n > 0 && (
+                    <p className="measurement mt-4 text-xs text-[color:var(--color-copper-ink)]">
+                      {n} project{n === 1 ? "" : "s"}
+                    </p>
+                  )}
+                </li>
+              )
+            })}
           </ul>
         </Container>
       </Section>
+
+      {/*
+       * §6.1 item 8 — numbers. Computed from the records, never hardcoded.
+       * Both competitor sites render "0 +" in production because their
+       * counters animate from a value that was never wired up; arithmetic
+       * over real content cannot do that.
+       */}
+      <Section>
+        <Container>
+          <Eyebrow>Km 3.100 · On record</Eyebrow>
+          <dl className="mt-8 grid grid-cols-2 gap-8 md:grid-cols-4">
+            {[
+              ["Years active", String(new Date().getFullYear() - COMPANY.foundedYear)],
+              ["Projects published", String(totals.count)],
+              ["Contract value", `₹${totals.valueCr} Cr`],
+              ["Under execution", String(totals.ongoing)],
+            ].map(([label, value]) => (
+              <div key={label} className="border-t-2 border-[color:var(--color-copper)] pt-4">
+                <dt className="text-[10px] tracking-[0.14em] text-[color:var(--color-muted)] uppercase">
+                  {label}
+                </dt>
+                <dd className="measurement mt-2 text-[length:var(--text-xl)]">
+                  {value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-6 max-w-[58ch] text-xs text-[color:var(--color-muted)]">
+            Figures are counted from published project records, not entered by
+            hand, so they cannot drift out of step with the projects below them.
+          </p>
+        </Container>
+      </Section>
+
     </>
   )
 }

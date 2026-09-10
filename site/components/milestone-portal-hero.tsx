@@ -178,6 +178,14 @@ export function MilestonePortalHero() {
         }
         front={
           <>
+            {/*
+              * The slogan is the page's headline but renders as SVG <text>
+              * inside the clip path, so the document had no <h1> at all —
+              * bad for §9's per-page semantics and for anyone using a
+              * screen reader's heading list. This carries it properly; the
+              * visible type is the same words.
+              */}
+            <h1 className="sr-only">Every milestone is our vision</h1>
             <p data-ncc-eyebrow>Est. 1987 · Class AA · Mehsana, Gujarat</p>
             <p data-ncc-motto>
               Roads, bridges, irrigation and river protection works in Gujarat.
@@ -186,7 +194,11 @@ export function MilestonePortalHero() {
         }
       >
         <div data-ncc-arrival>
-          <h2>Thirty-eight years of roads, bridges and river works in Gujarat.</h2>
+          {/* No year count here on purpose. The homepage "Years active" tile
+              derives it from COMPANY.foundedYear; stating it twice guarantees
+              the two drift apart, and they already had — this read
+              "Thirty-eight" while the computed tile read 39. */}
+          <h2>Roads, bridges and river works for Gujarat&apos;s authorities since 1987.</h2>
           <dl data-ncc-creds>
             {CREDENTIALS.map((c) => (
               <div key={c.label}>
