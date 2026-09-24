@@ -6,15 +6,15 @@ import { loadProjects } from "@/lib/content/load"
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "Road, bridge, irrigation and river protection projects delivered by NCC Infraspace for government departments across Gujarat.",
+    "Road, bridge, municipal, water and industrial infrastructure contracts delivered by NCC Infraspace for government authorities.",
 }
 
 export default function ProjectsPage() {
   return (
     <ProjectsIndexView
-      eyebrow="Km 0.000 · Projects"
-      title="Every project we have on record."
-      intro="Roads, bridges, irrigation and river protection works, executed for state and national authorities. Ongoing and completed work each have their own page."
+      eyebrow="Projects"
+      title="The project files."
+      intro="Road, municipal, water, industrial and rail infrastructure contracts executed for state, municipal and development authorities. Each sheet carries the authority and scope, with the contract value and chainage where they are on record."
       projects={loadProjects()}
       emptyNote="No projects are published yet."
     />

@@ -2,9 +2,15 @@
 
 /* ============================================================================
    NCC Infraspace — design tokens
-   Source of truth: docs/01-requirements-r7.md. FINAL PALETTE — the owner has
-   closed this. R5's four-colour set is withdrawn, as were Signboard, Brass &
-   Indigo and Brass & Midnight before it.
+   Source of truth: docs/01-requirements-r7.md, AMENDED BY R9.
+
+   R9 withdrew Warm White #FAF7F2. The primary light surface is PURE WHITE
+   #FFFFFF. Cream, ivory, beige and warm-white treatments are removed from the
+   interface entirely — see docs/01-requirements-r9.md. The other four of R7's
+   five are untouched. Do not reintroduce a warm ground.
+
+   R5's four-colour set is withdrawn, as were Signboard, Brass & Indigo and
+   Brass & Midnight before it.
 
    Clean break as before: --gold, --orange, --navy-deep, --paper, --rule and
    the R5 -ink variants are gone and NOT aliased, so stragglers fail loudly.
@@ -14,24 +20,33 @@
    three of the five cannot legally carry text and §9 mandates WCAG 2.1 AA.
    Every previous revision needed the same and the owner accepted it each time.
 
-   THE BACKBONE IS EXCELLENT — better than any previous revision:
-     --navy on --white      15.28:1      --white on --navy      15.28:1
+   THE BACKBONE, remeasured against pure white at R9:
+     --navy on --white      16.32:1      --white on --navy      16.32:1
      --navy on --mist       12.40:1      --mist on --navy       12.40:1
+
+   Every ratio improved or held when the ground went from #FAF7F2 to #FFFFFF,
+   and NO DERIVED TOKEN NEEDED CHANGING. That is not luck: the -ink variants
+   were solved against --mist, the harder of the two light grounds, and --mist
+   did not move. Pure white only ever adds headroom on the easier ground.
 
    ENFORCEMENT RULES:
 
      1. --slate and --copper NEVER carry body text on ANY ground.
-        slate  4.41 white / 3.58 mist / 3.46 navy
-        copper 3.51 white / 2.85 mist / 4.36 navy
-        All below 4.5. Use the -ink variants on light, -light on dark.
+        slate  4.72 white / 3.58 mist / 3.46 navy
+        copper 3.75 white / 2.85 mist / 4.36 navy
+        All below 4.5 except slate on pure white, which clears by 0.22 and is
+        still barred — one token behaving differently on one of three grounds
+        is a rule nobody can hold in their head. Use -ink on light, -light on
+        dark, everywhere.
 
      2. NO TEXT COLOUR PASSES AA ON RAW --copper.
-        white 3.75 · warm-white 3.51 · navy 4.36. A filled copper CTA must
-        use --copper-deep with a --white label (4.51). This is the single
-        most likely bug in this palette: copper reads as an obvious button
-        fill and every label you reach for fails on it.
+        --white 3.75 · navy 4.36. Pure white gained 0.24 and still fails. A
+        filled copper CTA must use --copper-deep with a --white label, now
+        4.82 (was 4.51). This is the single most likely bug in this palette:
+        copper reads as an obvious button fill and every label you reach for
+        fails on it.
 
-     3. --mist is a SURFACE, never an interactive border. 1.23:1 on --white.
+     3. --mist is a SURFACE, never an interactive border. 1.32:1 on --white.
         Use --rule-strong for anything WCAG 1.4.11 applies to.
 
      4. --copper is the ACTIVE-STATE accent, per its own definition. CTAs,
@@ -43,7 +58,8 @@
   --color-navy: #18202f; /* Midnight Navy — executive premium dark surface  */
   --color-slate: #68748a; /* Slate Blue — muted corporate secondary         */
   --color-mist: #dce1e6; /* Mist Gray — cool metal interface background    */
-  --color-white: #faf7f2; /* Warm White — clean editorial light surface     */
+  --color-white: #ffffff; /* R9: PURE WHITE. Was Warm White #FAF7F2 —
+                             withdrawn. Do not reintroduce a warm ground.  */
   --color-copper: #b8734f; /* Copper — warm mechanical ACTIVE-STATE accent   */
 
   /* --- text-safe on light grounds (solved against --mist, the harder one) - */
@@ -105,6 +121,17 @@
   --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
 
+  /*
+   * ONE type scale, used everywhere. --text-caption is the uppercase
+   * letterspaced label step: it is fixed at 11px rather than fluid, because
+   * a tracked-out label that grows with the viewport reads as a second
+   * heading rather than as chrome.
+   */
+  --text-caption: 0.6875rem; /* 11px, uppercase labels and metadata keys */
+  /* Page display heading. One fluid curve from 32px at 360 to 72px at 1440,
+   * replacing the two hand-written clamps and a breakpoint that every page
+   * was carrying its own copy of. */
+  --text-display: clamp(2rem, 0.5rem + 4.2vw, 4.5rem);
   --text-xs: clamp(0.75rem, 0.73rem + 0.09vw, 0.8rem);
   --text-sm: clamp(0.875rem, 0.85rem + 0.11vw, 0.95rem);
   --text-base: clamp(1rem, 0.97rem + 0.14vw, 1.125rem);
@@ -269,7 +296,7 @@ h4 {
   inset: 0;
   background: radial-gradient(
     120% 90% at 30% 15%,
-    rgb(250 247 242 / 0.14),
+    rgb(255 255 255 / 0.14),
     transparent 62%
   );
 }

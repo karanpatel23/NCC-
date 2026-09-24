@@ -18,7 +18,8 @@
     lockup on dark surfaces) is the recommendation and needs no permission, but
     it concerns the LOCKUP, not this monogram.
 
-    Resolve §4, then revisit. --paper is R5's #F8FAFB.
+    Resolve §4, then revisit. R9: the stroke is pure white; the
+    #3B498C ground is the part still waiting on that brand decision.
 
     Square with no radius, per R2 and the sitewide "infrastructure isn't soft"
     rule. The only rounded thing on this site is the map pin.
@@ -27,7 +28,7 @@
   <path
     d="M19 46 V18 L45 46 V18"
     fill="none"
-    stroke="#F8FAFB"
+    stroke="#FFFFFF"
     stroke-width="7"
     stroke-linecap="butt"
     stroke-linejoin="miter"

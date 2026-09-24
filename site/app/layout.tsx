@@ -9,12 +9,41 @@ import { ChainageRail } from "@/components/chainage-rail"
 export const metadata: Metadata = {
   metadataBase: new URL("https://nccinfraspace.com"),
   title: {
-    default: "NCC Infraspace — Building Gujarat's roads and bridges since 1987",
+    /* R9: the phrase R9 names is gone from the landing page's title too.
+     * The meta description below KEEPS its geography — that is project fact
+     * and search signal, not positioning, and R9 preserves both. */
+    default: "NCC Infraspace, road and bridge contractors since 1987",
     template: "%s · NCC Infraspace",
   },
   description:
-    "Class AA contractor registered with the Government of Gujarat. Roads, bridges, irrigation and river protection works across Gujarat since 1987.",
+    "Class AA registered contractor building roads, bridges, irrigation and river protection works for government authorities across India since 1987.",
   alternates: { canonical: "/" },
+  /*
+   * Open Graph and Twitter cards. Previously absent on every page, so a link
+   * shared to WhatsApp or LinkedIn rendered as a bare URL. Per-page metadata
+   * inherits and overrides title and description automatically; only the
+   * shared defaults live here.
+   *
+   * The card image is the site's own logo lockup on the brand navy. There is
+   * no photograph that represents all 57 projects, and picking one would be
+   * an editorial claim about which job matters most.
+   */
+  openGraph: {
+    type: "website",
+    siteName: "NCC Infraspace",
+    locale: "en_IN",
+    url: "/",
+    title: "NCC Infraspace, road and bridge contractors since 1987",
+    description:
+      "Class AA registered contractor building roads, bridges, irrigation and river protection works for government authorities across India since 1987.",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "NCC Infraspace" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "NCC Infraspace, road and bridge contractors since 1987",
+    description:
+      "Class AA registered contractor building roads, bridges, irrigation and river protection works for government authorities across India since 1987.",
+  },
 }
 
 export default function RootLayout({

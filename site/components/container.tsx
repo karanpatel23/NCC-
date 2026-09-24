@@ -73,7 +73,7 @@ export function Eyebrow({
       : "text-[color:var(--color-copper-ink)]"
   return (
     <p
-      className={`mb-4 font-[family-name:var(--font-plex-sans)] text-[11px] font-medium tracking-[0.18em] uppercase ${color}`}
+      className={`mb-4 font-[family-name:var(--font-plex-sans)] text-[length:var(--text-caption)] font-medium tracking-[0.18em] uppercase ${color}`}
     >
       {children}
     </p>

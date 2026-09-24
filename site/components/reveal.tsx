@@ -25,10 +25,19 @@ export function Reveal({
   children,
   delay = 0,
   className = "",
+  as: Tag = "div",
 }: {
   children: ReactNode
   delay?: number
   className?: string
+  /*
+   * The element to render. Defaults to a div, but inside a list the wrapper
+   * has to BE the <li>: a div between <ul> and <li> breaks list semantics
+   * even with display:contents, which Lighthouse flags and screen readers
+   * announce wrongly. Previously this wrapped each <li> in a contents-div and
+   * the homepage capability list was reported as malformed.
+   */
+  as?: "div" | "li"
 }) {
   const ref = useRef<HTMLDivElement>(null)
 
@@ -85,8 +94,8 @@ export function Reveal({
   }, [delay])
 
   return (
-    <div ref={ref} className={className}>
+    <Tag ref={ref as never} className={className}>
       {children}
-    </div>
+    </Tag>
   )
 }

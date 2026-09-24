@@ -34,7 +34,7 @@ export default function AppleIcon() {
             fontSize: 62,
             fontWeight: 800,
             letterSpacing: "-0.02em",
-            color: "#FBFAF7", // --paper
+            color: "#FFFFFF", // R9: was warm white #FBFAF7
           }}
         >
           NCC

@@ -42,13 +42,44 @@ export const Project = z
   .object({
     title: z.string().min(6),
     status: z.enum(["ongoing", "completed", "awarded"]),
-    category: z.enum(["highways", "bridges", "irrigation", "protection"]),
+    /*
+     * R11: widened from the original four. The recovered portfolio is not only
+     * roads — it contains municipal resurfacing, sewer and water-supply
+     * networks, industrial-estate infrastructure and a port rail link. Four
+     * values could not describe 56 real records without forcing most of them
+     * into "highways", which would have been a silent falsehood in the data.
+     *
+     * bridges / irrigation / protection are RETAINED even though no recovered
+     * record uses them. Their absence from this dataset is not evidence the
+     * company lacks the capability — it is one working file covering 2018–2023.
+     */
+    category: z.enum([
+      "highways",
+      "bridges",
+      "irrigation",
+      "protection",
+      "urban",
+      "water",
+      "industrial",
+      "rail",
+    ]),
 
     /* Required — the Maruti rule. Their project records carry a title and one
      * sentence of tender scope and nothing else. */
     client: z.string().min(2),
     authority: z.string().optional(),
-    contractValueCr: z.number().positive(),
+    /*
+     * R11: OPTIONAL. Was required.
+     *
+     * The owner's instruction is that a value may be omitted when unresolved,
+     * and that nothing may be invented to fill it. Bilodara–Sihunj has no
+     * value on record; a 0, an empty string or a guessed figure would each be
+     * worse than the field simply not existing. Consumers omit the row.
+     *
+     * .positive() still holds when a value IS given, so 0 cannot slip in as a
+     * stand-in for "unknown".
+     */
+    contractValueCr: z.number().positive().optional(),
 
     scopeSummary: z.string().min(20).max(220),
 
@@ -56,7 +87,16 @@ export const Project = z
     chainageTo: z.string().optional(),
     lengthKm: z.number().positive().optional(),
     highway: z.string().optional(), // 'NH-58', 'SH-41'
-    district: z.string(),
+    /*
+     * R11: OPTIONAL. Was required. 30 of the 56 recovered records never state
+     * a district in their scope text.
+     *
+     * It must NOT be inferred from the awarding authority's office — "R and B
+     * Panchayat Division, Ahmedabad" is where the department sits, not where
+     * the road is. Several Ahmedabad-issued packages are works in other
+     * talukas entirely.
+     */
+    district: z.string().optional(),
     state: z.string().default("Gujarat"),
     location: z.tuple([z.number(), z.number()]).optional(), // [lat, lng]
 
@@ -74,7 +114,16 @@ export const Project = z
      * .min(1) just invites "." . The competitor ships nearly every <img> with
      * an empty alt.
      */
-    heroImage: z.object({ src: z.string(), alt: z.string().min(10) }),
+    /*
+     * R11: OPTIONAL. Was required, and was the binding blocker on publishing
+     * the recovered portfolio — 51 of 57 projects have no owner-approved
+     * photograph, and inventing an association or substituting stock imagery
+     * is forbidden.
+     *
+     * The alt-text floor is unchanged and still applies to any image that IS
+     * supplied: min(10), because .min(1) just invites ".".
+     */
+    heroImage: z.object({ src: z.string(), alt: z.string().min(10) }).optional(),
     gallery: z
       .array(
         z.object({
@@ -115,12 +164,29 @@ export const Project = z
    */
   .refine((p) => p.progressPercent === undefined || !!p.progressUpdated, {
     message:
-      "progressPercent requires progressUpdated — an undated percentage looks current forever",
+      "progressPercent requires progressUpdated. An undated percentage looks current forever",
   })
-  .refine((p) => p.status !== "completed" || p.completionDate, {
-    message: "Completed projects require completionDate",
-  })
-  .refine((p) => !p.featured || p.heroImage.src, {
+  /*
+   * REMOVED at R8, by the owner's decision: completion dates are not required
+   * and are not displayed.
+   *
+   * The rule was sound in the abstract — a completed project with no date
+   * looks unfinished — but it collided with the facts. The reviewed records
+   * ARE complete and their handover dates are not to hand, so the rule left
+   * only three moves: hold every completed project back, weaken the whole
+   * schema, or write a plausible date. The third is the one that actually
+   * happens under deadline, and it is the exact failure the §2 teardown
+   * exists to prevent. A record that is true but thin beats one that is
+   * complete and invented.
+   *
+   * `completionDate` remains in the schema and any authentic date already
+   * stored is retained. It is simply not required, and app/projects/[slug]
+   * does not render it this phase.
+   *
+   * Nothing sorts by date — loadProjects() orders by displayOrder — so an
+   * absent date cannot reorder or break a listing. Verified, not assumed.
+   */
+  .refine((p) => !p.featured || !!p.heroImage?.src, {
     message: "Featured projects appear in the corridor and need a hero image",
   })
 

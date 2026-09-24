@@ -31,6 +31,13 @@ export function ChainageRail() {
   const [marks, setMarks] = useState<Mark[]>([])
   const [progress, setProgress] = useState(0)
   const [activeIndex, setActiveIndex] = useState(0)
+  /*
+   * Sections that own the left gutter can ask the rail to stand down. The
+   * homepage blueprint is a full-bleed navy drawing in exactly this space, and
+   * the rail's ticks and labels landed on top of it. Marked sections set
+   * [data-rail-quiet]; everywhere else the rail behaves as before.
+   */
+  const [quiet, setQuiet] = useState(false)
   const raf = useRef(0)
 
   useEffect(() => {
@@ -74,6 +81,14 @@ export function ChainageRail() {
           if (m.top <= line) idx = i
         })
         setActiveIndex(idx)
+
+        const mid = window.innerHeight * 0.5
+        setQuiet(
+          Array.from(document.querySelectorAll("[data-rail-quiet]")).some((el) => {
+            const r = el.getBoundingClientRect()
+            return r.top < mid && r.bottom > mid
+          }),
+        )
       })
     }
     onScroll()
@@ -95,7 +110,8 @@ export function ChainageRail() {
        */}
       <div
         aria-hidden
-        className="fixed inset-x-0 top-0 z-[60] h-[2px] bg-transparent xl:hidden"
+        className="fixed inset-x-0 top-0 z-[60] h-[2px] bg-transparent transition-opacity duration-300 xl:hidden"
+        style={{ opacity: quiet ? 0 : 1 }}
       >
         <div
           className="h-full origin-left bg-[color:var(--color-copper)] transition-[width] duration-150 ease-out"
@@ -106,7 +122,8 @@ export function ChainageRail() {
       {/* Desktop rail, left gutter, ≥1280px only. */}
       <div
         aria-hidden
-        className="pointer-events-none fixed top-0 left-6 z-40 hidden h-screen w-[86px] xl:block"
+        className="pointer-events-none fixed top-0 left-6 z-40 hidden h-screen w-[86px] transition-opacity duration-300 xl:block"
+        style={{ opacity: quiet ? 0 : 1 }}
       >
         <div className="relative flex h-full flex-col justify-center">
           {/* the road edge */}
@@ -134,7 +151,7 @@ export function ChainageRail() {
                     }}
                   />
                   <span
-                    className="measurement text-[10px] whitespace-nowrap transition-colors duration-200"
+                    className="measurement text-[length:var(--text-caption)] whitespace-nowrap transition-colors duration-150"
                     style={{
                       color: isActive
                         ? "var(--color-copper-ink)"
@@ -151,7 +168,7 @@ export function ChainageRail() {
 
           {/* current section label, sticking to the rail */}
           <p
-            className="measurement absolute left-[10px] max-w-[70px] text-[9px] leading-tight tracking-[0.1em] text-[color:var(--color-copper-ink)] uppercase"
+            className="measurement absolute left-[10px] max-w-[84px] text-[length:var(--text-caption)] leading-tight tracking-[0.1em] text-[color:var(--color-copper-ink)] uppercase"
             style={{ top: "calc(50% + 120px)" }}
           >
             {active.label}

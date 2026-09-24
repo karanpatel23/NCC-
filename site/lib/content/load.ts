@@ -61,7 +61,22 @@ export function loadProjects(): LoadedProject[] {
     /* Throws on invalid content. See the note above — this is deliberate. */
     const parsed = Project.parse(data)
 
-    return { ...parsed, slug, body: content.trim() }
+    /*
+     * Strip HTML comments from the body.
+     *
+     * The generated records carry an internal provenance line —
+     * `<!-- provenance: archive on-hand ids [...]; source amount ... lakhs -->`
+     * — recording which archive rows they came from. The detail page renders
+     * the body as plain paragraphs, so that comment was being printed to
+     * visitors verbatim on 55 of 57 project pages.
+     *
+     * The comment stays in the MDX file, which is where the provenance
+     * belongs; it simply never reaches the page. Stripping here rather than in
+     * the template fixes every consumer at once.
+     */
+    const body = content.replace(/<!--[\s\S]*?-->/g, "").trim()
+
+    return { ...parsed, slug, body }
   })
 
   return projects.sort((a, b) => a.displayOrder - b.displayOrder)
@@ -83,7 +98,9 @@ export function featuredProjects(): LoadedProject[] {
  * the corridor should not ship as a corridor at all.
  */
 export function corridorImages(): string[] {
-  return featuredProjects().map((p) => p.heroImage.src)
+  return featuredProjects()
+    .map((p) => p.heroImage?.src)
+    .filter((s): s is string => !!s)
 }
 
 /** One project by slug, or null. Used by the detail route's generateStaticParams pair. */
@@ -107,11 +124,22 @@ export function projectsByStatus(
 
 /** Totals for the index headers. Real arithmetic over real records, never a
  * hardcoded counter — the competitor teardowns both show "0 +" in production. */
+/*
+ * R11: `valueCr` is GONE, deliberately.
+ *
+ * The owner's instruction is that no aggregate portfolio value is published.
+ * The reason is in the evidence: the recovered set is one working file of
+ * tender awards from 2018–2023, it is not the company's lifetime record, and
+ * summing it produces a number that reads as an order book and is not one.
+ * Individual project values are published; their sum is not.
+ *
+ * Do not reinstate a total here. A helper that exists will end up rendered.
+ */
 export function projectTotals() {
   const all = loadProjects()
   return {
     count: all.length,
-    valueCr: Math.round(all.reduce((sum, p) => sum + p.contractValueCr, 0) * 100) / 100,
+    withValue: all.filter((p) => p.contractValueCr !== undefined).length,
     ongoing: all.filter((p) => p.status === "ongoing").length,
     completed: all.filter((p) => p.status === "completed").length,
     awarded: all.filter((p) => p.status === "awarded").length,

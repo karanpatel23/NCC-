@@ -58,7 +58,7 @@ function main() {
       // Image existence is not the schema's job, but a broken src is a broken
       // page, so check it here where we have the directory in hand.
       const imgs = [
-        result.data.heroImage.src,
+        ...(result.data.heroImage ? [result.data.heroImage.src] : []),
         ...result.data.gallery.map((g) => g.src),
       ]
       for (const src of imgs) {
