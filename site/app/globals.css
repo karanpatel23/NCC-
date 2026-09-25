@@ -372,7 +372,11 @@ h4 {
    the approved Home composition keeps its existing styling and layout. */
 .page-shell { padding-bottom: clamp(5rem,8vw,9rem); }
 .page-heading { position:relative; margin-inline:calc(50% - 50vw); padding:clamp(7rem,11vw,10rem) max(1.25rem,calc((100vw - 1184px)/2)) clamp(3.5rem,6vw,6rem); overflow:hidden; background:#f1f4f6; }
-.engineering-grid { background-image:linear-gradient(90deg,rgba(104,116,138,.10) 1px,transparent 1px),linear-gradient(rgba(104,116,138,.10) 1px,transparent 1px); background-size:64px 64px; }
+/* Grid texture. The three customs exist so the mobile block can retune line
+   weight, cell size and origin without restating the gradients — a second copy
+   of the background-image is exactly how the two would drift apart. Desktop
+   values are the originals: .10 alpha, 64px cells, origin at the box edge. */
+.engineering-grid { --grid-line:rgba(104,116,138,.10); --grid-size:64px; --grid-origin:0px; background-image:linear-gradient(90deg,var(--grid-line) 1px,transparent 1px),linear-gradient(var(--grid-line) 1px,transparent 1px); background-size:var(--grid-size) var(--grid-size); background-position:var(--grid-origin) 0; }
 .heading-marker,.eyebrow { display:block; font:500 .72rem/1.45 var(--font-mono); letter-spacing:.17em; text-transform:uppercase; color:var(--color-copper-ink); }
 .heading-marker { display:flex; align-items:center; gap:.75rem; color:var(--color-muted); margin-bottom:clamp(3rem,6vw,5rem); }
 .heading-marker span { width:2rem; height:1px; background:var(--color-copper-deep); }
@@ -403,7 +407,106 @@ h4 {
 .enquiry-note { margin-top:5rem; padding:clamp(2rem,5vw,5rem); }.enquiry-note p:not(.eyebrow) { margin:1.5rem 0; max-width:54ch; }.enquiry-note .button { margin-top:1rem; }
 .careers-panel { display:grid; grid-template-columns:1.05fr .95fr; margin:4rem 0 1rem; }.careers-panel>div:first-child { padding:clamp(2rem,5vw,5rem); }.careers-panel p:not(.eyebrow) { max-width:48ch; margin:1.5rem 0; color:var(--color-muted); }.careers-panel .button { margin-top:1.5rem; }.career-email { display:block; width:max-content; max-width:100%; overflow-wrap:anywhere; margin-top:1rem; color:var(--color-copper-ink); }.drawing-panel { background-color:var(--color-mist); display:flex; flex-direction:column; justify-content:center; align-items:center; gap:2rem; padding:2rem; }.drawing-panel svg { max-width:100%; }
 @supports (backdrop-filter:blur(12px)) { .glass { background:rgba(255,255,255,.78); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); } }
-@media(max-width:767px){ .page-heading { padding-top:7rem; }.heading-marker { margin-bottom:2.5rem; }.editorial-section { grid-template-columns:1fr; padding:4rem 0; gap:2rem; }.contact-band { flex-direction:column; align-items:start; }.contact-actions,.office-grid,.careers-panel { grid-template-columns:1fr; }.contact-actions { margin:2rem 0 4rem; }.drawing-panel { min-height:16rem; }.footprint-list { grid-template-columns:1fr; } }
+/* ===========================================================================
+ * MOBILE PANEL SYSTEM — everything below 768px. Nothing here escapes the
+ * query, so tablet and desktop render exactly as they did before it existed.
+ *
+ * ONE decision drives the whole block: DARK PANELS ARE FULL-BLEED, and their
+ * content sits on the page gutter. The alternative the brief offered — keep
+ * the panels inset and give them inner padding — was rejected because it puts
+ * dark-panel text 24px right of the light sections above and below it. That is
+ * the misalignment this block exists to remove, not a second version of it.
+ *
+ * Consequence: ONE left edge, --gutter, for every piece of section-level text
+ * on the site. Before this, mobile carried five: header 16, subpage shell 20,
+ * Container 24 (header bar, footer, homepage), sheet cards 39, glass cards 52.
+ * --gutter is 1.5rem because 24px is the §4.6 system gutter that <Container>
+ * already uses for the header, the footer and the whole homepage; the shell's
+ * px-5 was the drift. Moving the shell to 24 leaves those three untouched.
+ *
+ * The panels bleed with a negative margin of exactly --gutter, NOT with the
+ * 50vw trick .page-heading uses. Below 1280px the shell is full width and its
+ * only inline padding is the gutter, so -1.5rem lands on the viewport edge to
+ * the pixel — and no scrollbar can widen it, which 100vw can.
+ * ========================================================================= */
+@media(max-width:767px){
+  :root { --gutter:1.5rem; }
+
+  /* One gutter, applied to the shell. Header/footer/homepage are already on
+     24px via <Container> and are deliberately not touched. */
+  .page-shell { padding-inline:var(--gutter); }
+
+  /* Grid texture. Start the first line ON the gutter so it coincides with the
+     text edge instead of cutting the measure at an arbitrary offset, shrink
+     the cell (64px drew six lines across a 342px panel), and lighten it. */
+  .engineering-grid { --grid-line:rgba(104,116,138,.055); --grid-size:57px; --grid-origin:var(--gutter); }
+  .dark-panel.engineering-grid,.on-dark.engineering-grid { --grid-line:rgba(163,178,199,.075); }
+
+  /* --- page heading band ------------------------------------------------- */
+  .page-heading { padding:7rem var(--gutter) 2.75rem; }
+  .heading-marker { margin-bottom:2.5rem; }
+  .heading-rule span { margin-left:var(--gutter); }
+  /* 37px at 360, 40px at 390, 42px at 430. Was a flat 44.8px, and the tighter
+     tracking that reads as precision at 104px reads as cramped at 40. */
+  .page-heading h1 { font-size:clamp(2.2rem,10.25vw,2.6rem); line-height:1.09; letter-spacing:-.028em; }
+  /* Drop the authored line break and let text-wrap:balance do the work. The
+     desktop breaks are chosen for a 1000px measure: held at 390 they stranded
+     single words, "Experience / forms / our / foundations." over four lines.
+     Every heading this hits now carries an explicit {" "} before its <br>,
+     because display:none on a <br> swallows the adjacent whitespace too —
+     without it the words run together ("Experience formsour"). */
+  .page-heading h1 br,.contact-band h2 br { display:none; }
+  .page-intro { margin-top:1.25rem; }
+
+  /* --- editorial sections ------------------------------------------------- */
+  /* Vertical scale, applied everywhere below: 2.75rem block padding,
+     eyebrow -> heading .6rem, heading -> body 1.5rem, row gap 1.25rem. */
+  .editorial-section { grid-template-columns:1fr; padding:2.75rem 0; gap:1.5rem; }
+  .editorial-section h2,.section-heading h2,.office-section h2,.careers-panel h2,.enquiry-note h2,.contact-band h2 { margin-top:.6rem; line-height:1.15; letter-spacing:-.03em; }
+
+  /* The bleed. Dark panels only — light sections have no visible edge, so they
+     stay in the shell and their text is already on the gutter. */
+  .editorial-section.dark-panel,.contact-band,.enquiry-note { padding-inline:var(--gutter); }
+  .editorial-section.dark-panel { margin-inline:calc(var(--gutter) * -1); padding-block:2.75rem; border-bottom:0; }
+  .contact-band { margin:3.5rem calc(var(--gutter) * -1) 0; padding-block:2.75rem; flex-direction:column; align-items:start; gap:1.5rem; }
+  .enquiry-note { margin:3.5rem calc(var(--gutter) * -1) 0; padding-block:2.75rem; }
+  .enquiry-note p:not(.eyebrow) { margin:1.25rem 0; }
+
+  /* Overflow guards. Grid and flex children default to min-width:auto, which
+     is what lets one long token shoulder a panel past its own padding. */
+  .editorial-section>*,.contact-band>*,.approach-list>div,.history-list li>*,.identity-grid div,.footprint-list li { min-width:0; }
+  .editorial-body p,.editorial-section h2,.page-heading h1,.page-intro,.approach-list h3,.approach-list p,.history-list h3,.history-list p,.enquiry-note p,.contact-band h2,.careers-panel p,.dark-panel blockquote { overflow-wrap:break-word; }
+
+  /* The copper rule now sits inside the panel padding rather than on its edge,
+     and the quote carries its own right padding so the last word on a line is
+     not flush to the panel. 48ch is wider than the measure and was doing
+     nothing but blocking the shorter wrap. */
+  .dark-panel blockquote { max-width:none; padding-left:1rem; padding-right:.5rem; font-size:1.2rem; line-height:1.5; }
+
+  .approach-list { gap:1.25rem; }
+  .approach-list div { padding-top:1rem; }
+  .approach-list h3 { font-size:1.15rem; }
+  .identity-grid { margin-top:1.75rem; }
+  .history-list li { grid-template-columns:3.75rem 1fr; gap:.85rem; padding:1.1rem 0; }
+  .footprint-list { grid-template-columns:1fr; margin-top:1.5rem; }
+
+  /* --- cards ---------------------------------------------------------------
+     Cards are a nested surface with a drawn border, so their interiors indent
+     from the gutter by design. The point is that they all indent by the SAME
+     18px the project and capability sheets already use — glass cards were on
+     32px, which put their text 14px right of every other card on the site. */
+  .contact-actions,.office-grid,.careers-panel { grid-template-columns:1fr; }
+  .contact-actions { margin:2rem 0 3.5rem; gap:1rem; }
+  .contact-actions a { padding:1.125rem; }
+  .office-section { margin:3.5rem 0; }
+  .office-grid { gap:1rem; margin-top:1.75rem; }
+  .office-grid address { min-height:0; padding:1.125rem; }
+  .office-grid h3 { font-size:1.3rem; }
+  .careers-panel { margin:2.5rem 0 1rem; }
+  .careers-panel>div:first-child { padding:1.125rem; }
+  .careers-panel p:not(.eyebrow) { margin:1.25rem 0; }
+  .drawing-panel { min-height:16rem; padding:1.5rem 1.125rem; gap:1.5rem; }
+}
 
 /* Glass surfaces for the project and client archives. Opaque base keeps all
    copy readable where blur is unsupported. */
@@ -419,3 +522,43 @@ h4 {
 .project-detail .gallery-grid img { background:#eef1f3; }
 @supports (backdrop-filter:blur(12px)) { .project-sheet,.capability-card,.client-glass { background:rgba(255,255,255,.83); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); } }
 @media (prefers-reduced-motion:reduce) { .project-sheet,.capability-card,.client-glass { transition:none; } }
+
+/* ===========================================================================
+ * /capabilities — the plant plate.
+ *
+ * ONE full-bleed photographic band, between the page header and the capability
+ * list, and it exists on this route only. public/images/expertise-concrete-
+ * plant.png is a GENERATED industrial image supplied by the owner, not an NCC
+ * site photograph and not a record of NCC plant. It sits on this page in
+ * exactly the status the engineering drawings above it already have: a
+ * category illustration. That is why the caption describes how road and bridge
+ * work is built in general and claims nothing about NCC's own equipment —
+ * there is no approved fact about batching plant, capacity or ownership, and
+ * §7 says an unevidenced field renders nothing rather than a plausible guess.
+ *
+ * Contrast measured on --navy, not estimated: eyebrow #d99c7b 6.99:1,
+ * body white/.84 11.79:1, heading white 16.32:1.
+ * ========================================================================= */
+.expertise-plate { position:relative; margin-inline:calc(50% - 50vw); margin-top:clamp(2.5rem,5vw,4rem); overflow:hidden; background:var(--color-navy); }
+/* The source is 1619x971 = 1.667, so the lg ratio is the frame's own and the
+   desktop plate applies NO crop at all. Below that the frame gets taller and
+   object-fit crops the width; 58% biases the window toward the silos and the
+   mixer, which are what still read at 390px. */
+.expertise-plate figure { margin:0; aspect-ratio:4/3; }
+.expertise-plate img { display:block; width:100%; height:100%; object-fit:cover; object-position:58% center; }
+/* Copper hairline on the horizon between the photograph and the caption —
+   the same 2px accent the sheets and the heading band already draw. */
+.expertise-plate-caption { position:relative; display:grid; gap:1rem; padding-block:clamp(1.75rem,3.5vw,3rem); padding-inline:1.5rem; border-top:2px solid var(--color-copper-light); }
+.expertise-plate-caption h2 { font-size:clamp(1.6rem,3.4vw,2.5rem); line-height:1.12; letter-spacing:-.03em; color:var(--color-white); }
+.expertise-plate-caption p:not(.eyebrow) { max-width:58ch; font-size:clamp(1rem,1.3vw,1.16rem); line-height:1.7; color:rgb(255 255 255 / .84); overflow-wrap:break-word; }
+.expertise-plate-caption .eyebrow { margin-bottom:.5rem; }
+@media(min-width:640px){ .expertise-plate figure { aspect-ratio:16/9; } .expertise-plate img { object-position:center; } }
+/* Caption padding tracks PAGE_SHELL exactly — 24 / 32 / 48 against a 1280
+   column — so the caption's left edge lands on the capability cards below it
+   at every width rather than near them. */
+@media(min-width:768px){ .expertise-plate-caption { padding-inline:max(2rem,calc((100vw - 1280px)/2 + 2rem)); } }
+@media(min-width:1024px){
+  .expertise-plate figure { aspect-ratio:1619/971; }
+  .expertise-plate-caption { grid-template-columns:minmax(0,.42fr) minmax(0,.58fr); align-items:start; gap:clamp(2rem,5vw,6rem); padding-inline:max(3rem,calc((100vw - 1280px)/2 + 3rem)); }
+  .expertise-plate-caption>div { min-width:0; }
+}
