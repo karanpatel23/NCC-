@@ -25,8 +25,8 @@ export default function ClientsPage() {
           <>
             Government departments, municipal corporations, development
             authorities, national institutions and private organisations
-            have worked with NCC Infraspace. Open a card to explore the
-            published project records linked to it.
+            have worked with NCC Infraspace. The published contracts are in
+            the project files.
           </>
         }
       />

@@ -424,6 +424,31 @@ export function MilestonePortalHero() {
         @media (min-width: 1000px) {
           [data-ncc-creds] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
         }
+
+        /*
+         * GlyphPortal ships a native select so TOUCH users can pick which
+         * letter the camera enters through — its own "any-pointer: coarse"
+         * rule shows it on every phone and tablet. It is switched off here for
+         * two reasons.
+         *
+         * The entry letter is not a choice on this site. focusChar is "O", and
+         * the O of MILESTONE is the one worth entering because the milestone is
+         * the subject, while the other two Os sit in OUR and VISION. A dropdown
+         * inviting a different letter contradicts a decision already made.
+         *
+         * And the component parks it at --gp-word-bottom + 42px, which on a
+         * phone lands on the subtitle: measured 124x44 at (133,354) on a 390px
+         * viewport, covering the last word of "Roads, bridges, irrigation and
+         * river protection works."
+         *
+         * display:none, NOT interactive={false} on the component. That prop
+         * also suppresses the "Scroll to enter." hint and the desktop letter
+         * hover, both of which are wanted. Nothing is lost to assistive tech:
+         * the letter buttons are already inert with tabIndex -1, so this select
+         * was never anyone's only route anywhere, and "See our credentials"
+         * remains a real anchor into the arrival content.
+         */
+        .ncc-portal [data-gp-touch-picker] { display: none; }
       `}</style>
 
       <GlyphPortal
