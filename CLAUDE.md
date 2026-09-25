@@ -356,6 +356,43 @@ is a recovered 2018–2023 tender file, not a lifetime record, and a total over 
 book. Individual contract values appear on each project; their sum does not appear anywhere. The
 surviving count tile is labelled *"Projects listed on this site"*.
 
+### There is a ₹40 Cr publication floor on the portfolio (R24)
+The owner's instruction: projects under ₹40 Cr are not visible on the site. **13 of 57
+records publish; 44 are drafted.**
+
+- **Drafted, NOT deleted.** Each withdrawn directory is prefixed `_`, the loader's own
+  documented opt-out. The tender evidence stays on disk, `content:check` lists all 44
+  separately as "valid — rename to publish", and the floor is reversed by renaming back.
+  Nothing was destroyed to apply an editorial decision.
+- **A record with NO value is NOT under the floor.** `bilodara-sihunj-road` has no
+  `contractValueCr`, so it is not known to be under 40 and it stays published. R11 is
+  explicit that an absent optional field is never read as 0, and that rule does not
+  weaken because a filter would be tidier if it did. It is the one published record with
+  no value, and it still carries its gallery.
+- **Three categories lost their EVIDENCE, not their CLAIM.** water 6→0, industrial 2→0,
+  rail 1→0. `/capabilities` reads the approved registry, so all three still render their
+  title and description and then stop, exactly as bridges, irrigation and protection
+  already do. Do not "tidy" them out of `lib/capabilities.ts` — NCC still does that work;
+  the site simply no longer publishes a contract that evidences it.
+- Madhya Pradesh survives on one record (₹158.27 Cr), so the `/about` footprint keeps
+  both states. Distinct project clients 32→13; the `/clients` wall is unaffected because
+  it lists owner-verified relationships, not derived records.
+
+**Applying the floor exposed two counters that were TYPED, and both were live.** The hero
+credentials panel and a duplicate list in `lib/company.ts` each carried
+`{ label: "Project records", value: "57" }`, and `/projects` advertised "Explore 57
+completed road, municipal, water, industrial and rail infrastructure project records" in
+its meta description and its visible intro. After the cut the hero claimed 57 published
+records when 13 were, and the description promoted water, industrial and rail work to a
+search engine that would land the visitor on a list containing none of it — the §2
+failure reached by neglect rather than by invention, which makes it no better.
+- The hero is a client component, so `app/page.tsx` derives `projectTotals().count` and
+  passes it in. That also keeps the §4.4 invariant: the true figure is in the SSR HTML.
+- `lib/company.ts`'s `CREDENTIALS` was deleted, not corrected. Nothing imported it, and a
+  second copy of a derived figure is the bug rather than its value.
+- `/projects` now derives both the count and the list of types from the records it is
+  actually listing, so the sentence cannot describe a portfolio the page is not showing.
+
 ### Content is typed MDX in `content/`, not a CMS (R6)
 No Sanity, no Studio, no API keys. `lib/content/schema.ts` is the enforcement layer and
 `lib/content/load.ts` uses `.parse()`, not `safeParse` — a malformed project **fails the build**

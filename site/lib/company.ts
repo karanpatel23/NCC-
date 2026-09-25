@@ -66,14 +66,15 @@ export const COMPANY = {
   email: "ncc_infraspace2015@yahoo.in",
 } as const
 
-/* Presentation facts retained for compatibility. Unverified turnover,
- * credit ratings and registration have been removed from published copy. */
-export const CREDENTIALS = [
-  { label: "Established", value: "1987" },
-  { label: "Incorporated", value: "2015" },
-  { label: "Project records", value: "57" },
-  { label: "Portfolio", value: "Across India" },
-] as const
+/*
+ * The credentials panel lives in milestone-portal-hero.tsx, which builds it
+ * from a COUNTED project total. A duplicate list here carried a typed "57"
+ * that nothing imported and nothing kept in step, so it went stale silently
+ * the moment the portfolio was filtered. Deleted rather than corrected: a
+ * second copy of a derived figure is the bug, not its value.
+ *
+ * Turnover, credit ratings and registration remain barred from published copy.
+ */
 
 export type Office = {
   label: string

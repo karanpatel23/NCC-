@@ -7,6 +7,7 @@ import { Reveal } from "@/components/reveal"
 import { BlueprintSection } from "@/components/blueprint-section"
 import { MilestonePortalHero } from "@/components/milestone-portal-hero"
 import { HEADLINE_CAPABILITIES } from "@/lib/capabilities"
+import { projectTotals } from "@/lib/content/load"
 
 /*
  * FINAL palette — docs/01-requirements-r7.md. Five colours, closed by the
@@ -28,7 +29,7 @@ export default function Page() {
        * Hero — the MILESTONE glyph portal. No photography or video, per the
        * owner's standing instruction, reaffirmed at R8.
        */}
-      <MilestonePortalHero />
+      <MilestonePortalHero projectCount={projectTotals().count} />
 
       {/*
        * R12: the blueprint replaces the dark arrival panel that followed the

@@ -35,18 +35,32 @@ import { DISPLAY_FAMILY } from "@/lib/fonts"
  * overridden below; none of its own colours survive.
  */
 
-const CREDENTIALS = [
-  { label: "Established", value: "1987" },
-  { label: "Incorporated", value: "2015" },
-  { label: "Project records", value: "57" },
-  { label: "Portfolio", value: "Across India" },
-]
+/*
+ * "Project records" is COUNTED, never typed. It shipped as a literal "57" and
+ * went stale the moment the portfolio was filtered — exactly the failure the
+ * §2 teardown exists for, where both competitors render "0 +" in production
+ * because a hardcoded counter was never wired up.
+ *
+ * This is a client component, so it cannot read the content tree itself. The
+ * homepage is a server component and passes the figure in, which also keeps
+ * the §4.4 invariant: the true number is in the SSR HTML from the start.
+ */
+function credentials(projectCount: number) {
+  return [
+    { label: "Established", value: "1987" },
+    { label: "Incorporated", value: "2015" },
+    { label: "Project records", value: String(projectCount) },
+    { label: "Portfolio", value: "Across India" },
+  ]
+}
 
 /*
  * The slogan IS the type now, so the motto is no longer passed in — it is the
- * `word` below. Kept as a named export with no props so page.tsx stays simple.
+ * `word` below. The one prop is projectCount, because the credentials panel
+ * must not carry a typed figure.
  */
-export function MilestonePortalHero() {
+export function MilestonePortalHero({ projectCount }: { projectCount: number }) {
+  const CREDENTIALS = credentials(projectCount)
   return (
     <>
       <style>{`
