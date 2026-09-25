@@ -1,4 +1,5 @@
 import { pageMetadata } from "@/lib/metadata"
+import Image from "next/image"
 import Link from "next/link"
 
 import {
@@ -84,6 +85,46 @@ export default function CapabilitiesPage() {
           Where a contract is published on this site, it is linked from the
           capability it belongs to.</>}
       />
+
+      {/*
+        * The plant plate — owner-supplied artwork, this route only.
+        *
+        * data-rail-quiet because the plate is full-bleed and the chainage rail
+        * owns the left gutter above 1280; without it the rail's ticks land on
+        * the photograph. Same reason [data-intro] carries it on the homepage.
+        *
+        * The caption describes how road and bridge work is built, NOT NCC's
+        * equipment. Nothing approved says NCC owns or operates a batching
+        * plant, so nothing here says so either — §7, and the same footing the
+        * engineering drawings below already stand on.
+        */}
+      <section
+        className="expertise-plate on-dark"
+        data-rail-quiet
+        aria-labelledby="plant-plate-heading"
+      >
+        <figure>
+          <Image
+            src="/images/expertise-concrete-plant.png"
+            alt="A concrete batching plant: cement silos, an aggregate conveyor, stockpiles of aggregate and a mixer truck."
+            width={1619}
+            height={971}
+            sizes="100vw"
+          />
+        </figure>
+        <div className="expertise-plate-caption">
+          <div>
+            <p className="eyebrow">Materials and methods</p>
+            <h2 id="plant-plate-heading">Specified, batched, placed.</h2>
+          </div>
+          <p>
+            Road and bridge work is built from specified materials — aggregate,
+            bituminous mixes and structural concrete — placed to the layers,
+            thicknesses and tolerances each contract sets out. The sections
+            below set out the categories of work NCC carries out.
+          </p>
+        </div>
+      </section>
 
       <div className="mt-8 border-t border-[color:var(--color-rule)] pt-8 lg:mt-10 lg:pt-10">
         <div className="flex flex-col gap-4 lg:gap-6">

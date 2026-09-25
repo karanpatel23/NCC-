@@ -252,6 +252,66 @@ client, so a contract cannot silently detach from its authority. All 14 client l
 owner-verified, including the national bodies; seven have no linked record yet and carry a
 `todo`.
 
+### Mobile below 768px is ONE gutter and full-bleed dark panels (R22)
+Every rule lives in the single `@media(max-width:767px)` block in `globals.css`.
+768/1024/1440 were verified **pixel-identical** before and after, on all nine
+routes, so the block provably cannot reach tablet or desktop.
+
+- **`--gutter` is 1.5rem and there is only one.** Mobile previously carried
+  five left edges: header 16 · page shell 20 · `<Container>` 24 · sheet cards
+  39 · glass cards 52. 24px wins because it is the §4.6 system gutter that
+  `<Container>` already applies to the header, the footer and the whole
+  homepage; `PAGE_SHELL`'s `px-5` was the drift. Only the shell moved, so those
+  three are untouched. Section text now sits at 24 sitewide and card interiors
+  at 43 (24 + 1px border + 18px), and 18px is the padding the project and
+  capability sheets already used.
+- **Dark panels are FULL-BLEED, not inset-with-padding.** The brief allowed
+  either. Inset+padding would put dark-panel text 24px right of the light
+  sections above and below it — the same misalignment in a new costume. They
+  bleed with `margin-inline:calc(var(--gutter) * -1)`, NOT the 50vw trick, so
+  no scrollbar can widen them. Applies to `.editorial-section.dark-panel`,
+  `.contact-band` and `.enquiry-note`.
+- **There was never a gradient fade.** The "fade cutting into HISTORY" was the
+  panel's 64px empty bottom padding with grid lines still drawn in it. Measured:
+  `mask:none`, no gradient overlay, `padding:64px 0px`. Fixed by tightening the
+  block padding to 2.75rem, not by removing an effect that did not exist.
+- **`.engineering-grid` is driven by `--grid-line`, `--grid-size` and
+  `--grid-origin`.** Retune those; never restate the `background-image`, which
+  is how the mobile and desktop textures would drift apart. Mobile starts the
+  first line ON the gutter so it coincides with the text edge.
+- **A `<br>` in a heading needs `{" "}` before it.** `display:none` on a `<br>`
+  eats the adjacent whitespace, so the mobile reflow rendered "Experience
+  formsour foundations". All five authored breaks now carry the explicit space:
+  `/about`, `/csr`, `/careers`, `/contact` and `ContactBand`.
+- **h2 was NOT scaled down.** The brief asked for 36-44px display headings and
+  named two section h2s as oversized; those h2s measured **32px**, already under
+  the floor. h1 came 44.8 -> 37/40/42 at 360/390/430. What made the h2s dominate
+  was spanning the full 390px with no padding, which the bleed fixed.
+
+### The plant plate is a category illustration, not an NCC plant record (R22)
+`.expertise-plate` in `globals.css` + the `<section>` in `app/capabilities/page.tsx`.
+`public/images/expertise-concrete-plant.png` is a GENERATED image supplied by the
+owner. It is on `/capabilities` only.
+
+- **The caption claims nothing about NCC's equipment.** Nothing approved says
+  NCC owns or operates a batching plant, so the copy describes how road and
+  bridge work is built in general. It stands on exactly the footing the
+  engineering drawings on the same page already have.
+- **The lg aspect ratio is the source's own, 1619/971.** Desktop applies no
+  crop at all. Below 1024 the frame gets taller and `object-fit` crops width:
+  16/9 from 640, 4/3 below, with `object-position:58%` biasing toward the silos
+  and the mixer, the two things still legible at 390px.
+- **The caption's `padding-inline` tracks `PAGE_SHELL` exactly** — 24/32/48
+  against a 1280 column — so it lands ON the capability cards below it, not near
+  them. Verified equal at seventeen widths from 320 to 1920.
+- **It carries `data-rail-quiet`**, because it is full-bleed and the chainage
+  rail owns the same left gutter above 1280.
+- **Known, inherited:** the plate bleeds with `calc(50% - 50vw)`, matching
+  `.page-heading`. On a platform with classic (non-overlay) scrollbars, `vw`
+  counts the scrollbar and any element using this technique overhangs the client
+  box by its width. Pre-existing and sitewide, not introduced here; the fix, if
+  one is ever wanted, is `overflow-x:clip` on `body`, which is a desktop change.
+
 ### Routes and where content renders
 `/` · `/projects` · `/projects/[slug]` · `/clients` ·
 `/capabilities` · `/about` · `/contact`
