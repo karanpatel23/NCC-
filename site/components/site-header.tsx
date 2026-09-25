@@ -113,7 +113,8 @@ export function SiteHeader() {
    * [data-dark-hero]; every other page gets the solid treatment immediately.
    */
   useEffect(() => {
-    setDarkHero(!!document.querySelector("[data-dark-hero]"))
+    const frame = window.requestAnimationFrame(() => setDarkHero(!!document.querySelector("[data-dark-hero]")))
+    return () => window.cancelAnimationFrame(frame)
   }, [])
 
   /*

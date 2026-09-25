@@ -66,25 +66,13 @@ export const COMPANY = {
   email: "ncc_infraspace2015@yahoo.in",
 } as const
 
-/*
- * §6.1 item 3 — credentials strip.
- *
- * ⚠️ FLAGGED FOR OWNER REVIEW, R8. The owner's R8 instruction bars unconfirmed
- * financial figures and credit ratings from new copy. These four predate that
- * instruction and are sourced off-site (MCA, Crisil, D&B), not from the
- * client. "Turnover FY24" and "Credit rating" in particular are exactly the
- * class of claim R8 names. They are LEFT AS THEY ARE rather than deleted or
- * propagated: R8 says flag, not remove, and the hero already renders them.
- *
- * Do not copy these onto /about or any new page until the owner confirms them.
- * The same four are duplicated in components/milestone-portal-hero.tsx, which
- * is where they actually render.
- */
+/* Presentation facts retained for compatibility. Unverified turnover,
+ * credit ratings and registration have been removed from published copy. */
 export const CREDENTIALS = [
   { label: "Established", value: "1987" },
-  { label: "Registration", value: "Class AA, Govt. of Gujarat" },
-  { label: "Turnover FY24", value: "₹302 Cr" },
-  { label: "Credit rating", value: "Crisil BBB-/Stable · A3" },
+  { label: "Incorporated", value: "2015" },
+  { label: "Project records", value: "57" },
+  { label: "Portfolio", value: "Across India" },
 ] as const
 
 export type Office = {

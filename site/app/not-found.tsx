@@ -15,7 +15,9 @@ import { COMPANY, MAILTO_HREF, TEL_HREF } from "@/lib/company"
  */
 export const metadata: Metadata = {
   title: "Page not found",
-  description: "This page does not exist. The project files and office contact details are linked here.",
+  description: "Explore NCC Infraspace projects, expertise and office contact details.",
+  alternates: { canonical: null },
+  openGraph: { url: null },
   robots: { index: false, follow: true },
 }
 
@@ -32,7 +34,7 @@ export default function NotFound() {
       <PageHeader
         eyebrow="Page not found"
         title="That page is not here."
-        intro="The address may have changed, or a project record may have been renamed. Everything on the site is reachable from the links below."
+        intro="The address may have changed, or a project record may have been renamed. Find the project portfolio, expertise and office contacts below."
       />
 
       <div className="mt-8 border-t border-[color:var(--color-rule)] pt-8 lg:mt-10 lg:pt-10">

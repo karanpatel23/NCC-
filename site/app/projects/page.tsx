@@ -1,13 +1,9 @@
-import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/metadata"
 
 import { ProjectsIndexView } from "./_index-view"
 import { loadProjects } from "@/lib/content/load"
 
-export const metadata: Metadata = {
-  title: "Projects",
-  description:
-    "Road, bridge, municipal, water and industrial infrastructure contracts delivered by NCC Infraspace for government authorities.",
-}
+export const metadata = pageMetadata("Projects", "Explore 57 completed road, municipal, water, industrial and rail infrastructure project records from NCC Infraspace.", "/projects")
 
 export default function ProjectsPage() {
   return (

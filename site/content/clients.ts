@@ -17,9 +17,8 @@
  * only the authority on which published projects link to it. A client with
  * no linked project renders without project links and carries a TODO.
  *
- * PMGSY is a central funding scheme rather than an awarding body. It is kept
- * here at the owner's instruction and labelled as a scheme, and the projects
- * delivered under it name it in their scope text.
+ * PMGSY is a central funding scheme, not an awarding body. It is therefore
+ * absent from this client register. Relevant projects name it in their scope.
  *
  * ---------------------------------------------------------------------------
  * LOGOS
@@ -107,6 +106,8 @@ export const CLIENT_GROUPS: Array<{ id: ClientGroup; label: string; blurb: strin
   { id: "state-dept", label: "State departments", blurb: "Public health and works divisions." },
   { id: "rail", label: "Rail", blurb: "State rail infrastructure corporations." },
   { id: "other-state", label: "Other state governments", blurb: "State public works departments." },
+  { id: "national", label: "National institutions", blurb: "Government of India and national infrastructure bodies." },
+  { id: "private", label: "Private clients", blurb: "Infrastructure work for private sector organisations." },
 ]
 
 export const CLIENTS: ClientRecord[] = [
@@ -168,7 +169,6 @@ export const CLIENTS: ClientRecord[] = [
    * Act 2005. */
   { id: "govt-of-india", name: "Government of India", short: "Government of India", group: "national", match: "(?!)", ownerVerified: true, todo: "Attach Government of India projects" },
   { id: "nabard", name: "National Bank for Agriculture and Rural Development", short: "NABARD", group: "national", match: "(?!)", logo: "nabard.png", logoSource: "Recovered from the previous nccinfraspace.com client slider", ownerVerified: true, todo: "Attach NABARD funded projects" },
-  { id: "pmgsy", name: "Pradhan Mantri Gram Sadak Yojana", short: "PMGSY", group: "national", match: "(?!)", logo: "pmgsy.png", logoSource: "Recovered from the previous nccinfraspace.com client slider", ownerVerified: true, scheme: true, todo: "Scheme, not an awarding body. Four published records are delivered under it" },
   { id: "up-pwd", name: "Public Works Department, Uttar Pradesh", short: "UP PWD", group: "other-state", match: "(?!)", logo: "up-pwd.png", logoSource: "Recovered from the previous nccinfraspace.com client slider", ownerVerified: true, todo: "Attach Uttar Pradesh projects" },
   { id: "adani", name: "Adani", short: "Adani", group: "private", match: "(?!)", logo: "adani.png", logoSource: "Recovered from the previous nccinfraspace.com client slider", ownerVerified: true, todo: "Attach Adani projects" },
 ]

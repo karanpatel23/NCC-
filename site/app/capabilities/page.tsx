@@ -1,4 +1,4 @@
-import type { Metadata } from "next"
+import { pageMetadata } from "@/lib/metadata"
 import Link from "next/link"
 
 import {
@@ -35,11 +35,7 @@ import { PageHeader, PAGE_SHELL } from "@/components/page-header"
  * bars copying those onto a new page.
  */
 
-export const metadata: Metadata = {
-  title: "Expertise",
-  description:
-    "Roads and highways, bridges, irrigation, river protection, urban and municipal roads, water networks, industrial estate infrastructure and rail connectivity.",
-}
+export const metadata = pageMetadata("Expertise", "NCC Infraspace works across roads and highways, bridges, irrigation, river protection, water networks and urban infrastructure.", "/capabilities")
 
 
 
@@ -94,7 +90,7 @@ export default function CapabilitiesPage() {
           {sections.map((c) => (
             <section
               key={c.id}
-              className="border border-[color:var(--color-rule)] bg-[color:var(--color-white)] p-[18px] sm:p-6 lg:p-8"
+              className="capability-card border border-[color:var(--color-rule)] bg-[color:var(--color-white)] p-[18px] sm:p-6 lg:p-8"
             >
               {/* The states line is evidence, so it appears only where there
                 * is evidence. A capability with no record shows no location. */}

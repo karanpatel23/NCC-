@@ -42,7 +42,7 @@ export function ProjectsIndexView({
      * its own padding scale — 40 / 28 / 20 / 16 — and <Container> is fixed at
      * 24px. Max width and centring match it exactly.
      */
-    <div className="mx-auto w-full max-w-[1120px] px-4 pb-[clamp(4rem,2.5rem+6.5vw,8.75rem)] min-[360px]:px-5 md:px-7 lg:px-10">
+    <div className="page-shell mx-auto w-full max-w-[1280px] px-5 md:px-8 lg:px-12">
       {/* Clears the fixed header — h-14 on mobile, h-18 from md — with room
         * above the eyebrow rather than the heading sitting under the bar. */}
       <PageHeader

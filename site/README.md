@@ -1,21 +1,33 @@
-# Next.js template
+# NCC Infraspace website
 
-This is a Next.js template with shadcn/ui.
+The application lives in this `site/` directory. It is a Next.js 16 App Router project with 57 statically generated project detail pages.
 
-## Adding components
+## Local setup
 
-To add components to your app, run the following command:
+Use Node.js 24 (`.nvmrc` and `package.json` pin it), then run:
 
 ```bash
-npx shadcn@latest add button
+cd "/Users/karanpatel/Desktop/NCC website rebuild /site"
+nvm use 24
+npm ci
+npm run dev
 ```
 
-This will place the ui components in the `components` directory.
+The local site opens at `http://localhost:3000`. `predev` and `prebuild` synchronize the project's 21 media files into `public/content/projects/`.
 
-## Using components
+## Release checks
 
-To use the components in your app, import them as follows:
-
-```tsx
-import { Button } from "@/components/ui/button";
+```bash
+npm run lint
+npm run typecheck
+npm run content:check
+npm run build
 ```
+
+The build uses webpack, which is the configuration validated for this project. Fonts are bundled under `fonts/`; compilation does not need Google Fonts access.
+
+## Deployment settings
+
+Use **`site` as the Root Directory relative to the repository** for a Vercel Git import. For direct CLI deployment from this folder, the root is `.`. The checked-in `vercel.json` sets the Next.js framework preset, `npm ci`, and `npm run build`. Leave Output Directory at the Next.js default; do not set it to `out`, `public`, or `.next`. Node.js is pinned to 24.x. The application requires **no user-supplied environment variables**.
+
+See [the manual Vercel deployment guide](../docs/06-manual-vercel-deployment.md) for Dashboard and CLI steps, Preview-first deployment, custom domain setup, verification, and troubleshooting. Deployment is performed manually by the project owner.

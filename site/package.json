@@ -5,13 +5,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
-    "content:check": "tsx scripts/content-check.ts",
-    "sync:media": "tsx scripts/sync-media.ts",
+    "content:check": "node --import tsx scripts/content-check.ts",
+    "sync:media": "node --import tsx scripts/sync-media.ts",
     "prebuild": "npm run sync:media",
     "predev": "npm run sync:media"
   },
@@ -38,5 +38,8 @@
     "tailwindcss": "^4",
     "tsx": "^4.23.12",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": "24.x"
   }
 }

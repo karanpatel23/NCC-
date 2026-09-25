@@ -96,7 +96,7 @@ function Sheet({ project }: { project: SheetProject }) {
   return (
     <article
       data-sheet
-      className="border border-[color:var(--color-rule)] bg-[color:var(--color-white)] p-[18px] transition-colors duration-150 has-[a:hover]:border-[color:var(--color-rule-strong)] sm:p-6 lg:p-8"
+      className="project-sheet border border-[color:var(--color-rule)] bg-[color:var(--color-white)] p-[18px] transition-colors duration-150 has-[a:hover]:border-[color:var(--color-rule-strong)] sm:p-6 lg:p-8"
     >
       <div className="flex items-start justify-between gap-4">
         <div className="min-w-0">

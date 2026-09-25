@@ -1,28 +1,13 @@
-import type { Metadata } from "next"
 
+import { pageMetadata } from "@/lib/metadata"
 import { PageHeader, PAGE_SHELL } from "@/components/page-header"
 import { CLIENT_GROUPS, loadClients } from "@/lib/content/clients"
 import { ClientsView } from "./_clients-view"
 
-/*
- * Clients.
- *
- * Every client here awarded at least one of the 57 published contracts. The
- * list is derived from the records, so it cannot drift from them, and a client
- * with no project does not appear at all.
- *
- * What is NOT here matters as much: NHAI, NABARD, MORTH, the Government of
- * India emblem, UP PWD and Adani. Logos for all six sat in the old site's
- * client slider and not one of the 57 records evidences a contract with any of
- * them. PMGSY is a central funding scheme and appears in project scope, not
- * as a client.
- */
+/* Owner-verified relationships and project-record clients are grouped here.
+ * PMGSY is a scheme, so it remains in project scopes only. */
 
-export const metadata: Metadata = {
-  title: "Clients",
-  description:
-    "The government departments, municipal corporations and development authorities that awarded NCC Infraspace its published contracts.",
-}
+export const metadata = pageMetadata("Clients", "Government departments, municipal corporations, national institutions and private clients NCC Infraspace has worked with.", "/clients")
 
 export default function ClientsPage() {
   const clients = loadClients()
@@ -39,8 +24,9 @@ export default function ClientsPage() {
         intro={
           <>
             Government departments, municipal corporations, development
-            authorities and estate bodies award NCC Infraspace its work under
-            open tender. Open any client to see what they commissioned.
+            authorities, national institutions and private organisations
+            have worked with NCC Infraspace. Open a card to explore the
+            published project records linked to it.
           </>
         }
       />

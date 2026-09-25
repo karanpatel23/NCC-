@@ -26,7 +26,7 @@ function Tile({ client }: { client: ResolvedClient }) {
   const panelId = `${useId()}-client`
 
   return (
-    <li className="border border-[color:var(--color-rule)] bg-[color:var(--color-white)] transition-colors duration-150 has-[button:hover]:border-[color:var(--color-rule-strong)]">
+    <li className="client-glass border border-[color:var(--color-rule)] bg-[color:var(--color-white)] transition-colors duration-150 has-[button:hover]:border-[color:var(--color-rule-strong)]">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -51,7 +51,7 @@ function Tile({ client }: { client: ResolvedClient }) {
                 * 200 box, not fitted to the box. Fitting made a square emblem
                 * small beside a long wordmark; equal area is what actually
                 * reads as equal weight. */
-              className="h-20 w-auto object-contain grayscale transition duration-150 group-hover:grayscale-0 group-focus-visible:grayscale-0"
+              className="h-20 w-auto object-contain grayscale transition duration-150 group-hover:grayscale-0 group-focus-visible:grayscale-0 group-aria-expanded:grayscale-0"
             />
           ) : (
             <span className="font-[family-name:var(--font-archivo)] text-[length:var(--text-xl)] leading-none font-semibold tracking-[-0.02em] text-[color:var(--color-ink)] transition-colors group-hover:text-[color:var(--color-copper-ink)]">
@@ -89,7 +89,7 @@ function Tile({ client }: { client: ResolvedClient }) {
           <p className="text-[length:var(--text-sm)] leading-[1.6] text-[color:var(--color-muted)]">
             {client.scheme
               ? "A central funding scheme. Projects delivered under it name it in their scope."
-              : "Published project records for this client are not attached yet."}
+              : "NCC has worked with this organisation. Explore the portfolio for published project records."}
           </p>
         ) : (
         <>
@@ -133,7 +133,7 @@ function Tile({ client }: { client: ResolvedClient }) {
               >
                 <span className="min-w-0">{p.title}</span>
                 {p.valueCr !== undefined && (
-                  <span className="measurement text-[color:var(--color-muted)]">₹{p.valueCr} Cr</span>
+                  <span className="sr-only"> Contract value ₹{p.valueCr} Cr</span>
                 )}
               </Link>
             </li>

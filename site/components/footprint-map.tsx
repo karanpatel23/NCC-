@@ -5,8 +5,8 @@ import { INDIA_STATES, INDIA_VIEWBOX } from "@/lib/india-states"
 /*
  * Where NCC has delivered work.
  *
- * The boundary is the official Survey of India depiction, imported from
- * lib/india-states.ts. See the provenance block in that file.
+ * This legacy component is not rendered. Its DataMeet-derived boundaries have
+ * unverified official provenance and license; see lib/india-states.ts.
  *
  * The map shows STATES ONLY. No project names, no lists, no counts, and
  * nothing that appears on hover or tap. Projects are the projects page's job;

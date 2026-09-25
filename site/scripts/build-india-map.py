@@ -1,16 +1,8 @@
 #!/usr/bin/env python3
-"""
-Regenerates lib/india-states.ts from the official Survey of India boundary.
-
-    pip install pyshp
-    curl -LO https://raw.githubusercontent.com/datameet/maps/master/States/Admin2.shp
-    curl -LO https://raw.githubusercontent.com/datameet/maps/master/States/Admin2.dbf
-    curl -LO https://raw.githubusercontent.com/datameet/maps/master/States/Admin2.shx
-    curl -LO https://raw.githubusercontent.com/datameet/maps/master/States/Admin2.prj
-    python3 scripts/build-india-map.py
-
-Do NOT substitute Natural Earth, GADM or OpenStreetMap. They depict India's
-boundaries differently from the official position.
+"""Legacy DataMeet geometry generator, retained for audit history only.
+Source: https://github.com/datameet/maps/States/Admin2.*
+This is not verified Survey of India ABDB geometry and must not be described
+or published as an official map. About renders project states in text instead.
 """
 import json, math, shapefile
 

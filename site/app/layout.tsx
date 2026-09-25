@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { fontDisplay, fontSans, fontMono } from "@/lib/fonts"
+import { COMPANY, OFFICES } from "@/lib/company"
 
 import "./globals.css"
 import { SiteHeader } from "@/components/site-header"
@@ -16,8 +17,8 @@ export const metadata: Metadata = {
     template: "%s · NCC Infraspace",
   },
   description:
-    "Class AA registered contractor building roads, bridges, irrigation and river protection works for government authorities across India since 1987.",
-  alternates: { canonical: "/" },
+    "NCC Infraspace builds roads, bridges, irrigation and water infrastructure across India. Explore the company and its completed projects.",
+
   /*
    * Open Graph and Twitter cards. Previously absent on every page, so a link
    * shared to WhatsApp or LinkedIn rendered as a bare URL. Per-page metadata
@@ -32,17 +33,17 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "NCC Infraspace",
     locale: "en_IN",
-    url: "/",
+
     title: "NCC Infraspace, road and bridge contractors since 1987",
     description:
-      "Class AA registered contractor building roads, bridges, irrigation and river protection works for government authorities across India since 1987.",
+      "NCC Infraspace builds roads, bridges, irrigation and water infrastructure across India. Explore the company and its completed projects.",
     images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "NCC Infraspace" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "NCC Infraspace, road and bridge contractors since 1987",
     description:
-      "Class AA registered contractor building roads, bridges, irrigation and river protection works for government authorities across India since 1987.",
+      "NCC Infraspace builds roads, bridges, irrigation and water infrastructure across India. Explore the company and its completed projects.",
   },
 }
 
@@ -69,6 +70,7 @@ export default function RootLayout({
       className={`${fontDisplay.variable} ${fontSans.variable} ${fontMono.variable}`}
     >
       <body className="flex min-h-dvh flex-col">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{__html: JSON.stringify({"@context":"https://schema.org","@type":"Organization",name:COMPANY.legalName,url:"https://nccinfraspace.com",email:COMPANY.email,telephone:COMPANY.phone,foundingDate:String(COMPANY.foundedYear),address:OFFICES.map(o=>({"@type":"PostalAddress",streetAddress:o.address,addressCountry:"IN"}))}).replace(/</g,"\\u003c")}} />
         <ChainageRail />
         <SiteHeader />
         <main className="flex-1">{children}</main>

@@ -39,7 +39,7 @@ export default async function Image() {
               textTransform: "uppercase",
             }}
           >
-            Est. 1987 · Class AA contractor
+            Est. 1987 · Infrastructure contractor
           </div>
           <div
             style={{

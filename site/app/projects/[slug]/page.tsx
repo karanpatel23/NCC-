@@ -8,6 +8,7 @@ import { resolveProjectImage } from "@/lib/content/media"
 import { formatValue } from "../_sheet-data"
 import { CATEGORY_LABEL } from "@/lib/labels"
 import { PAGE_SHELL } from "@/components/page-header"
+import { pageMetadata } from "@/lib/metadata"
 
 /*
  * Project detail — main brief §6.3, "the template that matters most", now in
@@ -36,16 +37,15 @@ export async function generateMetadata({
   const { slug } = await params
   const project = getProject(slug)
   if (!project) return {}
-  return {
-    title: project.seo?.title ?? project.title,
+  const title = project.seo?.title ?? project.title
+  const description =
     /* Capped at 155 characters. A scope summary can run to 220, and Google
      * truncates the tail mid-word in the result snippet. */
-    description:
-      project.seo?.description ??
+    project.seo?.description ??
       (project.scopeSummary.length > 155
         ? project.scopeSummary.slice(0, 152).replace(/[\s,;:.]+\S*$/, "") + "."
-        : project.scopeSummary),
-  }
+        : project.scopeSummary)
+  return pageMetadata(title, description, `/projects/${slug}`)
 }
 
 const STATUS_LABEL = {
@@ -110,12 +110,16 @@ export default async function ProjectDetailPage({
   const hero = project.heroImage
     ? resolveProjectImage(project.slug, project.heroImage)
     : null
-  const gallery = project.gallery.map((g) =>
+  // The first gallery image appears on the listing when an alternate exists.
+  // Keep it there and show the remaining images with this detail record.
+  const gallery = project.gallery.slice(project.heroImage ? 1 : 0).map((g) =>
     resolveProjectImage(project.slug, g),
   )
+  const scopeParagraphs = project.body?.split(/\n{2,}/).map(p => p.replace(/\s+/g, " ").trim()) ?? []
+  const scopeBullets = project.body?.split("\n").map(p => p.trim()).filter(p => p.startsWith("•")) ?? []
 
   return (
-    <div className={`${PAGE_SHELL} pb-[clamp(4rem,2.5rem+6.5vw,8.75rem)]`}>
+    <div className={`project-detail ${PAGE_SHELL} pb-[clamp(4rem,2.5rem+6.5vw,8.75rem)]`}>
       <div className="pt-[calc(3.5rem+2.5rem)] md:pt-[calc(4.5rem+3.5rem)]">
         <Link
           href="/projects"
@@ -204,14 +208,15 @@ export default async function ProjectDetailPage({
             */}
           {project.body ? (
             <div className="max-w-[64ch]">
-              {project.body.split(/\n{2,}/).map((para, i) => (
+              {scopeParagraphs.filter(p => !p.startsWith("•")).map((para, i) => (
                 <p
                   key={i}
                   className="mt-4 text-[length:var(--text-base)] leading-[1.65] break-words text-[color:var(--color-ink)] first:mt-4"
                 >
-                  {para.replace(/\s+/g, " ").trim()}
+                  {para}
                 </p>
               ))}
+              {scopeBullets.length > 0 && <ul className="mt-4 list-disc space-y-2 pl-5">{scopeBullets.map(b => <li key={b} className="text-[length:var(--text-base)] leading-[1.6]">{b.slice(1).trim()}</li>)}</ul>}
             </div>
           ) : (
             <p className="mt-4 max-w-[64ch] text-[length:var(--text-base)] leading-[1.65] break-words text-[color:var(--color-ink)]">
@@ -275,12 +280,10 @@ export default async function ProjectDetailPage({
             Photography
           </h2>
           <ul
-            className={`mt-6 gap-5 [column-count:1] sm:[column-count:2] ${
-              gallery.length >= 5 ? "lg:[column-count:3]" : ""
-            }`}
+            className="gallery-grid mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"
           >
             {gallery.map((img) => (
-              <li key={img.url} className="mb-5 break-inside-avoid">
+              <li key={img.url} className="min-w-0">
                 <Image
                   src={img.url}
                   alt={img.alt}

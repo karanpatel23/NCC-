@@ -80,7 +80,9 @@ export function toSheet(p: LoadedProject): SheetProject {
     lengthKm: p.lengthKm,
     image: p.heroImage
       ? (() => {
-          const r = resolveProjectImage(p.slug, p.heroImage)
+          // Use a gallery alternate where available, preserving the project association.
+          const listingImage = p.gallery.length ? p.gallery[0] : p.heroImage
+          const r = resolveProjectImage(p.slug, listingImage)
           return {
             url: r.url,
             alt: r.alt,

@@ -1,0 +1,2 @@
+# NCC design context
+Owner-authorized redesign, 24 September 2026. Navy #18202f, slate, copper and pure white. Restrained glass with opaque fallbacks. Archivo headings and IBM Plex body/technical details. Authentic project photography; route lines are diagrams, not maps. Reuse Next Image, brand lockup, content loaders and filters. No external context uploaded. Public benchmarks: L&T, VINCI, Skanska, Bechtel, AECOM and Arup. Decisions: strong photographic opening, full road names, technical project facts, editorial company pages, transparent and keyboard-operable navigation.

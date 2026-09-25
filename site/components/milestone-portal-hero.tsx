@@ -37,9 +37,9 @@ import { DISPLAY_FAMILY } from "@/lib/fonts"
 
 const CREDENTIALS = [
   { label: "Established", value: "1987" },
-  { label: "Registration", value: "Class AA, Govt. of Gujarat" },
-  { label: "Turnover FY24", value: "₹302 Cr" },
-  { label: "Credit rating", value: "Crisil BBB-/Stable · A3" },
+  { label: "Incorporated", value: "2015" },
+  { label: "Project records", value: "57" },
+  { label: "Portfolio", value: "Across India" },
 ]
 
 /*
@@ -478,14 +478,8 @@ export function MilestonePortalHero() {
               * visible type is the same words.
               */}
             <h1 className="sr-only">Every milestone is our vision</h1>
-            {/* R9 removed "Mehsana, Gujarat" from the eyebrow and "in
-                Gujarat" from the line beneath. The Class AA registration
-                stays — it is a credential, not a location claim, and R9
-                explicitly left the credentials alone. Nothing replaces the
-                geography: an unsupported reach like "pan-India" would be the
-                §2 failure in a new costume. Project geography still lives on
-                the project records, where it is checkable. */}
-            <p data-ncc-eyebrow>Est. 1987 · Class AA Contractor</p>
+            {/* Verified identity only; no pending registration or financial claims. */}
+            <p data-ncc-eyebrow>Est. 1987 · Infrastructure contractor</p>
             <p data-ncc-motto>
               Roads, bridges, irrigation and river protection works.
             </p>

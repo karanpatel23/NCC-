@@ -1,3 +1,5 @@
+import { pageMetadata } from "@/lib/metadata"
+export const metadata = pageMetadata("Road and bridge contractors since 1987", "NCC Infraspace builds roads, bridges, irrigation and water infrastructure across India. Explore the company and its completed projects.", "/")
 import Link from "next/link"
 
 import { Container, Section, Eyebrow } from "@/components/container"
