@@ -245,6 +245,25 @@ issuing authority and the office addresses keep their state names, because those
 The `/about` footprint map is India-scale, generated from lon/lat so shape and markers share
 one projection, and is framed as work delivered to date rather than an operating area.
 
+### A client tile is a mark and a name (R23)
+`app/clients/_clients-view.tsx`. No disclosure, no expanding panel, no per-client link —
+the owner's instruction. The group filter and the group sections stay; only the per-tile
+dropdown went.
+
+- **The loader's check is NOT presentation and must not follow the panel out.**
+  `lib/content/clients.ts` still FAILS THE BUILD when a project matches zero or more than
+  one client. The records are loaded and validated, then simply not surfaced; `/projects`
+  is where a record is read. Deleting the loader because the page stopped rendering its
+  output would remove the only thing stopping a contract silently detaching from its
+  authority.
+- **Logos render in their own colour at rest.** They were greyscale-until-opened while a
+  tile could be opened. With the disclosure gone that state has no resolution on touch,
+  and a wall left permanently grey for every phone visitor is worse than one that just
+  shows the marks.
+- **`.client-glass` is out of the `:hover` and `:focus-within` rules in `globals.css`.**
+  A tile that cannot be actioned must not paint an interactive state.
+- The `/clients` intro no longer says "Open a card" — it said so, and cards no longer open.
+
 ### Data files the owner edits directly (R21)
 `content/clients.ts` · `content/timeline.ts` · `content/footprint.ts` · `lib/capabilities.ts`.
 None is layout. The client loader FAILS THE BUILD if a project matches zero or more than one
@@ -448,6 +467,24 @@ The full slogan is the type; the camera flies through the O of MILESTONE. The ow
 photography and video in the hero, which **reverses R4 §3** — so the credentials are the content you
 arrive inside the letter, and that is where the evidence now lands. Do not reintroduce a photo hero
 without checking that decision.
+
+**GlyphPortal's touch letter-picker is switched OFF** (R23). The vendored component
+ships a native `<select>` reading "Choose a letter" and shows it on every coarse pointer
+via its own `any-pointer: coarse` rule, so touch users can pick the entry letter. Two
+reasons it is hidden here, in the hero's own scoped style block:
+- **The entry letter is not a choice.** `focusChar="O"` picks the O of MILESTONE because
+  the milestone is the subject; the other two Os sit in "OUR" and "VISION". A dropdown
+  offering a different letter contradicts a decision already made.
+- **It landed ON the subtitle.** The component parks it at `--gp-word-bottom + 42px`,
+  measured 124x48 at (133,354) on a 390px viewport — directly over the last word of
+  "Roads, bridges, irrigation and river protection works."
+
+Use `display: none`, **NOT** `interactive={false}` on the component: that prop also kills
+the "Scroll to enter." hint and the desktop letter hover, both of which are wanted.
+Nothing is lost to assistive tech — the letter buttons are already `inert` with
+`tabIndex={-1}`, so the select was never anyone's only route anywhere. Verified after the
+change on iPhone, iPad and desktop: hint present, CTA present, `--gp-field-scale` 1 -> 1.16
+and `--gp-reveal` 0 -> 1 unchanged.
 
 The corridor (`image-stream-hero.tsx`) and the project reel (`project-reel-hero.tsx`) both still
 exist and can carry other pages.
